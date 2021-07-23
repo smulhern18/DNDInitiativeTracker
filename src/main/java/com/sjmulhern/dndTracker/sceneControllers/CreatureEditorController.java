@@ -8,14 +8,21 @@ import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
 import com.sjmulhern.dndTracker.creatures.PlayerCharacter;
 import com.sjmulhern.dndTracker.creatures.Size;
 import com.sjmulhern.dndTracker.creatures.Type;
+import com.sjmulhern.dndTracker.tools.Ability;
+import com.sjmulhern.dndTracker.tools.Tool;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.util.ArrayList;
 import java.util.Set;
@@ -74,17 +81,18 @@ public class CreatureEditorController {
         String creatureType = ((RadioButton) types.getSelectedToggle()).getText();
         switch(creatureType){
             case "Creature":
-                editedCreature = new Creature(
-                    nameField.getText(),
-                    descriptionField.getText(),
-                    Alignment.valueOf(alignmentField.getValue()),
-                    Size.valueOf(sizeField.getValue()),
-                    Integer.parseInt(movementSpeedField.getText()),
-                    Integer.parseInt(swimmingSpeedField.getText()),
-                    Integer.parseInt(climbingSpeedField.getText()),
-                    Integer.parseInt(flyingSpeedField.getText()),
-
-                );
+//                editedCreature = new Creature(
+//                    nameField.getText(),
+//                    descriptionField.getText(),
+//                    Alignment.valueOf(alignmentField.getValue()),
+//                    Size.valueOf(sizeField.getValue()),
+//                    Integer.parseInt(movementSpeedField.getText()),
+//                    Integer.parseInt(swimmingSpeedField.getText()),
+//                    Integer.parseInt(climbingSpeedField.getText()),
+//                    Integer.parseInt(flyingSpeedField.getText()),
+//
+//
+//                );
                 break;
             case "Monster":
 
@@ -106,7 +114,6 @@ public class CreatureEditorController {
         Set<Creature> creatures = App.initativeRoundRobin.getCreatures();
 
         Creature wantedCreature = null;
-        System.out.println(creatureName);
         for (Creature creature: creatures) {
             if (creature.getName().equals(creatureName)) {
                 wantedCreature = creature;
@@ -165,6 +172,30 @@ public class CreatureEditorController {
         } else if (NonPlayerCharacter.class.equals(creatureEditing.getClass())) {
             npcRadioButton.setSelected(true);
         }
+
+        ObservableList<Ability> abilitesObservable =  FXCollections.observableArrayList();
+        abilitesObservable.addAll(creatureEditing.getAbilities());
+        abilitiesNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        abilitiesDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        abilityTable.setItems(abilitesObservable);
+        abilityTable.getColumns().add(abilitiesNameColumn);
+        abilityTable.getColumns().add(abilitiesDescriptionColumn);
+
+
+
+        ObservableList<Tool> toolsObservable = FXCollections.observableArrayList();
+        toolsObservable.addAll(creatureEditing.getTools());
+        toolsNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        toolsDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        toolsToHitColumn.setCellValueFactory(new PropertyValueFactory<>("toHit"));
+        toolsDamageColumn.setCellValueFactory(new PropertyValueFactory<>("damage"));
+        toolsDamageTypeColumn.setCellValueFactory(new PropertyValueFactory<>("damageType"));
+        weaponsTable.setItems(toolsObservable);
+        weaponsTable.getColumns().add(toolsNameColumn);
+        weaponsTable.getColumns().add(toolsToHitColumn);
+        weaponsTable.getColumns().add(toolsDamageColumn);
+        weaponsTable.getColumns().add(toolsDamageTypeColumn);
+        weaponsTable.getColumns().add(toolsDescriptionColumn);
     }
 
     @FXML
@@ -180,7 +211,7 @@ public class CreatureEditorController {
     @FXML
     public TextField climbingSpeedField;
     @FXML
-    public TextField abilitiesField;
+    public TableView<Ability> abilityTable;
     @FXML
     public TextField swimmingSpeedField;
     @FXML
@@ -190,7 +221,7 @@ public class CreatureEditorController {
     @FXML
     public TextField descriptionField;
     @FXML
-    public TextField weaponsField;
+    public TableView<Tool> weaponsTable;
     @FXML
     public Spinner<Integer> strField;
     @FXML
@@ -223,6 +254,19 @@ public class CreatureEditorController {
     public RadioButton npcRadioButton;
     @FXML
     public ToggleGroup types;
-
+    @FXML
+    public TableColumn<Ability, String> abilitiesNameColumn;
+    @FXML
+    public TableColumn<Ability, String> abilitiesDescriptionColumn;
+    @FXML
+    public TableColumn<Tool, String> toolsNameColumn;
+    @FXML
+    public TableColumn<Tool, String> toolsToHitColumn;
+    @FXML
+    public TableColumn<Tool, String> toolsDamageColumn;
+    @FXML
+    public TableColumn<Tool, String> toolsDescriptionColumn;
+    @FXML
+    public TableColumn<Tool, String> toolsDamageTypeColumn;
 
 }

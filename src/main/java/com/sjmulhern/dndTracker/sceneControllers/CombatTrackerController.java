@@ -6,11 +6,15 @@ import com.sjmulhern.dndTracker.creatures.Condition;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Monster;
 import com.sjmulhern.dndTracker.creatures.Size;
+import com.sjmulhern.dndTracker.tools.Ability;
+import com.sjmulhern.dndTracker.tools.DamageType;
+import com.sjmulhern.dndTracker.tools.Tool;
 import com.sjmulhern.dndTracker.utils.InitativeRoundRobin;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class CombatTrackerController {
 
@@ -30,8 +34,18 @@ public class CombatTrackerController {
                                                          15,
                                                          15,
                                                          0,
-                                                         new ArrayList<>(),
-                                                         new ArrayList<>(),
+                                                         new ArrayList<>(
+                                                             Arrays.asList(
+                                                                 new Ability(
+                                                                     "Multiattack",
+                                                                     "Can attack twice with one action"))),
+                                                         new ArrayList<>(
+                                                             Arrays.asList(
+                                                                 new Tool("ShortSword",
+                                                                          "A tiny Goblin sword",
+                                                                          DamageType.Slashing,
+                                                                          "+1",
+                                                                          "1d6"))),
                                                          new ArrayList<>(),
                                                          new ArrayList<>(),
                                                          12,
@@ -43,7 +57,7 @@ public class CombatTrackerController {
                                                          69,
                                                          20,
                                                          1,
-                                                         Condition.Blinded));
+                                                         Condition.None));
             initativeRoundRobin.addCreature(new Monster("Goblin 2",
                                                         "not a Goblin",
                                                         Alignment.Unaligned,
@@ -65,7 +79,7 @@ public class CombatTrackerController {
                                                         69,
                                                         20,
                                                         1,
-                                                        Condition.Blinded));
+                                                        Condition.None));
         }
 
         Creature creature = initativeRoundRobin.getNext();
