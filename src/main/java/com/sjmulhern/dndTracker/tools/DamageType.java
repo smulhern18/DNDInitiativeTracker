@@ -41,4 +41,14 @@ public enum DamageType {
         }
         return value;
     }
+
+    public static String[] getStringValues() {
+        DamageType[] damageTypes = values();
+        String[] damageTypeStrings = new String[damageTypes.length];
+        for (int i = 0; i < damageTypes.length; i++) {
+            damageTypeStrings[i] = damageTypes[i].toString();
+        }
+
+        return damageTypeStrings;
+    }
 }

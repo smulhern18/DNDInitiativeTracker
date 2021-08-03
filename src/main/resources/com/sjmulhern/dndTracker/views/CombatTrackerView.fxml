@@ -2,127 +2,181 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 
 <AnchorPane fx:id="rootPane" prefHeight="789.0" prefWidth="373.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.CombatTrackerController">
-    <children>
-        <fx:include source="ToolbarView.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-         <Pane layoutX="2.0" layoutY="40.0" prefHeight="750.0" prefWidth="600.0">
-             <Label layoutX="9.0" layoutY="14.0" text="Name:" />
-             <Label fx:id="nameLabel" layoutX="122.0" layoutY="14.0" prefHeight="17.0" prefWidth="72.0" />
-             <Label layoutX="9.0" layoutY="31.0" text="Creature Type:" />
-             <Separator layoutX="115.0" orientation="VERTICAL" prefHeight="750.0" prefWidth="7.0" />
-             <Label fx:id="creatureTypeLabel" layoutX="122.0" layoutY="31.0" prefHeight="17.0" prefWidth="72.0" />
-             <Label layoutX="206.0" layoutY="31.0" text="Description:" />
-             <Label layoutX="9.0" layoutY="48.0" text="Alignment:" />
-             <Label fx:id="alignmentLabel" layoutX="122.0" layoutY="48.0" prefHeight="17.0" prefWidth="72.0" />
-             <Label layoutX="9.0" layoutY="65.0" text="Size:" />
-             <Label fx:id="sizeLabel" layoutX="122.0" layoutY="65.0" prefHeight="17.0" prefWidth="72.0" />
-             <Label layoutX="9.0" layoutY="82.0" text="Movement Speed:" />
-             <Label fx:id="movementSpeedLabel" layoutX="122.0" layoutY="82.0" prefHeight="17.0" prefWidth="72.0" />
-             <Label layoutX="9.0" layoutY="118.0" text="Climbing Speed:" />
-             <Label fx:id="climbingSpeedLabel" layoutX="122.0" layoutY="118.0" prefHeight="17.0" prefWidth="72.0" />
-             <Label layoutX="9.0" layoutY="99.0" text="Swimming Speed:" />
-             <Label fx:id="swimmingSpeedLabel" layoutX="122.0" layoutY="99.0" prefHeight="17.0" prefWidth="72.0" />
-             <Label layoutX="9.0" layoutY="136.0" text="Flying Speed:" />
-             <Label fx:id="flyingSpeedLabel" layoutX="122.0" layoutY="136.0" prefHeight="17.0" prefWidth="72.0" />
-             <Separator layoutX="-2.0" layoutY="153.0" prefHeight="1.0" prefWidth="600.0" />
-             <Label layoutX="9.0" layoutY="155.0" text="Abilities:" />
-             <Label fx:id="abilitiesLabel" layoutX="125.0" layoutY="155.0" prefHeight="76.0" prefWidth="450.0">
-                 <padding>
-                     <Insets right="5.0" />
-                 </padding>
-             </Label>
-             <Label layoutX="207.0" layoutY="14.0" text="Skills:" />
-             <Separator layoutX="203.0" layoutY="3.0" orientation="VERTICAL" prefHeight="152.0" prefWidth="7.0" />
-             <Label fx:id="skillsLabel" layoutX="281.0" layoutY="14.0" prefHeight="17.0" prefWidth="300.0" />
-             <Label fx:id="descriptionLabel" layoutX="281.0" layoutY="31.0" prefHeight="17.0" prefWidth="300.0" />
-             <Label layoutX="9.0" layoutY="231.0" text="Weapons:" />
-             <Label fx:id="weaponsLabel" layoutX="125.0" layoutY="231.0" prefHeight="76.0" prefWidth="450.0">
-                 <padding>
-                     <Insets right="5.0" />
-                 </padding>
-             </Label>
-             <Label layoutX="206.0" layoutY="48.0" text="Languages:" />
-             <Label fx:id="languagesLabel" layoutX="283.0" layoutY="48.0" prefHeight="17.0" prefWidth="300.0" />
-             <Separator layoutX="205.0" layoutY="64.0" prefHeight="3.0" prefWidth="395.0" />
-             <HBox alignment="TOP_CENTER" layoutX="205.0" layoutY="66.0" prefHeight="30.0" prefWidth="396.0">
-                 <opaqueInsets>
-                     <Insets />
-                 </opaqueInsets>
-                 <Label text="Strength">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-                 <Label text="Dexterity">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-                 <Label text="Constitution">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-                 <Label text="Intelligence">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-                 <Label text="Wisdom">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-                 <Label text="Charisma">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-             </HBox>
-             <HBox alignment="TOP_CENTER" layoutX="205.0" layoutY="92.0" prefHeight="30.0" prefWidth="395.0" spacing="10.0">
-                 <opaqueInsets>
-                     <Insets />
-                 </opaqueInsets>
-                 <Label fx:id="strLabel">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-                 <Label fx:id="dexLabel">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-                 <Label fx:id="contLabel">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-                 <Label fx:id="intLabel">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-                 <Label fx:id="wisLabel">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-                 <Label fx:id="chaLabel">
-                     <padding>
-                         <Insets right="10.0" />
-                     </padding>
-                 </Label>
-             </HBox>
-             <Button layoutX="503.0" layoutY="711.0" mnemonicParsing="false" onAction="#nextInitiativeButtonPressed" text="Next Initiative" />
-             <Label layoutX="223.0" layoutY="118.0" text="Hit Points:" />
-             <Label fx:id="hitPointsLabel" layoutX="285.0" layoutY="118.0" />
-         </Pane>
-    </children>
+    <fx:include source="ToolbarView.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <Pane layoutX="1.0" layoutY="40.0" prefHeight="750.0" prefWidth="650.0">
+        <Separator layoutX="102.0" layoutY="207.0" orientation="VERTICAL" prefHeight="543.0" prefWidth="7.0" />
+        <GridPane layoutX="207.0" layoutY="3.0" prefHeight="59.0" prefWidth="441.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.5" minWidth="10.0" prefWidth="70.5" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="371.0" minWidth="10.0" prefWidth="371.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Label text="Description:" GridPane.rowIndex="1" />
+            <Label text="Skills:" />
+            <Label fx:id="skillsLabel" prefHeight="17.0" prefWidth="300.0" text="Skills go here" GridPane.columnIndex="1" />
+            <Label fx:id="descriptionLabel" prefHeight="17.0" prefWidth="300.0" text="Description go here" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Languages:" GridPane.rowIndex="2" />
+            <Label fx:id="languagesLabel" prefHeight="17.0" prefWidth="300.0" text="Languages go here" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        </GridPane>
+        <Separator layoutY="207.0" prefHeight="3.0" prefWidth="651.0" />
+        <Separator layoutX="203.0" layoutY="3.0" orientation="VERTICAL" prefHeight="205.0" prefWidth="7.0" />
+        <Separator layoutX="205.0" layoutY="64.0" prefHeight="3.0" prefWidth="450.0" />
+        <GridPane layoutX="211.0" layoutY="66.0" prefHeight="34.0" prefWidth="441.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Label text="Strength">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label text="Dexterity" GridPane.columnIndex="1">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label text="Constitution" GridPane.columnIndex="2">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label text="Intelligence" GridPane.columnIndex="3">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label text="Wisdom" GridPane.columnIndex="4">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label text="Charisma" GridPane.columnIndex="5">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label fx:id="strLabel" text="STR" GridPane.rowIndex="1">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label fx:id="dexLabel" text="DEX" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label fx:id="contLabel" text="CONT" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label fx:id="intLabel" text="INT" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label fx:id="wisLabel" text="WIS" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+            <Label fx:id="chaLabel" text="CHA" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                <padding>
+                    <Insets right="10.0" />
+                </padding>
+            </Label>
+        </GridPane>
+        <Button layoutX="544.0" layoutY="709.0" mnemonicParsing="false" onAction="#nextInitiativeButtonPressed" text="Next Initiative" />
+        <Label layoutX="211.0" layoutY="118.0" text="Hit Points:" />
+        <GridPane layoutY="3.0" prefHeight="205.0" prefWidth="204.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.5" minWidth="10.0" prefWidth="102.5" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="102.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="16.0" minHeight="10.0" percentHeight="12.5" prefHeight="16.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="16.0" minHeight="10.0" percentHeight="12.5" prefHeight="16.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="16.0" minHeight="10.0" percentHeight="12.5" prefHeight="16.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="16.0" minHeight="10.0" percentHeight="12.5" prefHeight="16.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="16.0" minHeight="0.0" percentHeight="12.5" prefHeight="16.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="16.0" minHeight="10.0" percentHeight="12.5" prefHeight="16.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="12.5" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="12.5" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Label text="Name:" />
+            <Label fx:id="nameLabel" maxHeight="17.0" GridPane.columnIndex="1" />
+            <Label text="Creature Type:" GridPane.rowIndex="1" />
+            <Label text="Alignment:" GridPane.rowIndex="2" />
+            <Label text="Size:" GridPane.rowIndex="3" />
+            <Label text="Movement Speed:" GridPane.rowIndex="4" />
+            <Label fx:id="movementSpeedLabel" prefHeight="27.0" prefWidth="134.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Swimming Speed:" GridPane.rowIndex="5" />
+            <Label text="Climbing Speed:" GridPane.rowIndex="6" />
+            <Label fx:id="climbingSpeedLabel" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label fx:id="swimmingSpeedLabel" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Flying Speed:" GridPane.rowIndex="7" />
+            <Label fx:id="flyingSpeedLabel" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label fx:id="creatureTypeLabel" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="alignmentLabel" prefHeight="27.0" prefWidth="137.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="sizeLabel" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        </GridPane>
+        <Spinner fx:id="hitPointsSpinner" layoutX="275.0" layoutY="113.0" prefHeight="27.0" prefWidth="102.0" />
+        <Label fx:id="levelDescriptor" layoutX="211.0" layoutY="157.0" text="Level:" />
+        <Label fx:id="levelLabel" layoutX="250.0" layoutY="157.0" text="Level Label" />
+        <ComboBox fx:id="creatureNames" layoutX="116.0" layoutY="709.0" prefHeight="27.0" prefWidth="362.0" />
+        <Button fx:id="openButton" layoutX="488.0" layoutY="709.0" mnemonicParsing="false" onAction="#openButtonPressed" text="Open" />
+    </Pane>
+    <GridPane layoutX="6.0" layoutY="251.0" prefHeight="152.0" prefWidth="642.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="112.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="488.0" minWidth="10.0" prefWidth="477.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Label text="Abilities:" />
+        <Label text="Weapons:" GridPane.rowIndex="1" />
+        <TableView fx:id="abilityTable" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1">
+            <columns>
+                <TableColumn fx:id="abilitiesNameColumn" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="abilitiesDescriptionColumn" prefWidth="412.0" text="Description" />
+            </columns>
+        </TableView>
+        <TableView fx:id="weaponsTable" editable="true" prefHeight="76.0" prefWidth="557.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <columns>
+                <TableColumn fx:id="toolsNameColumn" prefWidth="102.0" text="Name" />
+                <TableColumn fx:id="toolsToHitColumn" prefWidth="48.0" text="To Hit" />
+                <TableColumn fx:id="toolsDamageColumn" prefWidth="55.0" text="Damage" />
+                <TableColumn fx:id="toolsDamageTypeColumn" prefWidth="93.0" text="Damage Type" />
+                <TableColumn fx:id="toolsDescriptionColumn" prefWidth="179.0" text="Description" />
+            </columns>
+        </TableView>
+    </GridPane>
 </AnchorPane>

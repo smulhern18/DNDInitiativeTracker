@@ -6,6 +6,7 @@ import com.sjmulhern.dndTracker.App;
 import com.sjmulhern.dndTracker.utils.JsonPackager;
 import javafx.event.ActionEvent;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -20,12 +21,16 @@ public class ToolbarController {
 
     }
 
-    public void editCreaturePressed (ActionEvent actionEvent) throws IOException {
+    public void editCreaturePressed () throws IOException {
         App.mainSceneController.switchScene("CreatureEditor");
     }
 
-    public void deleteCreaturePressed (ActionEvent actionEvent) {
+    public void deleteCreaturePressed () {
 
+    }
+
+    public void initativeControllerPressed () throws IOException{
+        App.mainSceneController.switchScene("CombatTracker");
     }
 
     public MenuButton encounterPropertiesMenu;

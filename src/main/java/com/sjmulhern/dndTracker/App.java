@@ -3,6 +3,7 @@ package com.sjmulhern.dndTracker;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.sceneControllers.CombatTrackerController;
 import com.sjmulhern.dndTracker.sceneControllers.CreatureEditorController;
+import com.sjmulhern.dndTracker.sceneControllers.LanguageEditPopupController;
 import com.sjmulhern.dndTracker.sceneControllers.MainController;
 import com.sjmulhern.dndTracker.sceneControllers.ToolbarController;
 import com.sjmulhern.dndTracker.utils.InitativeRoundRobin;
@@ -34,6 +35,8 @@ public class App extends Application {
     private final ToolbarController toolbarController = new ToolbarController();
 
     public static InitativeRoundRobin initativeRoundRobin = new InitativeRoundRobin();
+
+    public static Creature currentCreature;
 
     @Override
     public void init() {}

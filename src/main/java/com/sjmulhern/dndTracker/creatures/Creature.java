@@ -57,6 +57,8 @@ public class Creature {
 
     private int initiative = 0;
 
+    private Double level = 0.0;
+
     private Condition currentCondition = Condition.None;
 
     public JsonObject toJson () {
@@ -69,6 +71,7 @@ public class Creature {
         jsonObject.addProperty("swimSpeed", getSwimSpeed());
         jsonObject.addProperty("climbSpeed", getClimbSpeed());
         jsonObject.addProperty("flySpeed", getFlySpeed());
+        jsonObject.addProperty("level", getLevel());
 
         JsonArray abilitiesArray = new JsonArray();
         for (Ability ability: getAbilities()) {

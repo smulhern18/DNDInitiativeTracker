@@ -32,13 +32,14 @@ public class PlayerCharacter extends Creature {
         int hitPoints,
         int armorClass,
         int initiative,
+        Double level,
         Condition currentCondition) {
 
         super(name, description, alignment, size, movementSpeed, swimSpeed,
               climbSpeed,
               flySpeed, abilities, tools, skills, languages, strength, dexterity,
               constitution, intelligence, wisdom, charisma, hitPoints, armorClass,
-              initiative, currentCondition);
+              initiative, level, currentCondition);
     }
 
     @Override

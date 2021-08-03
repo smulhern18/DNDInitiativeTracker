@@ -18,13 +18,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="789.0" prefWidth="373.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.CreatureEditorController">
+<AnchorPane prefHeight="789.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.CreatureEditorController">
     <fx:include source="ToolbarView.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-    <Pane layoutY="39.0" prefHeight="750.0" prefWidth="600.0">
-        <GridPane layoutX="9.0" layoutY="-2.0" prefHeight="217.0" prefWidth="196.0">
+    <Pane layoutY="39.0" prefHeight="750.0" prefWidth="642.0">
+        <GridPane layoutX="9.0" layoutY="-2.0" prefHeight="217.0" prefWidth="235.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.5" minWidth="10.0" prefWidth="107.5" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="68.0" minWidth="10.0" prefWidth="64.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="64.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
@@ -37,12 +37,12 @@
                 <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <Label text="Name:" />
-            <TextField fx:id="nameField" maxHeight="17.0" maxWidth="72.0" GridPane.columnIndex="1" />
+            <TextField fx:id="nameField" maxHeight="17.0" GridPane.columnIndex="1" />
             <Label text="Creature Type:" GridPane.rowIndex="1" />
             <Label text="Alignment:" GridPane.rowIndex="2" />
             <Label text="Size:" GridPane.rowIndex="3" />
             <Label text="Movement Speed:" GridPane.rowIndex="4" />
-            <TextField fx:id="movementSpeedField" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="movementSpeedField" prefHeight="27.0" prefWidth="134.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <Label text="Swimming Speed:" GridPane.rowIndex="5" />
             <Label text="Climbing Speed:" GridPane.rowIndex="6" />
             <TextField fx:id="climbingSpeedField" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
@@ -50,11 +50,11 @@
             <Label text="Flying Speed:" GridPane.rowIndex="7" />
             <TextField fx:id="flyingSpeedField" prefHeight="17.0" prefWidth="72.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          <ComboBox fx:id="creatureTypeField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-         <ComboBox fx:id="alignmentField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <ComboBox fx:id="alignmentField" prefHeight="27.0" prefWidth="137.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          <ComboBox fx:id="sizeField" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
         </GridPane>
         <Separator layoutX="115.0" orientation="VERTICAL" prefHeight="750.0" prefWidth="7.0" />
-        <GridPane layoutX="206.0" layoutY="14.0">
+        <GridPane layoutX="254.0" layoutY="12.0" prefHeight="81.0" prefWidth="395.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -74,17 +74,17 @@
                     <Insets right="5.0" />
                 </padding>
           </Label>
-            <TextField fx:id="skillsField" prefHeight="17.0" prefWidth="300.0" GridPane.columnIndex="1" />
             <TextField fx:id="descriptionField" prefHeight="27.0" prefWidth="319.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Languages:" GridPane.rowIndex="2">
                 <padding>
                     <Insets right="5.0" />
                 </padding>
           </Label>
-            <TextField fx:id="languagesField" prefHeight="17.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         <Button fx:id="editSkillsButton" mnemonicParsing="false" onAction="#editSkillsButtonPressed" text="Edit Skills" GridPane.columnIndex="1" />
+         <Button fx:id="editLanguagesButton" mnemonicParsing="false" onAction="#editLanguagesButtonPressed" text="Edit Languages" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         </GridPane>
-        <Separator layoutY="219.0" prefHeight="1.0" prefWidth="600.0" />
-        <GridPane layoutX="6.0" layoutY="223.0" prefHeight="152.0" prefWidth="589.0">
+        <Separator layoutY="219.0" prefHeight="3.0" prefWidth="650.0" />
+        <GridPane layoutX="6.0" layoutY="223.0" prefHeight="152.0" prefWidth="642.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="112.0" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="488.0" minWidth="10.0" prefWidth="477.0" />
@@ -95,13 +95,13 @@
             </rowConstraints>
             <Label text="Abilities:" />
             <Label text="Weapons:" GridPane.rowIndex="1" />
-         <TableView fx:id="abilityTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+         <TableView fx:id="abilityTable" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1">
            <columns>
              <TableColumn fx:id="abilitiesNameColumn" prefWidth="75.0" text="Name" />
-             <TableColumn fx:id="abilitiesDescriptionColumn" prefWidth="401.0" text="Description" />
+             <TableColumn fx:id="abilitiesDescriptionColumn" prefWidth="412.0" text="Description" />
            </columns>
          </TableView>
-         <TableView fx:id="weaponsTable" prefHeight="76.0" prefWidth="393.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <TableView fx:id="weaponsTable" editable="true" prefHeight="76.0" prefWidth="557.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
            <columns>
              <TableColumn fx:id="toolsNameColumn" prefWidth="102.0" text="Name" />
                <TableColumn fx:id="toolsToHitColumn" prefWidth="48.0" text="To Hit" />
@@ -111,9 +111,9 @@
            </columns>
          </TableView>
         </GridPane>
-        <Separator layoutX="194.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="223.0" prefWidth="7.0" />
-        <Separator layoutX="195.0" layoutY="115.0" prefHeight="3.0" prefWidth="405.0" />
-        <GridPane alignment="TOP_CENTER" layoutX="200.0" layoutY="124.0" prefHeight="17.0" prefWidth="395.0">
+        <Separator layoutX="242.0" layoutY="-5.0" orientation="VERTICAL" prefHeight="223.0" prefWidth="7.0" />
+        <Separator layoutX="246.0" layoutY="112.0" prefHeight="3.0" prefWidth="404.0" />
+        <GridPane alignment="TOP_CENTER" layoutX="248.0" layoutY="122.0" prefHeight="17.0" prefWidth="395.0">
             <opaqueInsets>
                 <Insets />
             </opaqueInsets>
@@ -226,31 +226,42 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" />
          </rowConstraints>
         </GridPane>
-        <Label layoutX="211.0" layoutY="181.0" text="Hit Points (Max):" />
-        <Spinner fx:id="hitPointsField" editable="true" layoutX="307.0" layoutY="176.0" stylesheets="@spinner.css" />
+        <Label layoutX="259.0" layoutY="179.0" text="Hit Points (Max):" />
+        <Spinner fx:id="hitPointsField" editable="true" layoutX="355.0" layoutY="174.0" prefHeight="27.0" prefWidth="74.0" stylesheets="@spinner.css" />
       <Button fx:id="saveCreatureButton" layoutX="490.0" layoutY="709.0" mnemonicParsing="false" onAction="#saveCreatureButtonPressed" text="Save Creature" />
       <ComboBox fx:id="creatureNames" layoutX="123.0" layoutY="709.0" prefHeight="27.0" prefWidth="300.0" />
       <Button fx:id="openButton" layoutX="432.0" layoutY="709.0" mnemonicParsing="false" onAction="#openButtonPressed" text="Open" />
-      <GridPane layoutX="14.0" layoutY="616.0" prefHeight="120.0" prefWidth="81.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
+        <GridPane layoutX="14.0" layoutY="616.0" prefHeight="120.0" prefWidth="81.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
             <RadioButton fx:id="creatureRadioButton" mnemonicParsing="false" selected="true" text="Creature">
-               <toggleGroup>
-                  <ToggleGroup fx:id="types" />
-               </toggleGroup>
+                <toggleGroup>
+                    <ToggleGroup fx:id="types" />
+                </toggleGroup>
             </RadioButton>
             <RadioButton fx:id="monsterRadioButton" mnemonicParsing="false" text="Monster" toggleGroup="$types" GridPane.rowIndex="1" />
             <RadioButton fx:id="playerRadioButton" mnemonicParsing="false" text="Player" toggleGroup="$types" GridPane.rowIndex="2" />
             <RadioButton fx:id="npcRadioButton" mnemonicParsing="false" text="NPC" toggleGroup="$types" GridPane.rowIndex="3" />
-         </children>
-      </GridPane>
+        </GridPane>
+        <GridPane alignment="CENTER" layoutX="122.0" layoutY="375.0" prefHeight="38.0" prefWidth="488.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <Button fx:id="addNewAbilityButton" alignment="CENTER" mnemonicParsing="false" onAction="#addNewAbilityPressed" text="Add New Ability" />
+            <Button fx:id="addNewWeaponButton" mnemonicParsing="false" onAction="#addNewWeaponPressed" text="Add New Weapon" GridPane.columnIndex="1" />
+        </GridPane>
+      <Label fx:id="levelDescriptor" layoutX="441.0" layoutY="182.0" text="Level:" />
+      <Spinner fx:id="levelSpinner" layoutX="481.0" layoutY="177.0" prefHeight="27.0" prefWidth="90.0" stylesheets="@spinner.css" />
     </Pane>
 </AnchorPane>
