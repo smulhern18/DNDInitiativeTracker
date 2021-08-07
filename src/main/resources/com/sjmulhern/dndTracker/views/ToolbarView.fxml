@@ -6,30 +6,19 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.sjmulhern.dndTracker.sceneControllers.ToolbarController">
-    <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
-             prefHeight="39.0" prefWidth="650.0">
-        <Button mnemonicParsing="false" onAction="#mainMenuPressed"
-                text="Main Menu"/>
-        <MenuButton fx:id="encounterPropertiesMenu" mnemonicParsing="false"
-                    text="Encounter Properties">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.ToolbarController">
+    <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="650.0">
+        <Button mnemonicParsing="false" onAction="#mainMenuPressed" text="Main Menu" />
+        <MenuButton fx:id="encounterPropertiesMenu" mnemonicParsing="false" text="Encounter Properties">
             <items>
-                <MenuItem mnemonicParsing="false"
-                          onAction="#initativeControllerPressed"
-                          text="Initiative Controller"/>
-                <MenuItem mnemonicParsing="false" onAction="#addNewCreaturePressed"
-                          text="Add New Creature"/>
-                <MenuItem mnemonicParsing="false" onAction="#editCreaturePressed"
-                          text="Edit Current Creature"/>
-                <MenuItem mnemonicParsing="false" onAction="#deleteCreaturePressed"
-                          text="Delete Current Creature"/>
+                <MenuItem mnemonicParsing="false" onAction="#initativeControllerPressed" text="Initiative Controller" />
+                <MenuItem mnemonicParsing="false" onAction="#addNewCreaturePressed" text="Add New Creature" />
+                <MenuItem mnemonicParsing="false" onAction="#editCreaturePressed" text="Edit Current Creature" />
+                <MenuItem mnemonicParsing="false" onAction="#deleteCreaturePressed" text="Delete Current Creature" />
             </items>
         </MenuButton>
-        <Button mnemonicParsing="false" onAction="#importButtonPressed"
-                text="Import"/>
-        <Button mnemonicParsing="false" onAction="#exportButtonPressed"
-                text="Export"/>
+        <Button mnemonicParsing="false" onAction="#importButtonPressed" text="Import" />
+        <Button mnemonicParsing="false" onAction="#exportButtonPressed" text="Export" />
+      <Button fx:id="exitButton" mnemonicParsing="false" onAction="#exitPressed" text="Exit" />
     </ToolBar>
 </AnchorPane>

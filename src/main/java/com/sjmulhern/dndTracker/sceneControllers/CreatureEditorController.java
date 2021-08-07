@@ -2,6 +2,7 @@ package com.sjmulhern.dndTracker.sceneControllers;
 
 import com.sjmulhern.dndTracker.App;
 import com.sjmulhern.dndTracker.creatures.Alignment;
+import com.sjmulhern.dndTracker.creatures.Condition;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Monster;
 import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
@@ -61,9 +62,16 @@ public class CreatureEditorController {
         for (Type value: Type.values()) {
             typeStrings.add(value.toString());
         }
+
+        ArrayList<String> conditionStrings = new ArrayList<>();
+        for (Condition condition: Condition.values()) {
+            conditionStrings.add(condition.toString());
+        }
+
         addToComboBox(alignmentField, alignmentStrings);
         addToComboBox(sizeField, sizeStrings);
         addToComboBox(creatureTypeField, typeStrings);
+        addToComboBox(currentConditionCombobox, conditionStrings);
 
         creatureEditing = App.initativeRoundRobin.getCurrent();
         reset();
@@ -156,6 +164,7 @@ public class CreatureEditorController {
         descriptionField.setText(creatureEditing.getDescription());
         alignmentField.setValue(creatureEditing.getAlignment().toString());
         sizeField.setValue(creatureEditing.getSize().toString());
+        currentConditionCombobox.setValue(creatureEditing.getCurrentCondition().toString());
         movementSpeedField.setText(creatureEditing.getMovementSpeed()+"");
         swimmingSpeedField.setText(creatureEditing.getSwimSpeed()+"");
         climbingSpeedField.setText(creatureEditing.getClimbSpeed()+"");
@@ -239,6 +248,9 @@ public class CreatureEditorController {
         toolsDamageTypeColumn.setCellFactory(ComboBoxTableCell.forTableColumn(DamageType.getStringValues()));
         weaponsTable.setItems(toolsObservable);
         weaponsTable.setEditable(true);
+
+
+
     }
 
     public void addNewWeaponPressed () {
@@ -271,7 +283,7 @@ public class CreatureEditorController {
         }
     }
 
-    public void editLanguagesButtonPressed () throws IOException {
+    public void editLanguagesButtonPressed () {
         // initializing the controller
         App.currentCreature = creatureEditing;
         LanguageEditPopupController popupController = new LanguageEditPopupController();
@@ -312,8 +324,6 @@ public class CreatureEditorController {
     @FXML
     public TextField flyingSpeedField;
     @FXML
-    public TextField skillsField;
-    @FXML
     public TextField descriptionField;
     @FXML
     public TableView<Tool> weaponsTable;
@@ -331,8 +341,6 @@ public class CreatureEditorController {
     public Spinner<Integer> chaField;
     @FXML
     public Spinner<Integer> hitPointsField;
-    @FXML
-    public TextField languagesField;
     @FXML
     public Button saveCreatureButton;
     @FXML
@@ -373,5 +381,6 @@ public class CreatureEditorController {
     public Button editLanguagesButton;
     public Spinner<Double> levelSpinner;
     public Label levelDescriptor;
+    public ComboBox<String> currentConditionCombobox;
 
 }

@@ -33,13 +33,14 @@ public class NonPlayerCharacter extends Creature {
         int armorClass,
         int initiative,
         Double level,
-        Condition currentCondition) {
+        Condition currentCondition,
+        Spells spells) {
 
         super(name, description, alignment, size, movementSpeed, swimSpeed,
               climbSpeed,
               flySpeed, abilities, tools, skills, languages, strength, dexterity,
               constitution, intelligence, wisdom, charisma, hitPoints, armorClass,
-              initiative, level, currentCondition);
+              initiative, level, currentCondition, spells);
     }
 
     @Override

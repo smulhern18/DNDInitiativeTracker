@@ -151,6 +151,11 @@
         <Label fx:id="levelLabel" layoutX="250.0" layoutY="157.0" text="Level Label" />
         <ComboBox fx:id="creatureNames" layoutX="116.0" layoutY="709.0" prefHeight="27.0" prefWidth="362.0" />
         <Button fx:id="openButton" layoutX="488.0" layoutY="709.0" mnemonicParsing="false" onAction="#openButtonPressed" text="Open" />
+      <Label layoutX="400.0" layoutY="118.0" text="Current Condition: " />
+      <ComboBox fx:id="currentConditionComboBox" layoutX="400.0" layoutY="135.0" prefWidth="150.0" />
+      <AnchorPane fx:id="spellPane" layoutX="-1.0" layoutY="363.0" prefHeight="342.0" prefWidth="755.0">
+          <fx:include fx:id="spellView" source="spellView.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      </AnchorPane>
     </Pane>
     <GridPane layoutX="6.0" layoutY="251.0" prefHeight="152.0" prefWidth="642.0">
         <columnConstraints>

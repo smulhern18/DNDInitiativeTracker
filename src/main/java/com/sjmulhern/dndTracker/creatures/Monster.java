@@ -35,13 +35,13 @@ public class Monster extends Creature {
         ArrayList<Skill> skills,
         ArrayList<Language> languages, int strength, int dexterity, int constitution,
         int intelligence, int wisdom, int charisma, int hitPoints, int armorClass,
-        int initiative, Double level, Condition currentCondition) {
+        int initiative, Double level, Condition currentCondition, Spells spells) {
 
         super(name, description, alignment, size, movementSpeed, swimSpeed,
               climbSpeed,
               flySpeed, abilities, tools, skills, languages, strength, dexterity,
               constitution, intelligence, wisdom, charisma, hitPoints, armorClass,
-              initiative, level, currentCondition);
+              initiative, level, currentCondition, spells);
     }
 
     @Override

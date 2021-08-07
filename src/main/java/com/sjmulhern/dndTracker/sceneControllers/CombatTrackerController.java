@@ -8,9 +8,12 @@ import com.sjmulhern.dndTracker.creatures.Language;
 import com.sjmulhern.dndTracker.creatures.Monster;
 import com.sjmulhern.dndTracker.creatures.Size;
 import com.sjmulhern.dndTracker.creatures.Skill;
+import com.sjmulhern.dndTracker.creatures.Spells;
 import com.sjmulhern.dndTracker.creatures.Type;
 import com.sjmulhern.dndTracker.tools.Ability;
 import com.sjmulhern.dndTracker.tools.DamageType;
+import com.sjmulhern.dndTracker.tools.Shape;
+import com.sjmulhern.dndTracker.tools.Spell;
 import com.sjmulhern.dndTracker.tools.Tool;
 import com.sjmulhern.dndTracker.utils.InitativeRoundRobin;
 import javafx.beans.property.SimpleStringProperty;
@@ -57,82 +60,8 @@ public class CombatTrackerController {
     InitativeRoundRobin initativeRoundRobin = App.initativeRoundRobin;
 
     public void nextInitiativeButtonPressed () {
-        if (initativeRoundRobin.getCreatures().size() == 0) {
-            initativeRoundRobin.addCreature(new Creature("Goblin",
-                                                         "a Goblin",
-                                                         Alignment.Unaligned,
-                                                         Size.Small,
-                                                         30,
-                                                         15,
-                                                         15,
-                                                         0,
-                                                         new ArrayList<>(
-                                                             Collections
-                                                                 .singletonList(
-                                                                     new Ability(
-                                                                         "Multi-Attack",
-                                                                         "Can " +
-                                                                         "attack " +
-                                                                         "twice " +
-                                                                         "with one" +
-                                                                         " action"))),
-                                                         new ArrayList<>(
-                                                             Collections
-                                                                 .singletonList(
-                                                                     new Tool(
-                                                                         "ShortSword",
-                                                                         "A tiny " +
-                                                                         "Goblin " +
-                                                                         "sword",
-                                                                         DamageType.Slashing,
-                                                                         "+1",
-                                                                         "1d6"))),
-                                                         new ArrayList<Skill>(
-                                                             Arrays.asList(
-                                                                 Skill.values()
-                                                             )),
-                                                         new ArrayList<Language>(
-                                                             Arrays.asList(
-                                                                 Language.Common,
-                                                                 Language.Goblin)),
-                                                         12,
-                                                         13,
-                                                         14,
-                                                         15,
-                                                         16,
-                                                         30,
-                                                         69,
-                                                         20,
-                                                         1,
-                                                         1.0/4,
-                                                         Condition.None));
-            initativeRoundRobin.addCreature(new Monster("Goblin 2",
-                                                        "not a Goblin",
-                                                        Alignment.Unaligned,
-                                                        Size.Small,
-                                                        30,
-                                                        15,
-                                                        15,
-                                                        0,
-                                                        new ArrayList<>(),
-                                                        new ArrayList<>(),
-                                                        new ArrayList<>(),
-                                                        new ArrayList<>(),
-                                                        12,
-                                                        13,
-                                                        14,
-                                                        15,
-                                                        16,
-                                                        30,
-                                                        69,
-                                                        20,
-                                                        1,
-                                                        0.25,
-                                                        Condition.None));
-        }
-
         creature = initativeRoundRobin.getNext();
-
+        App.currentCreature = creature;
         reset();
     }
 
@@ -217,11 +146,29 @@ public class CombatTrackerController {
             skillsString = "None";
         }
         skillsLabel.setText(skillsString);
+
+        currentConditionComboBox.setValue(creature.getCurrentCondition().toString());
+
+        if (creature.getSpells() == null) {
+            spellView.setVisible(false);
+            spellView.setDisable(true);
+        } else {
+            spellView.setVisible(true);
+            spellView.setDisable(false);
+        }
     }
 
     public void initialize() {
         nextInitiativeButtonPressed();
+        //App.spellViewController.reset(creature.getSpells());
         addToComboBox(App.initativeRoundRobin.getCreatures().toArray());
+        ArrayList<String> conditions = new ArrayList<>();
+        for (Condition condition: Condition.values()) {
+            conditions.add(condition.toString());
+        }
+        currentConditionComboBox.getItems().addAll(conditions);
+        currentConditionComboBox.setValue(creature.getCurrentCondition().toString());
+        currentConditionComboBox.setOnAction(event -> creature.setCurrentCondition(Condition.valueOf(currentConditionComboBox.getValue())));
     }
 
     public void addToComboBox(Object[] creatures) {
@@ -268,5 +215,8 @@ public class CombatTrackerController {
     public TableColumn<Tool, String> toolsDamageTypeColumn;
     public TableColumn<Tool, String> toolsDescriptionColumn;
     public Label levelDescriptor;
+    public ComboBox<String> currentConditionComboBox;
+    @FXML
+    public AnchorPane spellView;
 
 }

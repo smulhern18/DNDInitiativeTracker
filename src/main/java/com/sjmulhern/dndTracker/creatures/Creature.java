@@ -61,6 +61,8 @@ public class Creature {
 
     private Condition currentCondition = Condition.None;
 
+    private Spells spells = null;
+
     public JsonObject toJson () {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("name", getName());
@@ -107,6 +109,8 @@ public class Creature {
         jsonObject.addProperty("armorClass", getArmorClass());
         jsonObject.addProperty("initiative", getInitiative());
         jsonObject.addProperty("currentCondition", getCurrentCondition().getOrdinal());
+
+        jsonObject.add("spells", getSpells().toJson());
 
         return jsonObject;
     }
