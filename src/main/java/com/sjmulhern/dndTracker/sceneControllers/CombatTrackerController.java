@@ -86,6 +86,7 @@ public class CombatTrackerController {
             levelDescriptor.setText("DC:");
         } else {
             creatureTypeLabel.setText(Type.None.toString());
+            levelDescriptor.setText("Level:");
         }
         if (hitPointsSpinner.getValueFactory() != null) {
             hitPointsSpinner.getValueFactory().setValue(creature.getHitPoints());
@@ -97,6 +98,8 @@ public class CombatTrackerController {
         }
 
         levelLabel.setText(creature.getLevel()+"");
+
+        acLabel.setText(creature.getArmorClass()+"");
 
         ObservableList<Ability> abilitiesObservable =  FXCollections.observableArrayList();
         abilitiesObservable.addAll(creature.getAbilities());
@@ -216,7 +219,7 @@ public class CombatTrackerController {
     public TableColumn<Tool, String> toolsDescriptionColumn;
     public Label levelDescriptor;
     public ComboBox<String> currentConditionComboBox;
-    @FXML
     public AnchorPane spellView;
+    public Label acLabel;
 
 }

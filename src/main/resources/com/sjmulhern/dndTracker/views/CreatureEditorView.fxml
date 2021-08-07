@@ -226,8 +226,8 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" />
          </rowConstraints>
         </GridPane>
-        <Label layoutX="262.0" layoutY="182.0" text="Hit Points (Max):" />
-        <Spinner fx:id="hitPointsField" editable="true" layoutX="358.0" layoutY="177.0" prefHeight="27.0" prefWidth="74.0" stylesheets="@spinner.css" />
+        <Label layoutX="249.0" layoutY="182.0" text="Hit Points (Max):" />
+        <Spinner fx:id="hitPointsField" editable="true" layoutX="345.0" layoutY="177.0" prefHeight="27.0" prefWidth="74.0" stylesheets="@spinner.css" />
       <Button fx:id="saveCreatureButton" layoutX="490.0" layoutY="709.0" mnemonicParsing="false" onAction="#saveCreatureButtonPressed" text="Save Creature" />
       <ComboBox fx:id="creatureNames" layoutX="123.0" layoutY="709.0" prefHeight="27.0" prefWidth="300.0" />
       <Button fx:id="openButton" layoutX="432.0" layoutY="709.0" mnemonicParsing="false" onAction="#openButtonPressed" text="Open" />
@@ -261,8 +261,10 @@
             <Button fx:id="addNewAbilityButton" alignment="CENTER" mnemonicParsing="false" onAction="#addNewAbilityPressed" text="Add New Ability" />
             <Button fx:id="addNewWeaponButton" mnemonicParsing="false" onAction="#addNewWeaponPressed" text="Add New Weapon" GridPane.columnIndex="1" />
         </GridPane>
-      <Label fx:id="levelDescriptor" layoutX="441.0" layoutY="182.0" text="Level:" />
-      <Spinner fx:id="levelSpinner" layoutX="481.0" layoutY="177.0" prefHeight="27.0" prefWidth="90.0" stylesheets="@spinner.css" />
+      <Label fx:id="levelDescriptor" layoutX="428.0" layoutY="182.0" text="Level:" />
+      <Spinner fx:id="levelSpinner" layoutX="468.0" layoutY="177.0" prefHeight="27.0" prefWidth="51.0" stylesheets="@spinner.css" />
       <ComboBox fx:id="currentConditionCombobox" layoutX="457.0" layoutY="66.0" prefWidth="150.0" />
+      <Label fx:id="levelDescriptor1" layoutX="532.0" layoutY="182.0" text="AC:" />
+      <Spinner fx:id="acSpinner" layoutX="560.0" layoutY="177.0" prefHeight="27.0" prefWidth="51.0" stylesheets="@spinner.css" />
     </Pane>
 </AnchorPane>

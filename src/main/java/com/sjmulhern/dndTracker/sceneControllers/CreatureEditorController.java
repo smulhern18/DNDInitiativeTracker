@@ -36,6 +36,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.invoke.VarHandle;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Set;
@@ -157,9 +158,14 @@ public class CreatureEditorController {
         }
         SpinnerValueFactory<Double> dcFactory =
             new SpinnerValueFactory.DoubleSpinnerValueFactory(0, Double.MAX_VALUE, creatureEditing.getLevel());
+        SpinnerValueFactory<Integer> acFactory =
+            new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, creatureEditing.getArmorClass());
         levelSpinner.setValueFactory(dcFactory);
         dcFactory.valueProperty().addListener(((observable, oldValue, newValue) -> creatureEditing.setLevel(newValue)));
         levelSpinner.setEditable(true);
+        acSpinner.setValueFactory(acFactory);
+        acFactory.valueProperty().addListener((observable, oldValue, newValue) -> creatureEditing.setArmorClass(newValue));
+        acSpinner.setEditable(true);
         nameField.setText(creatureEditing.getName());
         descriptionField.setText(creatureEditing.getDescription());
         alignmentField.setValue(creatureEditing.getAlignment().toString());
@@ -382,5 +388,6 @@ public class CreatureEditorController {
     public Spinner<Double> levelSpinner;
     public Label levelDescriptor;
     public ComboBox<String> currentConditionCombobox;
+    public Spinner<Integer> acSpinner;
 
 }

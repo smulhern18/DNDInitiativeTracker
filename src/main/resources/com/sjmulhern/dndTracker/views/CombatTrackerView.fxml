@@ -156,6 +156,8 @@
       <AnchorPane fx:id="spellPane" layoutX="-1.0" layoutY="363.0" prefHeight="342.0" prefWidth="755.0">
           <fx:include fx:id="spellView" source="spellView.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       </AnchorPane>
+      <Label fx:id="levelDescriptor1" layoutX="211.0" layoutY="181.0" text="AC:" />
+      <Label fx:id="acLabel" layoutX="250.0" layoutY="181.0" text="Level Label" />
     </Pane>
     <GridPane layoutX="6.0" layoutY="251.0" prefHeight="152.0" prefWidth="642.0">
         <columnConstraints>
