@@ -3,6 +3,7 @@ package com.sjmulhern.dndTracker.sceneControllers;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import com.sjmulhern.dndTracker.App;
+import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.utils.JsonPackager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,7 +34,9 @@ public class ToolbarController {
 
     }
 
-    public void initativeControllerPressed () throws IOException {
+    public void initiativeControllerPressed () throws IOException {
+        int current = App.initativeRoundRobin.getCurrentIndex();
+        App.initativeRoundRobin.setCurrentIndex(App.initativeRoundRobin.getCreatures().size() + current - 1);
         App.mainSceneController.switchScene("CombatTracker");
     }
 
