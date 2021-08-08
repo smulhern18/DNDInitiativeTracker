@@ -6,10 +6,20 @@ import com.sjmulhern.dndTracker.tools.Ability;
 import com.sjmulhern.dndTracker.tools.DamageType;
 import com.sjmulhern.dndTracker.tools.Tool;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.ArrayList;
 
+@Getter
+@Setter
 public class NonPlayerCharacter extends Creature {
+
+    private ArrayList<DamageType> resistances = new ArrayList<>();
+
+    private ArrayList<DamageType> weaknesses = new ArrayList<>();
+
+    private ArrayList<DamageType> immunities = new ArrayList<>();
 
     public NonPlayerCharacter (String name,
         String description,
@@ -34,20 +44,46 @@ public class NonPlayerCharacter extends Creature {
         int initiative,
         Double level,
         Condition currentCondition,
-        Spells spells) {
+        Spells spells,
+        ArrayList<DamageType> resistances,
+        ArrayList<DamageType> weaknesses,
+        ArrayList<DamageType> immunities) {
 
         super(name, description, alignment, size, movementSpeed, swimSpeed,
               climbSpeed,
               flySpeed, abilities, tools, skills, languages, strength, dexterity,
               constitution, intelligence, wisdom, charisma, hitPoints, armorClass,
               initiative, level, currentCondition, spells);
+
+        setResistances(resistances);
+        setWeaknesses(weaknesses);
+        setImmunities(immunities);
     }
 
     @Override
     public JsonObject toJson () {
 
+        JsonObject jsonObject = super.toJson();
 
-        return super.toJson();
+        JsonArray resistancesArray = new JsonArray();
+        for (DamageType damType: getResistances()) {
+            resistancesArray.add(damType.getOrdinal());
+        }
+        jsonObject.add("resistances", resistancesArray);
+
+        JsonArray weaknessesArray = new JsonArray();
+        for (DamageType damType: getWeaknesses()) {
+            weaknessesArray.add(damType.getOrdinal());
+        }
+        jsonObject.add("weaknesses", weaknessesArray);
+
+        JsonArray immunitiesArray = new JsonArray();
+        for (DamageType damType: getImmunities()) {
+            immunitiesArray.add(damType.getOrdinal());
+        }
+        jsonObject.add("immunities", immunitiesArray);
+
+        return jsonObject;
     }
 
 }

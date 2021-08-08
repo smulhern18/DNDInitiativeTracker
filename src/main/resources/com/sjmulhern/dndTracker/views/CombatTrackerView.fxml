@@ -153,11 +153,12 @@
         <Button fx:id="openButton" layoutX="488.0" layoutY="709.0" mnemonicParsing="false" onAction="#openButtonPressed" text="Open" />
       <Label layoutX="400.0" layoutY="118.0" text="Current Condition: " />
       <ComboBox fx:id="currentConditionComboBox" layoutX="400.0" layoutY="135.0" prefWidth="150.0" />
-      <AnchorPane fx:id="spellPane" layoutX="-1.0" layoutY="363.0" prefHeight="342.0" prefWidth="755.0">
+      <AnchorPane layoutY="367.0" prefHeight="342.0" prefWidth="755.0">
           <fx:include fx:id="spellView" source="spellView.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       </AnchorPane>
-      <Label fx:id="levelDescriptor1" layoutX="211.0" layoutY="181.0" text="AC:" />
+      <Label layoutX="211.0" layoutY="181.0" text="AC:" />
       <Label fx:id="acLabel" layoutX="250.0" layoutY="181.0" text="Level Label" />
+      <Button fx:id="viewModifiersButton" layoutY="709.0" mnemonicParsing="false" onAction="#viewModifiersPressed" text="View Modifiers" />
     </Pane>
     <GridPane layoutX="6.0" layoutY="251.0" prefHeight="152.0" prefWidth="642.0">
         <columnConstraints>

@@ -5,6 +5,7 @@ import com.sjmulhern.dndTracker.creatures.Condition;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Language;
 import com.sjmulhern.dndTracker.creatures.Monster;
+import com.sjmulhern.dndTracker.creatures.PlayerCharacter;
 import com.sjmulhern.dndTracker.creatures.Skill;
 import com.sjmulhern.dndTracker.creatures.Type;
 import com.sjmulhern.dndTracker.tools.Ability;
@@ -13,7 +14,11 @@ import com.sjmulhern.dndTracker.utils.InitativeRoundRobin;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -23,11 +28,36 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Set;
 
 public class CombatTrackerController {
+
+    public void viewModifiersPressed () {
+        // initializing the controller
+        DamageModifierController popupController = new DamageModifierController();
+        Parent layout;
+        try {
+            layout = FXMLLoader.load(Objects.requireNonNull(
+                App.class.getResource("views/DamageModifierView.fxml")));
+            Scene scene = new Scene(layout);
+            // this is the popup stage
+            Stage popupStage = new Stage();
+            // Giving the popup controller access to the popup stage (to allow the controller to close the stage)
+            popupController.setStage(popupStage);
+            popupStage.initOwner(App.getPrimaryStage());
+            popupStage.initModality(Modality.WINDOW_MODAL);
+            popupStage.setScene(scene);
+            popupStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     Creature creature = null;
 
@@ -73,6 +103,7 @@ public class CombatTrackerController {
         intLabel.setText(creature.getIntelligence()+" (" + (creature.getIntelligence()-10)/2 + ") ");
         wisLabel.setText(creature.getWisdom()+" (" + (creature.getWisdom()-10)/2 + ") ");
         chaLabel.setText(creature.getCharisma()+" (" + (creature.getCharisma()-10)/2 + ") ");
+
         if (creature instanceof Monster) {
             creatureTypeLabel.setText(((Monster) creature).getType().toString());
             levelDescriptor.setText("DC:");
@@ -80,6 +111,15 @@ public class CombatTrackerController {
             creatureTypeLabel.setText(Type.None.toString());
             levelDescriptor.setText("Level:");
         }
+
+        if (creature instanceof PlayerCharacter) {
+            viewModifiersButton.setDisable(true);
+            viewModifiersButton.setVisible(false);
+        } else {
+            viewModifiersButton.setDisable(false);
+            viewModifiersButton.setVisible(true);
+        }
+
         if (hitPointsSpinner.getValueFactory() != null) {
             hitPointsSpinner.getValueFactory().setValue(creature.getHitPoints());
         } else {
@@ -213,5 +253,6 @@ public class CombatTrackerController {
     public ComboBox<String> currentConditionComboBox;
     public AnchorPane spellView;
     public Label acLabel;
+    public Button viewModifiersButton;
 
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.DamageModifierController">
+   <children>
+      <GridPane prefHeight="17.0" prefWidth="366.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="122.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="184.0" minWidth="10.0" prefWidth="122.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label minWidth="122.0" prefHeight="17.0" prefWidth="122.0" text="Weaknesses" />
+            <Label minWidth="122.0" prefWidth="122.0" text="Resistances" GridPane.columnIndex="1" />
+            <Label minWidth="122.0" prefWidth="122.0" text="Immunities" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+      <HBox layoutY="17.0" prefHeight="262.0" prefWidth="366.0">
+         <children>
+            <TextArea fx:id="weaknessesTextArea" editable="false" prefHeight="200.0" prefWidth="122.0" />
+            <TextArea fx:id="resistancesTextArea" editable="false" prefHeight="200.0" prefWidth="122.0" />
+            <TextArea fx:id="immunitiesTextArea" editable="false" prefHeight="200.0" prefWidth="122.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -14,17 +14,9 @@ import java.util.ArrayList;
 
 @Getter
 @Setter
-public class Monster extends Creature {
+public class Monster extends NonPlayerCharacter {
 
     private Type type = Type.None;
-
-    private ArrayList<DamageType> resistances = new ArrayList<>();
-
-    private ArrayList<DamageType> weaknesses = new ArrayList<>();
-
-    private ArrayList<DamageType> immunities = new ArrayList<>();
-
-    private double challenge = 0;
 
     public Monster (String name, String description,
         Alignment alignment, Size size, int movementSpeed, int swimSpeed,
@@ -35,13 +27,18 @@ public class Monster extends Creature {
         ArrayList<Skill> skills,
         ArrayList<Language> languages, int strength, int dexterity, int constitution,
         int intelligence, int wisdom, int charisma, int hitPoints, int armorClass,
-        int initiative, Double level, Condition currentCondition, Spells spells) {
+        int initiative, Double level, Condition currentCondition, Spells spells, Type type,
+        ArrayList<DamageType> resistances,
+        ArrayList<DamageType> weaknesses,
+        ArrayList<DamageType> immunities) {
 
         super(name, description, alignment, size, movementSpeed, swimSpeed,
               climbSpeed,
               flySpeed, abilities, tools, skills, languages, strength, dexterity,
               constitution, intelligence, wisdom, charisma, hitPoints, armorClass,
-              initiative, level, currentCondition, spells);
+              initiative, level, currentCondition, spells, resistances, weaknesses, immunities);
+
+        setType(type);
     }
 
     @Override
@@ -50,27 +47,6 @@ public class Monster extends Creature {
         JsonObject jsonObject = super.toJson();
 
         jsonObject.addProperty("type", getType().getOrdinal());
-
-        JsonArray resistancesArray = new JsonArray();
-        for (DamageType damType: getResistances()) {
-            resistancesArray.add(damType.getOrdinal());
-        }
-        jsonObject.add("resistances", resistancesArray);
-
-        JsonArray weaknessesArray = new JsonArray();
-        for (DamageType damType: getWeaknesses()) {
-            weaknessesArray.add(damType.getOrdinal());
-        }
-        jsonObject.add("weaknesses", weaknessesArray);
-
-        JsonArray immunitiesArray = new JsonArray();
-        for (DamageType damType: getImmunities()) {
-            immunitiesArray.add(damType.getOrdinal());
-        }
-        jsonObject.add("immunities", immunitiesArray);
-
-        jsonObject.addProperty("challenge", getChallenge());
-
 
         return jsonObject;
     }

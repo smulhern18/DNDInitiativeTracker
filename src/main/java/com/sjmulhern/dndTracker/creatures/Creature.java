@@ -13,7 +13,7 @@ import java.util.ArrayList;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Creature {
+public abstract class Creature {
 
     private String name = null;
 
@@ -117,14 +117,11 @@ public class Creature {
 
     @Override
     public boolean equals(Object creatureObject) {
-
-        if (creatureObject.getClass() == Creature.class) {
-            Creature creature = (Creature) creatureObject;
-
-            return creature.getName().equals(getName());
+        if (creatureObject instanceof Creature) {
+            return this.getName().equals(((Creature)creatureObject).getName());
+        } else {
+            return false;
         }
-
-        return false;
     }
 
     @Override

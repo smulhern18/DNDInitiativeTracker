@@ -1,14 +1,11 @@
 package com.sjmulhern.dndTracker.sceneControllers;
 
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
 
 import com.sjmulhern.dndTracker.App;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Language;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
 import lombok.Getter;
@@ -16,7 +13,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class LanguageEditPopupController implements Initializable {
+public class LanguageEditPopupController {
 
     private Stage stage = null;
 
@@ -110,10 +107,6 @@ public class LanguageEditPopupController implements Initializable {
         } else {
             creature.getLanguages().add(language);
         }
-    }
-
-    public void initialize (URL location, ResourceBundle resources) {
-        initialize();
     }
 
     @FXML

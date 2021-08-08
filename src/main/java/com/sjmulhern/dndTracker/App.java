@@ -5,9 +5,11 @@ import com.sjmulhern.dndTracker.creatures.Condition;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Language;
 import com.sjmulhern.dndTracker.creatures.Monster;
+import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
 import com.sjmulhern.dndTracker.creatures.Size;
 import com.sjmulhern.dndTracker.creatures.Skill;
 import com.sjmulhern.dndTracker.creatures.Spells;
+import com.sjmulhern.dndTracker.creatures.Type;
 import com.sjmulhern.dndTracker.sceneControllers.CombatTrackerController;
 import com.sjmulhern.dndTracker.sceneControllers.CreatureEditorController;
 import com.sjmulhern.dndTracker.sceneControllers.MainController;
@@ -55,55 +57,58 @@ public class App extends Application {
 
     @Override
     public void init() {
-        initativeRoundRobin.addCreature(new Creature("Goblin",
-                                                     "a Goblin",
-                                                     Alignment.Unaligned,
-                                                     Size.Small,
-                                                     30,
-                                                     15,
-                                                     15,
-                                                     0,
-                                                     new ArrayList<>(
-                                                         Collections
-                                                             .singletonList(
-                                                                 new Ability(
-                                                                     "Multi-Attack",
-                                                                     "Can " +
-                                                                     "attack " +
-                                                                     "twice " +
-                                                                     "with one" +
-                                                                     " action"))),
-                                                     new ArrayList<>(
-                                                         Collections
-                                                             .singletonList(
-                                                                 new Tool(
-                                                                     "ShortSword",
-                                                                     "A tiny " +
-                                                                     "Goblin " +
-                                                                     "sword",
-                                                                     DamageType.Slashing,
-                                                                     "+1",
-                                                                     "1d6"))),
-                                                     new ArrayList<>(
-                                                         Arrays.asList(
-                                                             Skill.values()
-                                                         )),
-                                                     new ArrayList<>(
-                                                         Arrays.asList(
-                                                             Language.Common,
-                                                             Language.Goblin)),
-                                                     12,
-                                                     13,
-                                                     14,
-                                                     15,
-                                                     16,
-                                                     30,
-                                                     69,
-                                                     20,
-                                                     1,
-                                                     1.0/4,
-                                                     Condition.None,
-                                                     null));
+        initativeRoundRobin.addCreature(new NonPlayerCharacter("Goblin",
+                                                               "a Goblin",
+                                                               Alignment.Unaligned,
+                                                               Size.Small,
+                                                               30,
+                                                               15,
+                                                               15,
+                                                               0,
+                                                               new ArrayList<>(
+                                                                   Collections
+                                                                       .singletonList(
+                                                                           new Ability(
+                                                                               "Multi-Attack",
+                                                                               "Can " +
+                                                                               "attack " +
+                                                                               "twice " +
+                                                                               "with one" +
+                                                                               " action"))),
+                                                               new ArrayList<>(
+                                                                   Collections
+                                                                       .singletonList(
+                                                                           new Tool(
+                                                                               "ShortSword",
+                                                                               "A tiny " +
+                                                                               "Goblin " +
+                                                                               "sword",
+                                                                               DamageType.Slashing,
+                                                                               "+1",
+                                                                               "1d6"))),
+                                                               new ArrayList<>(
+                                                                   Arrays.asList(
+                                                                       Skill.values()
+                                                                   )),
+                                                               new ArrayList<>(
+                                                                   Arrays.asList(
+                                                                       Language.Common,
+                                                                       Language.Goblin)),
+                                                               12,
+                                                               13,
+                                                               14,
+                                                               15,
+                                                               16,
+                                                               30,
+                                                               69,
+                                                               20,
+                                                               1,
+                                                               1.0/4,
+                                                               Condition.None,
+                                                               null,
+                                                               null,
+                                                               null,
+                                                               null));
         initativeRoundRobin.addCreature(new Monster("Goblin 2",
                                                     "not a Goblin",
                                                     Alignment.Unaligned,
@@ -127,7 +132,28 @@ public class App extends Application {
                                                     1,
                                                     0.25,
                                                     Condition.None,
-                                                    new Spells(null, null, null, null, null, null, null, null, null, new ArrayList<Spell>(Arrays.asList(new Spell("Fireball, FIRE BALL, fireball", "its goddamn fireball", 20, Shape.Sphere, "Bat piss and Brimstone"))), new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0, 10)), new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)))));
+                                                    new Spells(null,
+                                                               null,
+                                                               null,
+                                                               null,
+                                                               null,
+                                                               null,
+                                                               null,
+                                                               null,
+                                                               null,
+                                                               new ArrayList<Spell>(
+                                                                   Arrays.asList(
+                                                                       new Spell("Fireball, FIRE BALL, fireball",
+                                                                                 "its goddamn fireball",
+                                                                                 20,
+                                                                                 Shape.Sphere,
+                                                                                 "Bat piss and Brimstone"))),
+                                                               new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0, 10)),
+                                                               new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0, 0))),
+                                                    Type.Humanoid,
+                                                    new ArrayList<>(Arrays.asList(DamageType.Acid, DamageType.Cold)),
+                                                    new ArrayList<>(Arrays.asList(DamageType.Fire, DamageType.Piercing)),
+                                                    null));
         currentCreature = initativeRoundRobin.getNext();
     }
 
