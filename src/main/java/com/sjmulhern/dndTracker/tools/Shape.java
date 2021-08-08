@@ -9,7 +9,8 @@ public enum Shape {
     Cone(1),
     Cube(2),
     Cylinder(3),
-    Sphere(4);
+    Sphere(4),
+    None(5);
 
     private final int ord;
 
@@ -30,5 +31,15 @@ public enum Shape {
             }
         }
         return value;
+    }
+
+    public static String[] getStringValues() {
+        Shape[] shapes = values();
+        String[] shapeStrings = new String[shapes.length];
+        for (int i = 0; i < shapes.length; i++) {
+            shapeStrings[i] = shapes[i].toString();
+        }
+
+        return shapeStrings;
     }
 }

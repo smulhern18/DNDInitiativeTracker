@@ -33,7 +33,7 @@ public class ToolbarController {
 
     }
 
-    public void initativeControllerPressed () throws IOException{
+    public void initativeControllerPressed () throws IOException {
         App.mainSceneController.switchScene("CombatTracker");
     }
 

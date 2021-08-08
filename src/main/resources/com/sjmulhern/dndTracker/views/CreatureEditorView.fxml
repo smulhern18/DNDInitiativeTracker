@@ -250,21 +250,29 @@
             <RadioButton fx:id="playerRadioButton" mnemonicParsing="false" text="Player" toggleGroup="$types" GridPane.rowIndex="2" />
             <RadioButton fx:id="npcRadioButton" mnemonicParsing="false" text="NPC" toggleGroup="$types" GridPane.rowIndex="3" />
         </GridPane>
-        <GridPane alignment="CENTER" layoutX="122.0" layoutY="375.0" prefHeight="38.0" prefWidth="488.0">
+        <GridPane alignment="CENTER" layoutX="122.0" layoutY="375.0" prefHeight="67.0" prefWidth="488.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <Button fx:id="addNewAbilityButton" alignment="CENTER" mnemonicParsing="false" onAction="#addNewAbilityPressed" text="Add New Ability" />
-            <Button fx:id="addNewWeaponButton" mnemonicParsing="false" onAction="#addNewWeaponPressed" text="Add New Weapon" GridPane.columnIndex="1" />
+            <Button fx:id="addNewWeaponButton" mnemonicParsing="false" onAction="#addNewWeaponPressed" text="Add New Weapon" GridPane.columnIndex="2" />
+         <ComboBox fx:id="abilityComboBox" prefWidth="150.0" GridPane.rowIndex="1" />
+         <ComboBox fx:id="weaponComboBox" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         <Button fx:id="removeAbility" mnemonicParsing="false" onAction="#removeAbility" text="Remove Selected" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <Button fx:id="removeWeapon" mnemonicParsing="false" onAction="#removeWeapon" text="Remove Selected" GridPane.columnIndex="3" GridPane.rowIndex="1" />
         </GridPane>
       <Label fx:id="levelDescriptor" layoutX="428.0" layoutY="182.0" text="Level:" />
       <Spinner fx:id="levelSpinner" layoutX="468.0" layoutY="177.0" prefHeight="27.0" prefWidth="51.0" stylesheets="@spinner.css" />
       <ComboBox fx:id="currentConditionCombobox" layoutX="457.0" layoutY="66.0" prefWidth="150.0" />
-      <Label fx:id="levelDescriptor1" layoutX="532.0" layoutY="182.0" text="AC:" />
+      <Label layoutX="532.0" layoutY="182.0" text="AC:" />
       <Spinner fx:id="acSpinner" layoutX="560.0" layoutY="177.0" prefHeight="27.0" prefWidth="51.0" stylesheets="@spinner.css" />
+      <Button layoutX="16.0" layoutY="380.0" mnemonicParsing="false" onAction="#editSpellsSelected" text="Edit Spells" />
     </Pane>
 </AnchorPane>

@@ -36,7 +36,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.lang.invoke.VarHandle;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Set;
@@ -254,9 +253,6 @@ public class CreatureEditorController {
         toolsDamageTypeColumn.setCellFactory(ComboBoxTableCell.forTableColumn(DamageType.getStringValues()));
         weaponsTable.setItems(toolsObservable);
         weaponsTable.setEditable(true);
-
-
-
     }
 
     public void addNewWeaponPressed () {
@@ -309,6 +305,36 @@ public class CreatureEditorController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void editSpellsSelected () {
+        // initializing the controller
+        App.currentCreature = creatureEditing;
+        SpellEditorController popupController = new SpellEditorController();
+        Parent layout;
+        try {
+            layout = FXMLLoader.load(Objects.requireNonNull(
+                App.class.getResource("views/SpellEditorView.fxml")));
+            Scene scene = new Scene(layout);
+            // this is the popup stage
+            Stage popupStage = new Stage();
+            // Giving the popup controller access to the popup stage (to allow the controller to close the stage)
+            popupController.setStage(popupStage);
+            popupStage.initOwner(App.getPrimaryStage());
+            popupStage.initModality(Modality.WINDOW_MODAL);
+            popupStage.setScene(scene);
+            popupStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void removeAbility () {
+
+    }
+
+    public void removeWeapon () {
+
     }
 
     @FXML
@@ -389,5 +415,13 @@ public class CreatureEditorController {
     public Label levelDescriptor;
     public ComboBox<String> currentConditionCombobox;
     public Spinner<Integer> acSpinner;
+
+    public ComboBox<String> abilityComboBox;
+
+    public ComboBox<String> weaponComboBox;
+
+    public Button removeAbility;
+
+    public Button removeWeapon;
 
 }

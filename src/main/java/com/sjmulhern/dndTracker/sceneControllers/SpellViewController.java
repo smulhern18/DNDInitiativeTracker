@@ -1,5 +1,7 @@
 package com.sjmulhern.dndTracker.sceneControllers;
 
+import com.sjmulhern.dndTracker.App;
+import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Spells;
 import com.sjmulhern.dndTracker.tools.Shape;
 import com.sjmulhern.dndTracker.tools.Spell;
@@ -11,14 +13,19 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-import static com.sjmulhern.dndTracker.App.currentCreature;
-
 public class SpellViewController {
 
+    Creature creature = App.currentCreature;
+
     public void reset (Spells spells) {
+        if (spells == null) {
+            tabPane.setVisible(false);
+            return;
+        }
         ArrayList<Spell> cantrips = spells.getCantrips();
         ArrayList<Spell> firstLevel = spells.getFirstLevel();
         ArrayList<Spell> secondLevel = spells.getSecondLevel();
@@ -32,7 +39,7 @@ public class SpellViewController {
 
         ArrayList<Tab> tabsToRemove = new ArrayList<>();
 
-        if (cantrips != null) {
+        if (cantrips != null && cantrips.size() != 0) {
             cantripTable.getItems().addAll(cantrips);
             cantripName.setCellValueFactory(new PropertyValueFactory<>("name"));
             cantripEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
@@ -43,7 +50,7 @@ public class SpellViewController {
             tabsToRemove.add(this.cantrips);
         }
 
-        if (firstLevel != null) {
+        if (firstLevel != null && firstLevel.size() != 0) {
             firstTable.getItems().addAll(firstLevel);
             firstName.setCellValueFactory(new PropertyValueFactory<>("name"));
             firstEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
@@ -56,7 +63,7 @@ public class SpellViewController {
             tabsToRemove.add(this.firstLevel);
         }
 
-        if (secondLevel != null) {
+        if (secondLevel != null && secondLevel.size() != 0) {
             secondTable.getItems().addAll(secondLevel);
             secondName.setCellValueFactory(new PropertyValueFactory<>("name"));
             secondEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
@@ -69,7 +76,7 @@ public class SpellViewController {
             tabsToRemove.add(this.secondLevel);
         }
 
-        if (thirdLevel != null) {
+        if (thirdLevel != null && thirdLevel.size() != 0) {
             thirdTable.getItems().addAll(thirdLevel);
             thirdName.setCellValueFactory(new PropertyValueFactory<>("name"));
             thirdEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
@@ -82,7 +89,7 @@ public class SpellViewController {
             tabsToRemove.add(this.thirdLevel);
         }
 
-        if (forthLevel != null) {
+        if (forthLevel != null && forthLevel.size() != 0) {
             forthTable.getItems().addAll(forthLevel);
             forthName.setCellValueFactory(new PropertyValueFactory<>("name"));
             forthEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
@@ -95,7 +102,7 @@ public class SpellViewController {
             tabsToRemove.add(this.forthLevel);
         }
 
-        if (fifthLevel != null) {
+        if (fifthLevel != null && fifthLevel.size() != 0) {
             fifthTable.getItems().addAll(fifthLevel);
             fifthName.setCellValueFactory(new PropertyValueFactory<>("name"));
             fifthEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
@@ -108,7 +115,7 @@ public class SpellViewController {
             tabsToRemove.add(this.fifthLevel);
         }
 
-        if (sixthLevel != null) {
+        if (sixthLevel != null && sixthLevel.size() != 0) {
             sixthTable.getItems().addAll(sixthLevel);
             sixthName.setCellValueFactory(new PropertyValueFactory<>("name"));
             sixthEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
@@ -121,7 +128,7 @@ public class SpellViewController {
             tabsToRemove.add(this.sixthLevel);
         }
 
-        if (seventhLevel != null) {
+        if (seventhLevel != null && seventhLevel.size() != 0) {
             seventhTable.getItems().addAll(seventhLevel);
             seventhName.setCellValueFactory(new PropertyValueFactory<>("name"));
             seventhEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
@@ -134,7 +141,7 @@ public class SpellViewController {
             tabsToRemove.add(this.seventhLevel);
         }
 
-        if (eighthLevel != null) {
+        if (eighthLevel != null && eighthLevel.size() != 0) {
             eighthTable.getItems().addAll(eighthLevel);
             eighthName.setCellValueFactory(new PropertyValueFactory<>("name"));
             eighthEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
@@ -147,7 +154,7 @@ public class SpellViewController {
             tabsToRemove.add(this.eighthLevel);
         }
 
-        if (ninthLevel != null) {
+        if (ninthLevel != null && ninthLevel.size() != 0) {
             ninthTable.getItems().addAll(ninthLevel);
             ninthName.setCellValueFactory(new PropertyValueFactory<>("name"));
             ninthEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
@@ -165,9 +172,13 @@ public class SpellViewController {
     }
 
     public void initialize() {
-        if (currentCreature != null) {
-            reset(currentCreature.getSpells());
+        if (creature != null) {
+            reset(creature.getSpells());
         }
+    }
+
+    public void start(Stage stage) {
+        creature = App.currentCreature;
     }
 
     @FXML
@@ -188,10 +199,6 @@ public class SpellViewController {
     public TableColumn<Spell, Shape> cantripShape;
     @FXML
     public TableColumn<Spell, String> cantripRequirements;
-    @FXML
-    public Label cantripSlots;
-    @FXML
-    public Label cantripSlotsExpended;
     @FXML
     public Tab firstLevel;
     @FXML

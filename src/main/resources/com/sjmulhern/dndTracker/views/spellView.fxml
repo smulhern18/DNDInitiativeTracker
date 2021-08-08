@@ -19,11 +19,11 @@
                       <children>
                           <TableView fx:id="cantripTable" layoutY="-1.0" prefHeight="270.0" prefWidth="650.0">
                               <columns>
-                                  <TableColumn fx:id="cantripName" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="-1.0" text="Name" />
-                                  <TableColumn fx:id="cantripEffect" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="-1.0" text="Effect" />
-                                  <TableColumn fx:id="cantripSize" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="-1.0" text="Size" />
-                                  <TableColumn fx:id="cantripShape" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="-1.0" text="Shape" />
-                                  <TableColumn fx:id="cantripRequirements" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="-1.0" text="Requirements" />
+                                  <TableColumn fx:id="cantripName" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="138.0" text="Name" />
+                                  <TableColumn fx:id="cantripEffect" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="113.0" text="Effect" />
+                                  <TableColumn fx:id="cantripSize" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="68.0" text="Size" />
+                                  <TableColumn fx:id="cantripShape" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="59.0" text="Shape" />
+                                  <TableColumn fx:id="cantripRequirements" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="270.0" text="Requirements" />
                               </columns>
                         <columnResizePolicy>
                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

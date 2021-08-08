@@ -29,7 +29,7 @@ public class InitativeRoundRobin {
         creatures.addAll(newCreatures);
     }
 
-    public Creature getNext(){
+    public Creature getNext() {
         currentIndex++;
 
         Object[] creaturesArray = creatures.toArray();

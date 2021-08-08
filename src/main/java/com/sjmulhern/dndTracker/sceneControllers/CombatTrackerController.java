@@ -1,19 +1,13 @@
 package com.sjmulhern.dndTracker.sceneControllers;
 
 import com.sjmulhern.dndTracker.App;
-import com.sjmulhern.dndTracker.creatures.Alignment;
 import com.sjmulhern.dndTracker.creatures.Condition;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Language;
 import com.sjmulhern.dndTracker.creatures.Monster;
-import com.sjmulhern.dndTracker.creatures.Size;
 import com.sjmulhern.dndTracker.creatures.Skill;
-import com.sjmulhern.dndTracker.creatures.Spells;
 import com.sjmulhern.dndTracker.creatures.Type;
 import com.sjmulhern.dndTracker.tools.Ability;
-import com.sjmulhern.dndTracker.tools.DamageType;
-import com.sjmulhern.dndTracker.tools.Shape;
-import com.sjmulhern.dndTracker.tools.Spell;
 import com.sjmulhern.dndTracker.tools.Tool;
 import com.sjmulhern.dndTracker.utils.InitativeRoundRobin;
 import javafx.beans.property.SimpleStringProperty;
@@ -31,8 +25,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Set;
 
 public class CombatTrackerController {

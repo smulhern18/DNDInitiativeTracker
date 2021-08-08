@@ -26,7 +26,6 @@ public class LanguageEditPopupController implements Initializable {
 
     public void initialize () {
 
-
         ArrayList<Language> languages = creature.getLanguages();
 
         if (languages != null && !languages.isEmpty()) {
