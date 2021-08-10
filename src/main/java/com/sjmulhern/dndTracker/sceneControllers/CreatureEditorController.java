@@ -293,7 +293,7 @@ public class CreatureEditorController {
         toolsDamageColumn.setOnEditCommit(
             event -> (event.getTableView().getItems().get(event.getTablePosition().getRow())).setDamage(event.getNewValue())
         );
-        toolsDamageTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDamageType()));
+        toolsDamageTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDamageType().toString()));
         toolsDamageTypeColumn.setCellFactory(ComboBoxTableCell.forTableColumn(DamageType.getStringValues()));
         weaponsTable.setItems(toolsObservable);
         weaponsTable.setEditable(true);

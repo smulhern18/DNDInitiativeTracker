@@ -118,7 +118,7 @@ public class CombatTrackerController {
             toolsDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
             toolsToHitColumn.setCellValueFactory(new PropertyValueFactory<>("toHit"));
             toolsDamageColumn.setCellValueFactory(new PropertyValueFactory<>("damage"));
-            toolsDamageTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDamageType()));
+            toolsDamageTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDamageType().toString()));
             weaponsTable.setItems(toolsObservable);
 
             String languagesString = "";
