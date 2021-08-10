@@ -246,8 +246,6 @@ public class CreatureEditorController {
         }
         creatureNames.setValue(creatureEditing.getName());
 
-
-
         if (Monster.class.equals(creatureEditing.getClass())) {
             monsterRadioButton.setSelected(true);
         } else if (PlayerCharacter.class.equals(creatureEditing.getClass())) {
@@ -270,6 +268,8 @@ public class CreatureEditorController {
         );
         abilityTable.setItems(abilitiesObservable);
         abilityTable.setEditable(true);
+
+        creatureEditing.getAbilities().forEach(element -> abilityComboBox.getItems().add(element.getName()));
 
         ObservableList<Tool> toolsObservable = FXCollections.observableArrayList();
         toolsObservable.addAll(creatureEditing.getTools());
@@ -297,14 +297,16 @@ public class CreatureEditorController {
         toolsDamageTypeColumn.setCellFactory(ComboBoxTableCell.forTableColumn(DamageType.getStringValues()));
         weaponsTable.setItems(toolsObservable);
         weaponsTable.setEditable(true);
+
+        creatureEditing.getTools().forEach(element -> weaponComboBox.getItems().add(element.getName()));
     }
 
     public void addNewWeaponPressed () {
-        weaponsTable.getItems().add(new Tool(" ", " ", DamageType.None, " ", " "));
+        weaponsTable.getItems().add(new Tool("New Weapon", " ", DamageType.None, " ", " "));
     }
 
     public void addNewAbilityPressed () {
-        abilityTable.getItems().add(new Ability(" ", " "));
+        abilityTable.getItems().add(new Ability("New Ability", " "));
     }
 
     public void editSkillsButtonPressed () {
