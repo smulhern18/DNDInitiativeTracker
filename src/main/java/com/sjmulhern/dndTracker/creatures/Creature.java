@@ -14,53 +14,64 @@ import lombok.Setter;
 @AllArgsConstructor
 public abstract class Creature {
 
-    private String name = null;
+    private String name;
 
-    private String description = null;
+    private String description;
 
-    private Alignment alignment = Alignment.Unaligned;
+    private Alignment alignment;
 
-    private Size size = Size.Medium;
+    private Size size;
 
-    private Integer movementSpeed = 30;
+    private Integer movementSpeed;
 
-    private Integer swimSpeed = 15;
+    private Integer swimSpeed;
 
-    private Integer climbSpeed = 15;
+    private Integer climbSpeed;
 
-    private Integer flySpeed = 0;
+    private Integer flySpeed;
 
-    private ArrayList<Ability> abilities = new ArrayList<>();
+    private ArrayList<Ability> abilities;
 
-    private ArrayList<Tool> tools = new ArrayList<>();
+    private ArrayList<Tool> tools;
 
-    private ArrayList<Skill> skills = new ArrayList<>();
+    private ArrayList<Skill> skills;
 
-    private ArrayList<Language> languages = new ArrayList<>();
+    private ArrayList<Language> languages;
 
-    private Integer strength = 0;
+    private Integer strength;
 
-    private Integer dexterity = 0;
+    private Integer dexterity;
 
-    private Integer constitution = 0;
+    private Integer constitution;
 
-    private Integer intelligence = 0;
+    private Integer intelligence;
 
-    private Integer wisdom = 0;
+    private Integer wisdom;
 
-    private Integer charisma = 0;
+    private Integer charisma;
 
-    private Integer hitPoints = 0;
+    private Integer hitPoints;
 
-    private Integer armorClass = 0;
+    private Integer armorClass;
 
-    private Integer initiative = 0;
+    private Integer initiative;
 
-    private Double level = 0.0;
+    private Double level;
 
-    private Condition currentCondition = Condition.None;
+    private Condition currentCondition;
 
-    private Spells spells = null;
+    private Spells spells;
+
+    public Creature(JsonObject jsonObject) {
+        //        this(jsonObject.get("name").toString(),
+        //             jsonObject.get("description").toString(),
+        //             Alignment.getEnum(jsonObject.get("alignment").toString()),
+        //             Size.getEnum(jsonObject.get("size").getAsDouble()),
+        //             jsonObject.get("movementSpeed").getAsInt(),
+        //             jsonObject.get("swimSpeed").getAsInt(),
+        //             jsonObject.get("climbSpeed").getAsInt(),
+        //             jsonObject.get("flySpeed").getAsInt(),)
+    }
 
     public JsonObject toJson() {
         JsonObject jsonObject = new JsonObject();
