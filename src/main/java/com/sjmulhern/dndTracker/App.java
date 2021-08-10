@@ -190,8 +190,6 @@ public class App extends Application {
         return pStage;
     }
 
-    public void reset() throws Exception { }
-
     @Override
     public void stop() {}
 
