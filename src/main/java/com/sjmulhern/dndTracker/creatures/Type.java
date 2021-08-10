@@ -1,7 +1,6 @@
 package com.sjmulhern.dndTracker.creatures;
 
 public enum Type {
-
     Aberration(0),
     Beast(1),
     Celestial(2),
@@ -21,16 +20,16 @@ public enum Type {
 
     private final int ordinal;
 
-    Type (int ordinal) {
+    Type(int ordinal) {
         this.ordinal = ordinal;
     }
 
-    public final int getOrdinal () {
+    public final int getOrdinal() {
         return ordinal;
     }
 
     // Get enum type from int
-    public static Type getEnum (int ordinal) {
+    public static Type getEnum(int ordinal) {
         Type value = null;
         for (Type t : values()) {
             if (t.ordinal() == ordinal) {

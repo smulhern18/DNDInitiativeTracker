@@ -1,7 +1,6 @@
 package com.sjmulhern.dndTracker.creatures;
 
 public enum Alignment {
-
     Chaotic_Good("CG"),
     Neutral_Good("NG"),
     Lawful_Good("LG"),
@@ -15,16 +14,16 @@ public enum Alignment {
 
     private final String abbreviation;
 
-    Alignment (String abbreviation) {
+    Alignment(String abbreviation) {
         this.abbreviation = abbreviation;
     }
 
-    public final String getAbbreviation () {
+    public final String getAbbreviation() {
         return abbreviation;
     }
 
     // Get enum type from int
-    public static Alignment getEnum (String abbreviation) {
+    public static Alignment getEnum(String abbreviation) {
         Alignment value = null;
         for (Alignment t : values()) {
             if (t.getAbbreviation().equals(abbreviation)) {

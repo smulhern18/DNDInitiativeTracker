@@ -1,10 +1,9 @@
 package com.sjmulhern.dndTracker.sceneControllers;
 
-import java.util.ArrayList;
-
 import com.sjmulhern.dndTracker.App;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Language;
+import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.stage.Stage;
@@ -21,7 +20,7 @@ public class LanguageEditPopupController {
 
     Creature creature = App.currentCreature;
 
-    public void initialize () {
+    public void initialize() {
 
         ArrayList<Language> languages = creature.getLanguages();
 
@@ -98,10 +97,9 @@ public class LanguageEditPopupController {
         primordial.setOnAction(event -> checkIfSelected(Language.Primordial));
         sylvan.setOnAction(event -> checkIfSelected(Language.Sylvan));
         undercommon.setOnAction(event -> checkIfSelected(Language.Undercommon));
-
     }
 
-    private void checkIfSelected (Language language) {
+    private void checkIfSelected(Language language) {
         if (creature.getLanguages().contains(language)) {
             creature.getLanguages().remove(language);
         } else {
@@ -109,8 +107,7 @@ public class LanguageEditPopupController {
         }
     }
 
-    @FXML
-    public CheckBox common;
+    @FXML public CheckBox common;
     public CheckBox elvish;
     public CheckBox gnomish;
     public CheckBox dwarvish;
@@ -126,5 +123,4 @@ public class LanguageEditPopupController {
     public CheckBox primordial;
     public CheckBox sylvan;
     public CheckBox undercommon;
-
 }

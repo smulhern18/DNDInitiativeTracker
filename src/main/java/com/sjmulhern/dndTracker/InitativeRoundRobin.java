@@ -1,13 +1,11 @@
-package com.sjmulhern.dndTracker.utils;
+package com.sjmulhern.dndTracker;
 
 import com.sjmulhern.dndTracker.creatures.Creature;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -17,9 +15,9 @@ public class InitativeRoundRobin {
 
     private int currentIndex = 0;
 
-    public InitativeRoundRobin(){ }
+    public InitativeRoundRobin() {}
 
-    public void addCreature(Creature creature){
+    public void addCreature(Creature creature) {
 
         creatures.remove(creature);
         creatures.add(creature);
@@ -38,13 +36,13 @@ public class InitativeRoundRobin {
 
         while (creature.getHitPoints() <= 0) {
             currentIndex++;
-            creature = (Creature) creaturesArray[currentIndex%creatures.size()];
+            creature = (Creature) creaturesArray[currentIndex % creatures.size()];
         }
 
         return creature;
     }
 
-    public Creature getCurrent(){
+    public Creature getCurrent() {
         return (Creature) creatures.toArray()[currentIndex % creatures.size()];
     }
 }

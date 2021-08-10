@@ -10,13 +10,12 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Ability {
 
-    private String name = null;
+    private String name;
 
-    private String description = null;
+    private String description;
 
     public Ability(JsonObject jsonObject) {
-        this(jsonObject.get("name").toString(),
-             jsonObject.get("description").toString());
+        this(jsonObject.get("name").toString(), jsonObject.get("description").toString());
     }
 
     public JsonObject toJson() {
@@ -25,7 +24,6 @@ public class Ability {
         jsonObject.addProperty("name", name);
         jsonObject.addProperty("description", description);
 
-        return  jsonObject;
+        return jsonObject;
     }
-
 }

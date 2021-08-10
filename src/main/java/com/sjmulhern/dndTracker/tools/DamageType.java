@@ -1,7 +1,5 @@
 package com.sjmulhern.dndTracker.tools;
 
-import com.sjmulhern.dndTracker.creatures.Condition;
-
 public enum DamageType {
     Slashing(0),
     Piercing(1),
@@ -20,18 +18,18 @@ public enum DamageType {
 
     private final int ordinal;
 
-    DamageType (int ordinal) {
+    DamageType(int ordinal) {
 
         this.ordinal = ordinal;
     }
 
-    public final int getOrdinal () {
+    public final int getOrdinal() {
 
         return ordinal;
     }
 
     // Get enum type from int
-    public static DamageType getEnum (int ordinal) {
+    public static DamageType getEnum(int ordinal) {
 
         DamageType value = null;
         for (DamageType t : values()) {

@@ -5,28 +5,24 @@ import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Monster;
 import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
 import com.sjmulhern.dndTracker.creatures.PlayerCharacter;
-import javafx.event.ActionEvent;
+import java.util.ArrayList;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
-
-import java.util.ArrayList;
 
 public class CreatureCreationPopupController {
 
     Creature currentCreature = App.currentCreature;
 
-    public void nothingPressed () {
+    public void nothingPressed() {}
 
-    }
-
-    public void currentCreaturePressed () {
+    public void currentCreaturePressed() {
         if (App.initativeRoundRobin.getCreatures().size() == 0) {
             nothingPressed();
         }
     }
 
-    public void selectedCreaturePressed () {
+    public void selectedCreaturePressed() {
         if (App.initativeRoundRobin.getCreatures().size() == 0) {
             nothingPressed();
         }
@@ -36,7 +32,7 @@ public class CreatureCreationPopupController {
 
         // Initialize Combobox
         ArrayList<String> names = new ArrayList<>();
-        for (Creature creature: App.initativeRoundRobin.getCreatures()) {
+        for (Creature creature : App.initativeRoundRobin.getCreatures()) {
             names.add(creature.getName());
         }
         creatureNameComboBox.getItems().addAll(names);
@@ -52,7 +48,6 @@ public class CreatureCreationPopupController {
         }
     }
 
-
     public ToggleGroup creatureType;
 
     public RadioButton monsterRadio;
@@ -62,5 +57,4 @@ public class CreatureCreationPopupController {
     public RadioButton npcRadio;
 
     public ComboBox<String> creatureNameComboBox;
-
 }

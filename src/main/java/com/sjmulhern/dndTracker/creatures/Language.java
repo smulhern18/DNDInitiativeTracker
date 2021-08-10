@@ -20,16 +20,16 @@ public enum Language {
 
     private final int ordinal;
 
-    Language (int ordinal) {
+    Language(int ordinal) {
         this.ordinal = ordinal;
     }
 
-    public final int getOrdinal () {
+    public final int getOrdinal() {
         return ordinal;
     }
 
     // Get enum type from int
-    public static Language getEnum (int ordinal) {
+    public static Language getEnum(int ordinal) {
         Language value = null;
         for (Language t : values()) {
             if (t.ordinal() == ordinal) {

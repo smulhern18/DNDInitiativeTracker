@@ -4,11 +4,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.sjmulhern.dndTracker.tools.Ability;
 import com.sjmulhern.dndTracker.tools.Tool;
+import java.util.ArrayList;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.ArrayList;
 
 @Getter
 @Setter
@@ -63,7 +62,7 @@ public abstract class Creature {
 
     private Spells spells = null;
 
-    public JsonObject toJson () {
+    public JsonObject toJson() {
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("name", getName());
         jsonObject.addProperty("description", getDescription());
@@ -76,25 +75,25 @@ public abstract class Creature {
         jsonObject.addProperty("level", getLevel());
 
         JsonArray abilitiesArray = new JsonArray();
-        for (Ability ability: getAbilities()) {
+        for (Ability ability : getAbilities()) {
             abilitiesArray.add(ability.toJson());
         }
         jsonObject.add("abilities", abilitiesArray);
 
         JsonArray toolsArray = new JsonArray();
-        for (Tool tool: getTools()) {
+        for (Tool tool : getTools()) {
             toolsArray.add(tool.toJson());
         }
         jsonObject.add("tools", toolsArray);
 
         JsonArray skillsArray = new JsonArray();
-        for (Skill skill: getSkills()) {
+        for (Skill skill : getSkills()) {
             skillsArray.add(skill.getOrdinal());
         }
         jsonObject.add("skills", skillsArray);
 
         JsonArray languagesArray = new JsonArray();
-        for (Language language: getLanguages()) {
+        for (Language language : getLanguages()) {
             languagesArray.add(language.getOrdinal());
         }
         jsonObject.add("languages", languagesArray);
@@ -118,7 +117,7 @@ public abstract class Creature {
     @Override
     public boolean equals(Object creatureObject) {
         if (creatureObject instanceof Creature) {
-            return this.getName().equals(((Creature)creatureObject).getName());
+            return this.getName().equals(((Creature) creatureObject).getName());
         } else {
             return false;
         }
@@ -128,5 +127,4 @@ public abstract class Creature {
     public int hashCode() {
         return name.hashCode();
     }
-
 }

@@ -22,16 +22,16 @@ public enum Skill {
 
     private final int ordinal;
 
-    Skill (int ordinal) {
+    Skill(int ordinal) {
         this.ordinal = ordinal;
     }
 
-    public final int getOrdinal () {
+    public final int getOrdinal() {
         return ordinal;
     }
 
     // Get enum type from int
-    public static Skill getEnum (int ordinal) {
+    public static Skill getEnum(int ordinal) {
         Skill value = null;
         for (Skill t : values()) {
             if (t.ordinal() == ordinal) {
@@ -41,4 +41,3 @@ public enum Skill {
         return value;
     }
 }
-

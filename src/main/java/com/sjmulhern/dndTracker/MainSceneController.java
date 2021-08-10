@@ -1,12 +1,11 @@
 package com.sjmulhern.dndTracker;
 
+import java.io.IOException;
+import java.util.Objects;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.Objects;
 
 public class MainSceneController {
     private final Stage primaryStage;
@@ -18,8 +17,9 @@ public class MainSceneController {
     }
 
     public void switchScene(String aScene) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(
-            App.class.getResource("views/" + aScene + "View.fxml")));
+        Parent root =
+                FXMLLoader.load(
+                        Objects.requireNonNull(App.class.getResource("views/" + aScene + "View.fxml")));
         primaryScene.setRoot(root);
         primaryStage.hide();
         primaryStage.show();

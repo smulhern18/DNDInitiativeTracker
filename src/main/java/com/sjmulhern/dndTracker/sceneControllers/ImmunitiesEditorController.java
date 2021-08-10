@@ -3,23 +3,21 @@ package com.sjmulhern.dndTracker.sceneControllers;
 import com.sjmulhern.dndTracker.App;
 import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
 import com.sjmulhern.dndTracker.tools.DamageType;
-import javafx.scene.control.CheckBox;
-
 import java.util.ArrayList;
+import javafx.scene.control.CheckBox;
 
 public class ImmunitiesEditorController {
 
     private ArrayList<DamageType> result;
 
-    private NonPlayerCharacter creature =  (NonPlayerCharacter) App.currentCreature;
+    private NonPlayerCharacter creature = (NonPlayerCharacter) App.currentCreature;
 
-    public void saveButtonPressed () {
-        ((NonPlayerCharacter)App.initativeRoundRobin.getCurrent())
-            .setImmunities(result);
+    public void saveButtonPressed() {
+        ((NonPlayerCharacter) App.initativeRoundRobin.getCurrent()).setImmunities(result);
         System.out.println(result.toString());
     }
 
-    public void initialize () {
+    public void initialize() {
 
         result = ((NonPlayerCharacter) App.currentCreature).getImmunities();
 
@@ -87,10 +85,9 @@ public class ImmunitiesEditorController {
         thunder.setOnAction(event -> checkIfSelected(DamageType.Thunder));
         force.setOnAction(event -> checkIfSelected(DamageType.Force));
         psychic.setOnAction(event -> checkIfSelected(DamageType.Psychic));
-
     }
 
-    private void checkIfSelected (DamageType damageType) {
+    private void checkIfSelected(DamageType damageType) {
         if (creature.getImmunities().contains(damageType)) {
             creature.getImmunities().remove(damageType);
         } else {
@@ -123,5 +120,4 @@ public class ImmunitiesEditorController {
     public CheckBox force;
 
     public CheckBox psychic;
-
 }

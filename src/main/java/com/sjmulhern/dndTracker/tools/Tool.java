@@ -1,8 +1,6 @@
 package com.sjmulhern.dndTracker.tools;
 
 import com.google.gson.JsonObject;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +21,12 @@ public class Tool {
     private String damage = null;
 
     public Tool(JsonObject jsonObject) {
-        
+        this(
+                jsonObject.get("name").toString(),
+                jsonObject.get("description").toString(),
+                DamageType.valueOf(jsonObject.get("damageType").toString()),
+                jsonObject.get("toHit").toString(),
+                jsonObject.get("damage").toString());
     }
 
     public JsonObject toJson() {

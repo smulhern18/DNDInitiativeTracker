@@ -1,10 +1,15 @@
 plugins {
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'com.diffplug.spotless' version '5.14.2'
 }
+
+sourceCompatibility = JavaVersion.VERSION_15
+targetCompatibility = JavaVersion.VERSION_15
 
 group 'com'
 version '1.0-SNAPSHOT'
+mainClassName = 'com.sjmulhern.dndTracker.Main'
 
 repositories {
     mavenCentral()
@@ -17,10 +22,10 @@ javafx {
 
 dependencies {
     implementation 'com.google.code.gson:gson:2.8.7'
-    implementation 'com.jfoenix:jfoenix:9.0.9'
-    implementation 'org.projectlombok:lombok:1.18.18'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'com.jfoenix:jfoenix:9.0.10'
+    implementation 'org.projectlombok:lombok:1.18.20'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
     compileOnly 'org.projectlombok:lombok:1.18.20'
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
     testCompileOnly 'org.projectlombok:lombok:1.18.20'
@@ -29,4 +34,18 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+compileJava.dependsOn 'spotlessApply'
+
+spotless {
+    java {
+        importOrder()
+        removeUnusedImports()
+        googleJavaFormat()
+        indentWithTabs(2)
+        indentWithSpaces(4)
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
 }

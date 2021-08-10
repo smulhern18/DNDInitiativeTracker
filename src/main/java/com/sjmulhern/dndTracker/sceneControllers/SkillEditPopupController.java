@@ -1,12 +1,11 @@
 package com.sjmulhern.dndTracker.sceneControllers;
 
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
-
 import com.sjmulhern.dndTracker.App;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Skill;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
@@ -24,7 +23,7 @@ public class SkillEditPopupController implements Initializable {
 
     Creature creature = App.currentCreature;
 
-    public void initialize () {
+    public void initialize() {
 
         ArrayList<Skill> skills = creature.getSkills();
 
@@ -109,11 +108,9 @@ public class SkillEditPopupController implements Initializable {
         stealth.setOnAction(event -> checkIfSelected(Skill.Stealth));
         survival.setOnAction(event -> checkIfSelected(Skill.Survival));
         religion.setOnAction(event -> checkIfSelected(Skill.Religion));
-
-
     }
 
-    private void checkIfSelected (Skill skill) {
+    private void checkIfSelected(Skill skill) {
         if (creature.getSkills().contains(skill)) {
             creature.getSkills().remove(skill);
         } else {
@@ -121,12 +118,11 @@ public class SkillEditPopupController implements Initializable {
         }
     }
 
-    public void initialize (URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources) {
         initialize();
     }
 
-    @FXML
-    public CheckBox athletics;
+    @FXML public CheckBox athletics;
     public CheckBox animalHandling;
     public CheckBox deception;
     public CheckBox acrobatics;
@@ -144,5 +140,4 @@ public class SkillEditPopupController implements Initializable {
     public CheckBox insight;
     public CheckBox history;
     public CheckBox arcana;
-
 }

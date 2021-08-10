@@ -3,9 +3,8 @@ package com.sjmulhern.dndTracker.sceneControllers;
 import com.sjmulhern.dndTracker.App;
 import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
 import com.sjmulhern.dndTracker.tools.DamageType;
-import javafx.scene.control.CheckBox;
-
 import java.util.ArrayList;
+import javafx.scene.control.CheckBox;
 
 public class ResistancesEditorController {
 
@@ -13,12 +12,11 @@ public class ResistancesEditorController {
 
     private NonPlayerCharacter creature = (NonPlayerCharacter) App.currentCreature;
 
-    public void saveButtonPressed () {
-        ((NonPlayerCharacter)App.initativeRoundRobin.getCurrent())
-            .setResistances(result);
+    public void saveButtonPressed() {
+        ((NonPlayerCharacter) App.initativeRoundRobin.getCurrent()).setResistances(result);
     }
 
-    public void initialize () {
+    public void initialize() {
 
         result = ((NonPlayerCharacter) App.currentCreature).getResistances();
 
@@ -86,10 +84,9 @@ public class ResistancesEditorController {
         thunder.setOnAction(event -> checkIfSelected(DamageType.Thunder));
         force.setOnAction(event -> checkIfSelected(DamageType.Force));
         psychic.setOnAction(event -> checkIfSelected(DamageType.Psychic));
-
     }
 
-    private void checkIfSelected (DamageType damageType) {
+    private void checkIfSelected(DamageType damageType) {
         if (creature.getResistances().contains(damageType)) {
             creature.getResistances().remove(damageType);
         } else {

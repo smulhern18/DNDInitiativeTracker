@@ -1,7 +1,5 @@
 package com.sjmulhern.dndTracker.tools;
 
-import com.sjmulhern.dndTracker.creatures.Size;
-
 public enum Shape {
 
     // All Sizes are in 1 by 1 in grid increments on one axis
@@ -14,16 +12,16 @@ public enum Shape {
 
     private final int ord;
 
-    Shape (int ord) {
+    Shape(int ord) {
         this.ord = ord;
     }
 
-    public final int intValue () {
+    public final int intValue() {
         return ord;
     }
 
     // Get enum type from int
-    public static Shape getEnum (int ord) {
+    public static Shape getEnum(int ord) {
         Shape value = null;
         for (Shape t : values()) {
             if (t.intValue() == ord) {
@@ -31,15 +29,5 @@ public enum Shape {
             }
         }
         return value;
-    }
-
-    public static String[] getStringValues() {
-        Shape[] shapes = values();
-        String[] shapeStrings = new String[shapes.length];
-        for (int i = 0; i < shapes.length; i++) {
-            shapeStrings[i] = shapes[i].toString();
-        }
-
-        return shapeStrings;
     }
 }

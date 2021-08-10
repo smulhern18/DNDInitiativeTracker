@@ -5,6 +5,7 @@ import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Spells;
 import com.sjmulhern.dndTracker.tools.Shape;
 import com.sjmulhern.dndTracker.tools.Spell;
+import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -15,13 +16,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-
 public class SpellViewController {
 
     Creature creature = App.currentCreature;
 
-    public void reset (Spells spells) {
+    public void reset(Spells spells) {
         if (spells == null) {
             tabPane.setVisible(false);
             return;
@@ -57,8 +56,8 @@ public class SpellViewController {
             firstSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             firstShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             firstRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
-            firstSlots.setText(spells.getSlots().get(1)+"");
-            firstSlotsExpended.setText(spells.getSlotsUsed().get(1)+"");
+            firstSlots.setText(spells.getSlots().get(1) + "");
+            firstSlotsExpended.setText(spells.getSlotsUsed().get(1) + "");
         } else {
             tabsToRemove.add(this.firstLevel);
         }
@@ -70,8 +69,8 @@ public class SpellViewController {
             secondSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             secondShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             secondRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
-            secondSlots.setText(spells.getSlots().get(2)+"");
-            secondSlotsExpended.setText(spells.getSlotsUsed().get(2)+"");
+            secondSlots.setText(spells.getSlots().get(2) + "");
+            secondSlotsExpended.setText(spells.getSlotsUsed().get(2) + "");
         } else {
             tabsToRemove.add(this.secondLevel);
         }
@@ -83,8 +82,8 @@ public class SpellViewController {
             thirdSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             thirdShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             thirdRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
-            thirdSlots.setText(spells.getSlots().get(3)+"");
-            thirdSlotsExpended.setText(spells.getSlotsUsed().get(3)+"");
+            thirdSlots.setText(spells.getSlots().get(3) + "");
+            thirdSlotsExpended.setText(spells.getSlotsUsed().get(3) + "");
         } else {
             tabsToRemove.add(this.thirdLevel);
         }
@@ -96,8 +95,8 @@ public class SpellViewController {
             forthSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             forthShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             forthRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
-            forthSlots.setText(spells.getSlots().get(4)+"");
-            forthSlotsExpended.setText(spells.getSlotsUsed().get(4)+"");
+            forthSlots.setText(spells.getSlots().get(4) + "");
+            forthSlotsExpended.setText(spells.getSlotsUsed().get(4) + "");
         } else {
             tabsToRemove.add(this.forthLevel);
         }
@@ -109,8 +108,8 @@ public class SpellViewController {
             fifthSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             fifthShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             fifthRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
-            fifthSlots.setText(spells.getSlots().get(5)+"");
-            fifthSlotsExpended.setText(spells.getSlotsUsed().get(5)+"");
+            fifthSlots.setText(spells.getSlots().get(5) + "");
+            fifthSlotsExpended.setText(spells.getSlotsUsed().get(5) + "");
         } else {
             tabsToRemove.add(this.fifthLevel);
         }
@@ -122,8 +121,8 @@ public class SpellViewController {
             sixthSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             sixthShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             sixthRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
-            sixthSlots.setText(spells.getSlots().get(6)+"");
-            sixthSlotsExpended.setText(spells.getSlotsUsed().get(6)+"");
+            sixthSlots.setText(spells.getSlots().get(6) + "");
+            sixthSlotsExpended.setText(spells.getSlotsUsed().get(6) + "");
         } else {
             tabsToRemove.add(this.sixthLevel);
         }
@@ -135,8 +134,8 @@ public class SpellViewController {
             seventhSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             seventhShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             seventhRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
-            seventhSlots.setText(spells.getSlots().get(7)+"");
-            seventhSlotsExpended.setText(spells.getSlotsUsed().get(7)+"");
+            seventhSlots.setText(spells.getSlots().get(7) + "");
+            seventhSlotsExpended.setText(spells.getSlotsUsed().get(7) + "");
         } else {
             tabsToRemove.add(this.seventhLevel);
         }
@@ -148,8 +147,8 @@ public class SpellViewController {
             eighthSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             eighthShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             eighthRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
-            eighthSlots.setText(spells.getSlots().get(8)+"");
-            eighthSlotsExpended.setText(spells.getSlotsUsed().get(8)+"");
+            eighthSlots.setText(spells.getSlots().get(8) + "");
+            eighthSlotsExpended.setText(spells.getSlotsUsed().get(8) + "");
         } else {
             tabsToRemove.add(this.eighthLevel);
         }
@@ -161,14 +160,13 @@ public class SpellViewController {
             ninthSize.setCellValueFactory(new PropertyValueFactory<>("size"));
             ninthShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             ninthRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
-            ninthSlots.setText(spells.getSlots().get(9)+"");
-            ninthSlotsExpended.setText(spells.getSlotsUsed().get(9)+"");
+            ninthSlots.setText(spells.getSlots().get(9) + "");
+            ninthSlotsExpended.setText(spells.getSlotsUsed().get(9) + "");
         } else {
             tabsToRemove.add(this.ninthLevel);
         }
 
         tabPane.getTabs().removeAll(tabsToRemove);
-
     }
 
     public void initialize() {
@@ -181,185 +179,94 @@ public class SpellViewController {
         creature = App.currentCreature;
     }
 
-    @FXML
-    public AnchorPane basePane;
-    @FXML
-    public TabPane tabPane;
-    @FXML
-    public Tab cantrips;
-    @FXML
-    public TableView<Spell> cantripTable;
-    @FXML
-    public TableColumn<Spell, String> cantripName;
-    @FXML
-    public TableColumn<Spell, String> cantripEffect;
-    @FXML
-    public TableColumn<Spell, Integer> cantripSize;
-    @FXML
-    public TableColumn<Spell, Shape> cantripShape;
-    @FXML
-    public TableColumn<Spell, String> cantripRequirements;
-    @FXML
-    public Tab firstLevel;
-    @FXML
-    public TableView<Spell> firstTable;
-    @FXML
-    public TableColumn<Spell, String> firstName;
-    @FXML
-    public TableColumn<Spell, String> firstEffect;
-    @FXML
-    public TableColumn<Spell, Integer> firstSize;
-    @FXML
-    public TableColumn<Spell, Shape> firstShape;
-    @FXML
-    public TableColumn<Spell, String> firstRequirements;
-    @FXML
-    public Label firstSlots;
-    @FXML
-    public Label firstSlotsExpended;
-    @FXML
-    public Tab secondLevel;
-    @FXML
-    public TableView<Spell> secondTable;
-    @FXML
-    public TableColumn<Spell, String> secondName;
-    @FXML
-    public TableColumn<Spell, String> secondEffect;
-    @FXML
-    public TableColumn<Spell, Integer> secondSize;
-    @FXML
-    public TableColumn<Spell, Shape> secondShape;
-    @FXML
-    public TableColumn<Spell, String> secondRequirements;
-    @FXML
-    public Label secondSlots;
-    @FXML
-    public Label secondSlotsExpended;
-    @FXML
-    public Tab thirdLevel;
-    @FXML
-    public TableView<Spell> thirdTable;
-    @FXML
-    public TableColumn<Spell, String> thirdName;
-    @FXML
-    public TableColumn<Spell, String> thirdEffect;
-    @FXML
-    public TableColumn<Spell, Integer> thirdSize;
-    @FXML
-    public TableColumn<Spell, Shape> thirdShape;
-    @FXML
-    public TableColumn<Spell, String> thirdRequirements;
-    @FXML
-    public Label thirdSlots;
-    @FXML
-    public Label thirdSlotsExpended;
-    @FXML
-    public Tab forthLevel;
-    @FXML
-    public TableView<Spell> forthTable;
-    @FXML
-    public TableColumn<Spell, String> forthName;
-    @FXML
-    public TableColumn<Spell, String> forthEffect;
-    @FXML
-    public TableColumn<Spell, Integer> forthSize;
-    @FXML
-    public TableColumn<Spell, Shape> forthShape;
-    @FXML
-    public TableColumn<Spell, String> forthRequirements;
-    @FXML
-    public Label forthSlots;
-    @FXML
-    public Label forthSlotsExpended;
-    @FXML
-    public Tab fifthLevel;
-    @FXML
-    public TableView<Spell> fifthTable;
-    @FXML
-    public TableColumn<Spell, String> fifthName;
-    @FXML
-    public TableColumn<Spell, String> fifthEffect;
-    @FXML
-    public TableColumn<Spell, Integer> fifthSize;
-    @FXML
-    public TableColumn<Spell, Shape> fifthShape;
-    @FXML
-    public TableColumn<Spell, String> fifthRequirements;
-    @FXML
-    public Label fifthSlots;
-    @FXML
-    public Label fifthSlotsExpended;
-    @FXML
-    public Tab sixthLevel;
-    @FXML
-    public TableView<Spell> sixthTable;
-    @FXML
-    public TableColumn<Spell, String> sixthName;
-    @FXML
-    public TableColumn<Spell, String> sixthEffect;
-    @FXML
-    public TableColumn<Spell, Integer> sixthSize;
-    @FXML
-    public TableColumn<Spell, Shape> sixthShape;
-    @FXML
-    public TableColumn<Spell, String> sixthRequirements;
-    @FXML
-    public Label sixthSlots;
-    @FXML
-    public Label sixthSlotsExpended;
-    @FXML
-    public Tab seventhLevel;
-    @FXML
-    public TableView<Spell> seventhTable;
-    @FXML
-    public TableColumn<Spell, String> seventhName;
-    @FXML
-    public TableColumn<Spell, String> seventhEffect;
-    @FXML
-    public TableColumn<Spell, Integer> seventhSize;
-    @FXML
-    public TableColumn<Spell, Shape> seventhShape;
-    @FXML
-    public TableColumn<Spell, String> seventhRequirements;
-    @FXML
-    public Label seventhSlots;
-    @FXML
-    public Label seventhSlotsExpended;
-    @FXML
-    public Tab eighthLevel;
-    @FXML
-    public TableView<Spell> eighthTable;
-    @FXML
-    public TableColumn<Spell, String> eighthName;
-    @FXML
-    public TableColumn<Spell, String> eighthEffect;
-    @FXML
-    public TableColumn<Spell, Integer> eighthSize;
-    @FXML
-    public TableColumn<Spell, Shape> eighthShape;
-    @FXML
-    public TableColumn<Spell, String> eighthRequirements;
-    @FXML
-    public Label eighthSlots;
-    @FXML
-    public Label eighthSlotsExpended;
-    @FXML
-    public Tab ninthLevel;
-    @FXML
-    public TableView<Spell> ninthTable;
-    @FXML
-    public TableColumn<Spell, String> ninthName;
-    @FXML
-    public TableColumn<Spell, String> ninthEffect;
-    @FXML
-    public TableColumn<Spell, Integer> ninthSize;
-    @FXML
-    public TableColumn<Spell, Shape> ninthShape;
-    @FXML
-    public TableColumn<Spell, String> ninthRequirements;
-    @FXML
-    public Label ninthSlots;
-    @FXML
-    public Label ninthSlotsExpended;
-
+    @FXML public AnchorPane basePane;
+    @FXML public TabPane tabPane;
+    @FXML public Tab cantrips;
+    @FXML public TableView<Spell> cantripTable;
+    @FXML public TableColumn<Spell, String> cantripName;
+    @FXML public TableColumn<Spell, String> cantripEffect;
+    @FXML public TableColumn<Spell, Integer> cantripSize;
+    @FXML public TableColumn<Spell, Shape> cantripShape;
+    @FXML public TableColumn<Spell, String> cantripRequirements;
+    @FXML public Tab firstLevel;
+    @FXML public TableView<Spell> firstTable;
+    @FXML public TableColumn<Spell, String> firstName;
+    @FXML public TableColumn<Spell, String> firstEffect;
+    @FXML public TableColumn<Spell, Integer> firstSize;
+    @FXML public TableColumn<Spell, Shape> firstShape;
+    @FXML public TableColumn<Spell, String> firstRequirements;
+    @FXML public Label firstSlots;
+    @FXML public Label firstSlotsExpended;
+    @FXML public Tab secondLevel;
+    @FXML public TableView<Spell> secondTable;
+    @FXML public TableColumn<Spell, String> secondName;
+    @FXML public TableColumn<Spell, String> secondEffect;
+    @FXML public TableColumn<Spell, Integer> secondSize;
+    @FXML public TableColumn<Spell, Shape> secondShape;
+    @FXML public TableColumn<Spell, String> secondRequirements;
+    @FXML public Label secondSlots;
+    @FXML public Label secondSlotsExpended;
+    @FXML public Tab thirdLevel;
+    @FXML public TableView<Spell> thirdTable;
+    @FXML public TableColumn<Spell, String> thirdName;
+    @FXML public TableColumn<Spell, String> thirdEffect;
+    @FXML public TableColumn<Spell, Integer> thirdSize;
+    @FXML public TableColumn<Spell, Shape> thirdShape;
+    @FXML public TableColumn<Spell, String> thirdRequirements;
+    @FXML public Label thirdSlots;
+    @FXML public Label thirdSlotsExpended;
+    @FXML public Tab forthLevel;
+    @FXML public TableView<Spell> forthTable;
+    @FXML public TableColumn<Spell, String> forthName;
+    @FXML public TableColumn<Spell, String> forthEffect;
+    @FXML public TableColumn<Spell, Integer> forthSize;
+    @FXML public TableColumn<Spell, Shape> forthShape;
+    @FXML public TableColumn<Spell, String> forthRequirements;
+    @FXML public Label forthSlots;
+    @FXML public Label forthSlotsExpended;
+    @FXML public Tab fifthLevel;
+    @FXML public TableView<Spell> fifthTable;
+    @FXML public TableColumn<Spell, String> fifthName;
+    @FXML public TableColumn<Spell, String> fifthEffect;
+    @FXML public TableColumn<Spell, Integer> fifthSize;
+    @FXML public TableColumn<Spell, Shape> fifthShape;
+    @FXML public TableColumn<Spell, String> fifthRequirements;
+    @FXML public Label fifthSlots;
+    @FXML public Label fifthSlotsExpended;
+    @FXML public Tab sixthLevel;
+    @FXML public TableView<Spell> sixthTable;
+    @FXML public TableColumn<Spell, String> sixthName;
+    @FXML public TableColumn<Spell, String> sixthEffect;
+    @FXML public TableColumn<Spell, Integer> sixthSize;
+    @FXML public TableColumn<Spell, Shape> sixthShape;
+    @FXML public TableColumn<Spell, String> sixthRequirements;
+    @FXML public Label sixthSlots;
+    @FXML public Label sixthSlotsExpended;
+    @FXML public Tab seventhLevel;
+    @FXML public TableView<Spell> seventhTable;
+    @FXML public TableColumn<Spell, String> seventhName;
+    @FXML public TableColumn<Spell, String> seventhEffect;
+    @FXML public TableColumn<Spell, Integer> seventhSize;
+    @FXML public TableColumn<Spell, Shape> seventhShape;
+    @FXML public TableColumn<Spell, String> seventhRequirements;
+    @FXML public Label seventhSlots;
+    @FXML public Label seventhSlotsExpended;
+    @FXML public Tab eighthLevel;
+    @FXML public TableView<Spell> eighthTable;
+    @FXML public TableColumn<Spell, String> eighthName;
+    @FXML public TableColumn<Spell, String> eighthEffect;
+    @FXML public TableColumn<Spell, Integer> eighthSize;
+    @FXML public TableColumn<Spell, Shape> eighthShape;
+    @FXML public TableColumn<Spell, String> eighthRequirements;
+    @FXML public Label eighthSlots;
+    @FXML public Label eighthSlotsExpended;
+    @FXML public Tab ninthLevel;
+    @FXML public TableView<Spell> ninthTable;
+    @FXML public TableColumn<Spell, String> ninthName;
+    @FXML public TableColumn<Spell, String> ninthEffect;
+    @FXML public TableColumn<Spell, Integer> ninthSize;
+    @FXML public TableColumn<Spell, Shape> ninthShape;
+    @FXML public TableColumn<Spell, String> ninthRequirements;
+    @FXML public Label ninthSlots;
+    @FXML public Label ninthSlotsExpended;
 }

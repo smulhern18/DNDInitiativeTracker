@@ -1,7 +1,6 @@
 package com.sjmulhern.dndTracker.creatures;
 
 public enum Condition {
-
     Blinded(0),
     Charmed(1),
     Deafened(2),
@@ -21,16 +20,16 @@ public enum Condition {
 
     private final int ordinal;
 
-    Condition (int ordinal) {
+    Condition(int ordinal) {
         this.ordinal = ordinal;
     }
 
-    public final int getOrdinal () {
+    public final int getOrdinal() {
         return ordinal;
     }
 
     // Get enum type from int
-    public static Condition getEnum (int ordinal) {
+    public static Condition getEnum(int ordinal) {
         Condition value = null;
         for (Condition t : values()) {
             if (t.ordinal() == ordinal) {

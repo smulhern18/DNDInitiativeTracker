@@ -1,6 +1,7 @@
 package com.sjmulhern.dndTracker.sceneControllers;
 
 import com.sjmulhern.dndTracker.App;
+import com.sjmulhern.dndTracker.InitativeRoundRobin;
 import com.sjmulhern.dndTracker.creatures.Condition;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Language;
@@ -10,11 +11,13 @@ import com.sjmulhern.dndTracker.creatures.Skill;
 import com.sjmulhern.dndTracker.creatures.Type;
 import com.sjmulhern.dndTracker.tools.Ability;
 import com.sjmulhern.dndTracker.tools.Tool;
-import com.sjmulhern.dndTracker.utils.InitativeRoundRobin;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Set;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -31,24 +34,22 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Set;
-
 public class CombatTrackerController {
 
-    public void viewModifiersPressed () {
+    public void viewModifiersPressed() {
         // initializing the controller
         DamageModifierController popupController = new DamageModifierController();
         Parent layout;
         try {
-            layout = FXMLLoader.load(Objects.requireNonNull(
-                App.class.getResource("views/DamageModifierView.fxml")));
+            layout =
+                    FXMLLoader.load(
+                            Objects.requireNonNull(App.class.getResource("views/DamageModifierView.fxml")));
             Scene scene = new Scene(layout);
             // this is the popup stage
             Stage popupStage = new Stage();
-            // Giving the popup controller access to the popup stage (to allow the controller to close the stage)
+            // Giving the popup controller access to the popup stage (to allow the
+            // controller to close the
+            // stage)
             popupController.setStage(popupStage);
             popupStage.initOwner(App.getPrimaryStage());
             popupStage.initModality(Modality.WINDOW_MODAL);
@@ -61,13 +62,13 @@ public class CombatTrackerController {
 
     Creature creature = null;
 
-    public void openButtonPressed () {
+    public void openButtonPressed() {
         String creatureName = creatureNames.getValue();
 
         Set<Creature> creatures = App.initativeRoundRobin.getCreatures();
 
         Creature wantedCreature = null;
-        for (Creature creature: creatures) {
+        for (Creature creature : creatures) {
             if (creature.getName().equals(creatureName)) {
                 wantedCreature = creature;
             }
@@ -81,7 +82,7 @@ public class CombatTrackerController {
 
     InitativeRoundRobin initativeRoundRobin = App.initativeRoundRobin;
 
-    public void nextInitiativeButtonPressed () {
+    public void nextInitiativeButtonPressed() {
         creature = initativeRoundRobin.getNext();
         App.currentCreature = creature;
         reset();
@@ -94,19 +95,21 @@ public class CombatTrackerController {
         alignmentLabel.setText(creature.getAlignment().toString());
         sizeLabel.setText(creature.getSize().toString());
         if (!(creature instanceof PlayerCharacter)) {
-            movementSpeedLabel.setText(creature.getMovementSpeed()+"");
-            swimmingSpeedLabel.setText(creature.getSwimSpeed()+"");
-            climbingSpeedLabel.setText(creature.getClimbSpeed()+"");
-            flyingSpeedLabel.setText(creature.getFlySpeed()+"");
+            movementSpeedLabel.setText(creature.getMovementSpeed() + "");
+            swimmingSpeedLabel.setText(creature.getSwimSpeed() + "");
+            climbingSpeedLabel.setText(creature.getClimbSpeed() + "");
+            flyingSpeedLabel.setText(creature.getFlySpeed() + "");
 
-            strLabel.setText(creature.getStrength()+" (" + (creature.getStrength()-10)/2 + ") ");
-            dexLabel.setText(creature.getDexterity()+" (" + (creature.getDexterity()-10)/2 + ") ");
-            contLabel.setText(creature.getConstitution()+" (" + (creature.getConstitution()-10)/2 + ") ");
-            intLabel.setText(creature.getIntelligence()+" (" + (creature.getIntelligence()-10)/2 + ") ");
-            wisLabel.setText(creature.getWisdom()+" (" + (creature.getWisdom()-10)/2 + ") ");
-            chaLabel.setText(creature.getCharisma()+" (" + (creature.getCharisma()-10)/2 + ") ");
+            strLabel.setText(creature.getStrength() + " (" + (creature.getStrength() - 10) / 2 + ") ");
+            dexLabel.setText(creature.getDexterity() + " (" + (creature.getDexterity() - 10) / 2 + ") ");
+            contLabel.setText(
+                    creature.getConstitution() + " (" + (creature.getConstitution() - 10) / 2 + ") ");
+            intLabel.setText(
+                    creature.getIntelligence() + " (" + (creature.getIntelligence() - 10) / 2 + ") ");
+            wisLabel.setText(creature.getWisdom() + " (" + (creature.getWisdom() - 10) / 2 + ") ");
+            chaLabel.setText(creature.getCharisma() + " (" + (creature.getCharisma() - 10) / 2 + ") ");
 
-            ObservableList<Ability> abilitiesObservable =  FXCollections.observableArrayList();
+            ObservableList<Ability> abilitiesObservable = FXCollections.observableArrayList();
             abilitiesObservable.addAll(creature.getAbilities());
             abilitiesNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
             abilitiesDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
@@ -118,11 +121,12 @@ public class CombatTrackerController {
             toolsDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
             toolsToHitColumn.setCellValueFactory(new PropertyValueFactory<>("toHit"));
             toolsDamageColumn.setCellValueFactory(new PropertyValueFactory<>("damage"));
-            toolsDamageTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDamageType().toString()));
+            toolsDamageTypeColumn.setCellValueFactory(
+                    cellData -> new SimpleStringProperty(cellData.getValue().getDamageType().toString()));
             weaponsTable.setItems(toolsObservable);
 
             String languagesString = "";
-            for (Language language: creature.getLanguages()) {
+            for (Language language : creature.getLanguages()) {
                 if (language == Language.DeepSpeech) {
                     languagesString += "Deep Speech, ";
                 } else {
@@ -131,17 +135,17 @@ public class CombatTrackerController {
             }
             if (languagesString.length() > 5) {
                 languagesString.trim();
-                languagesString = languagesString.substring(0, (languagesString.length()-2));
+                languagesString = languagesString.substring(0, (languagesString.length() - 2));
             } else {
                 languagesString = "None";
             }
             languagesLabel.setText(languagesString);
 
             String skillsString = "";
-            for (Skill skill: creature.getSkills()) {
-                if ( skill == Skill.AnimalHandling) {
+            for (Skill skill : creature.getSkills()) {
+                if (skill == Skill.AnimalHandling) {
                     skillsString += "Animal Handling, ";
-                } else if (skill == Skill.SlightOfHand){
+                } else if (skill == Skill.SlightOfHand) {
                     skillsString += "Slight of Hand, ";
                 } else {
                     skillsString += (skill.toString() + ", ");
@@ -149,7 +153,7 @@ public class CombatTrackerController {
             }
             if (skillsString.length() > 5) {
                 skillsString.trim();
-                skillsString = skillsString.substring(0, (skillsString.length()-2));
+                skillsString = skillsString.substring(0, (skillsString.length() - 2));
             } else {
                 skillsString = "None";
             }
@@ -193,14 +197,19 @@ public class CombatTrackerController {
             hitPointsSpinner.getValueFactory().setValue(creature.getHitPoints());
         } else {
             SpinnerValueFactory<Integer> hitPointsFactory =
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, Integer.MAX_VALUE, initativeRoundRobin.getCurrent().getHitPoints());
+                    new SpinnerValueFactory.IntegerSpinnerValueFactory(
+                            0, Integer.MAX_VALUE, initativeRoundRobin.getCurrent().getHitPoints());
             hitPointsSpinner.setValueFactory(hitPointsFactory);
-            hitPointsFactory.valueProperty().addListener(((observable, oldValue, newValue) -> initativeRoundRobin.getCurrent().setHitPoints(newValue)));
+            hitPointsFactory
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) ->
+                                    initativeRoundRobin.getCurrent().setHitPoints(newValue)));
         }
 
-        levelLabel.setText(creature.getLevel()+"");
+        levelLabel.setText(creature.getLevel() + "");
 
-        acLabel.setText(creature.getArmorClass()+"");
+        acLabel.setText(creature.getArmorClass() + "");
 
         currentConditionComboBox.setValue(creature.getCurrentCondition().toString());
 
@@ -215,30 +224,31 @@ public class CombatTrackerController {
 
     public void initialize() {
         nextInitiativeButtonPressed();
-        //App.spellViewController.reset(creature.getSpells());
+        // App.spellViewController.reset(creature.getSpells());
         addToComboBox(App.initativeRoundRobin.getCreatures().toArray());
         ArrayList<String> conditions = new ArrayList<>();
-        for (Condition condition: Condition.values()) {
+        for (Condition condition : Condition.values()) {
             conditions.add(condition.toString());
         }
         currentConditionComboBox.getItems().addAll(conditions);
         currentConditionComboBox.setValue(creature.getCurrentCondition().toString());
-        currentConditionComboBox.setOnAction(event -> creature.setCurrentCondition(Condition.valueOf(currentConditionComboBox.getValue())));
+        currentConditionComboBox.setOnAction(
+                event ->
+                        creature.setCurrentCondition(Condition.valueOf(currentConditionComboBox.getValue())));
     }
 
     public void addToComboBox(Object[] creatures) {
 
         ArrayList<String> names = new ArrayList<>();
 
-        for (Object creature: creatures) {
-            names.add(((Creature)creature).getName());
+        for (Object creature : creatures) {
+            names.add(((Creature) creature).getName());
         }
 
         creatureNames.getItems().addAll(names);
     }
 
-    @FXML
-    public Label nameLabel;
+    @FXML public Label nameLabel;
     public Label creatureTypeLabel;
     public Label descriptionLabel;
     public Label alignmentLabel;
@@ -274,5 +284,4 @@ public class CombatTrackerController {
     public AnchorPane spellView;
     public Label acLabel;
     public Button viewModifiersButton;
-
 }

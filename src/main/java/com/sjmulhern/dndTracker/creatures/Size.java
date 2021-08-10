@@ -13,16 +13,16 @@ public enum Size {
 
     private final double numHexes;
 
-    Size (double numHexes) {
+    Size(double numHexes) {
         this.numHexes = numHexes;
     }
 
-    public final double doubleValue () {
+    public final double doubleValue() {
         return numHexes;
     }
 
     // Get enum type from int
-    public static Size getEnum (double numHexes) {
+    public static Size getEnum(double numHexes) {
         Size value = null;
         for (Size t : values()) {
             if (t.doubleValue() == numHexes) {

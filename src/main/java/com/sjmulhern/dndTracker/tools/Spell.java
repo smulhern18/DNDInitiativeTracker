@@ -1,6 +1,5 @@
 package com.sjmulhern.dndTracker.tools;
 
-
 import com.google.gson.JsonObject;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -34,11 +33,11 @@ public class Spell {
     }
 
     public Spell(JsonObject jsonObject) {
-        this(jsonObject.get("name").toString(),
-             jsonObject.get("effect").toString(),
-             jsonObject.get("size").getAsInt(),
-             Shape.valueOf(jsonObject.get("shape").getAsString()),
-             jsonObject.get("requirements").toString());
+        this(
+                jsonObject.get("name").toString(),
+                jsonObject.get("effect").toString(),
+                jsonObject.get("size").getAsInt(),
+                Shape.valueOf(jsonObject.get("shape").getAsString()),
+                jsonObject.get("requirements").toString());
     }
-
 }

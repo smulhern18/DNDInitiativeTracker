@@ -2,14 +2,11 @@ package com.sjmulhern.dndTracker.creatures;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.sjmulhern.dndTracker.tools.Ability;
 import com.sjmulhern.dndTracker.tools.Spell;
+import java.util.ArrayList;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.ArrayList;
-import java.util.Vector;
 
 @Getter
 @Setter
@@ -36,7 +33,7 @@ public class Spells {
 
         if (getCantrips() != null) {
             JsonArray cantripArray = new JsonArray();
-            for (Spell cantrip: getCantrips()) {
+            for (Spell cantrip : getCantrips()) {
                 cantripArray.add(cantrip.toJson());
             }
             jsonObject.add("cantrip", cantripArray);
@@ -44,7 +41,7 @@ public class Spells {
 
         if (getFirstLevel() != null) {
             JsonArray firstLevelArray = new JsonArray();
-            for (Spell firstLevel: getFirstLevel()) {
+            for (Spell firstLevel : getFirstLevel()) {
                 firstLevelArray.add(firstLevel.toJson());
             }
             jsonObject.add("firstLevel", firstLevelArray);
@@ -52,7 +49,7 @@ public class Spells {
 
         if (getSecondLevel() != null) {
             JsonArray secondLevelArray = new JsonArray();
-            for (Spell secondLevel: getSecondLevel()) {
+            for (Spell secondLevel : getSecondLevel()) {
                 secondLevelArray.add(secondLevel.toJson());
             }
             jsonObject.add("secondLevel", secondLevelArray);
@@ -60,7 +57,7 @@ public class Spells {
 
         if (getThirdLevel() != null) {
             JsonArray thirdLevelArray = new JsonArray();
-            for (Spell thirdLevel: getThirdLevel()) {
+            for (Spell thirdLevel : getThirdLevel()) {
                 thirdLevelArray.add(thirdLevel.toJson());
             }
             jsonObject.add("thirdLevel", thirdLevelArray);
@@ -68,7 +65,7 @@ public class Spells {
 
         if (getForthLevel() != null) {
             JsonArray forthLevelArray = new JsonArray();
-            for (Spell forthLevel: getForthLevel()) {
+            for (Spell forthLevel : getForthLevel()) {
                 forthLevelArray.add(forthLevel.toJson());
             }
             jsonObject.add("forthLevel", forthLevelArray);
@@ -76,7 +73,7 @@ public class Spells {
 
         if (getFifthLevel() != null) {
             JsonArray fifthLevelArray = new JsonArray();
-            for (Spell fifthLevel: getFifthLevel()) {
+            for (Spell fifthLevel : getFifthLevel()) {
                 fifthLevelArray.add(fifthLevel.toJson());
             }
             jsonObject.add("fifthLevel", fifthLevelArray);
@@ -84,7 +81,7 @@ public class Spells {
 
         if (getSixthLevel() != null) {
             JsonArray sixthLevelArray = new JsonArray();
-            for (Spell sixthLevel: getSixthLevel()) {
+            for (Spell sixthLevel : getSixthLevel()) {
                 sixthLevelArray.add(sixthLevel.toJson());
             }
             jsonObject.add("sixthLevel", sixthLevelArray);
@@ -92,7 +89,7 @@ public class Spells {
 
         if (getSeventhLevel() != null) {
             JsonArray seventhLevelArray = new JsonArray();
-            for (Spell seventhLevel: getSeventhLevel()) {
+            for (Spell seventhLevel : getSeventhLevel()) {
                 seventhLevelArray.add(seventhLevel.toJson());
             }
             jsonObject.add("seventhLevel", seventhLevelArray);
@@ -100,7 +97,7 @@ public class Spells {
 
         if (getEighthLevel() != null) {
             JsonArray eigthLevelArray = new JsonArray();
-            for (Spell eigthLevel: getEighthLevel()) {
+            for (Spell eigthLevel : getEighthLevel()) {
                 eigthLevelArray.add(eigthLevel.toJson());
             }
             jsonObject.add("eigthLevel", eigthLevelArray);
@@ -108,7 +105,7 @@ public class Spells {
 
         if (getNinthLevel() != null) {
             JsonArray ninthLevelArray = new JsonArray();
-            for (Spell ninthLevel: getNinthLevel()) {
+            for (Spell ninthLevel : getNinthLevel()) {
                 ninthLevelArray.add(ninthLevel.toJson());
             }
             jsonObject.add("ninthLevel", ninthLevelArray);
@@ -116,7 +113,7 @@ public class Spells {
 
         if (getSlots() != null) {
             JsonArray slotsArray = new JsonArray();
-            for (Integer slot: getSlots()) {
+            for (Integer slot : getSlots()) {
                 slotsArray.add(slot);
             }
             jsonObject.add("slots", slotsArray);
@@ -124,7 +121,7 @@ public class Spells {
 
         if (getSlotsUsed() != null) {
             JsonArray slotsUsedArray = new JsonArray();
-            for (Integer slotUsed: getSlotsUsed()) {
+            for (Integer slotUsed : getSlotsUsed()) {
                 slotsUsedArray.add(slotUsed);
             }
             jsonObject.add("slotsUsed", slotsUsedArray);
