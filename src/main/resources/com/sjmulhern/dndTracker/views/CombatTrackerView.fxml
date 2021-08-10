@@ -112,9 +112,8 @@
                 </padding>
             </Label>
         </GridPane>
-        <Button layoutX="544.0" layoutY="709.0" mnemonicParsing="false" onAction="#nextInitiativeButtonPressed" text="Next Initiative" />
         <Label layoutX="211.0" layoutY="118.0" text="Hit Points:" />
-        <GridPane layoutY="3.0" prefHeight="205.0" prefWidth="204.0">
+        <GridPane layoutX="3.0" layoutY="3.0" prefHeight="205.0" prefWidth="204.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="111.5" minWidth="10.0" prefWidth="102.5" />
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="102.0" />
@@ -149,41 +148,42 @@
         <Spinner fx:id="hitPointsSpinner" layoutX="275.0" layoutY="113.0" prefHeight="27.0" prefWidth="102.0" />
         <Label fx:id="levelDescriptor" layoutX="211.0" layoutY="157.0" text="Level:" />
         <Label fx:id="levelLabel" layoutX="250.0" layoutY="157.0" text="Level Label" />
-        <ComboBox fx:id="creatureNames" layoutX="116.0" layoutY="709.0" prefHeight="27.0" prefWidth="362.0" />
-        <Button fx:id="openButton" layoutX="488.0" layoutY="709.0" mnemonicParsing="false" onAction="#openButtonPressed" text="Open" />
       <Label layoutX="400.0" layoutY="118.0" text="Current Condition: " />
       <ComboBox fx:id="currentConditionComboBox" layoutX="400.0" layoutY="135.0" prefWidth="150.0" />
-      <AnchorPane layoutY="367.0" prefHeight="342.0" prefWidth="755.0">
-          <fx:include fx:id="spellView" source="spellView.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      </AnchorPane>
       <Label layoutX="211.0" layoutY="181.0" text="AC:" />
       <Label fx:id="acLabel" layoutX="250.0" layoutY="181.0" text="Level Label" />
-      <Button fx:id="viewModifiersButton" layoutY="709.0" mnemonicParsing="false" onAction="#viewModifiersPressed" text="View Modifiers" />
+      <Button fx:id="viewModifiersButton" layoutX="2.0" layoutY="709.0" mnemonicParsing="false" onAction="#viewModifiersPressed" text="View Modifiers" />
+        <Button layoutX="544.0" layoutY="709.0" mnemonicParsing="false" onAction="#nextInitiativeButtonPressed" text="Next Initiative" />
+        <ComboBox fx:id="creatureNames" layoutX="116.0" layoutY="709.0" prefHeight="27.0" prefWidth="362.0" />
+        <Button fx:id="openButton" layoutX="488.0" layoutY="709.0" mnemonicParsing="false" onAction="#openButtonPressed" text="Open" />
+      <AnchorPane layoutY="406.0" prefHeight="304.0" prefWidth="642.0">
+          <fx:include fx:id="spellView" source="spellView.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      </AnchorPane>
     </Pane>
-    <GridPane layoutX="6.0" layoutY="251.0" prefHeight="152.0" prefWidth="642.0">
+    <GridPane layoutX="6.0" layoutY="251.0" prefHeight="194.0" prefWidth="642.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="112.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="488.0" minWidth="10.0" prefWidth="477.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="530.0" minWidth="10.0" prefWidth="477.0" />
         </columnConstraints>
         <rowConstraints>
-            <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="76.0" minHeight="10.0" percentHeight="50.0" prefHeight="76.0" vgrow="SOMETIMES" />
         </rowConstraints>
         <Label text="Abilities:" />
         <Label text="Weapons:" GridPane.rowIndex="1" />
-        <TableView fx:id="abilityTable" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1">
+        <TableView fx:id="abilityTable" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="97.0" prefWidth="529.0" GridPane.columnIndex="1">
             <columns>
                 <TableColumn fx:id="abilitiesNameColumn" prefWidth="75.0" text="Name" />
-                <TableColumn fx:id="abilitiesDescriptionColumn" prefWidth="412.0" text="Description" />
+                <TableColumn fx:id="abilitiesDescriptionColumn" prefWidth="445.0" text="Description" />
             </columns>
         </TableView>
         <TableView fx:id="weaponsTable" editable="true" prefHeight="76.0" prefWidth="557.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <columns>
                 <TableColumn fx:id="toolsNameColumn" prefWidth="102.0" text="Name" />
-                <TableColumn fx:id="toolsToHitColumn" prefWidth="48.0" text="To Hit" />
-                <TableColumn fx:id="toolsDamageColumn" prefWidth="55.0" text="Damage" />
-                <TableColumn fx:id="toolsDamageTypeColumn" prefWidth="93.0" text="Damage Type" />
-                <TableColumn fx:id="toolsDescriptionColumn" prefWidth="179.0" text="Description" />
+                <TableColumn fx:id="toolsToHitColumn" prefWidth="50.0" text="To Hit" />
+                <TableColumn fx:id="toolsDamageColumn" prefWidth="60.0" text="Damage" />
+                <TableColumn fx:id="toolsDamageTypeColumn" minWidth="85.0" prefWidth="-1.0" text="Damage Type" />
+                <TableColumn fx:id="toolsDescriptionColumn" prefWidth="225.0" text="Description" />
             </columns>
         </TableView>
     </GridPane>

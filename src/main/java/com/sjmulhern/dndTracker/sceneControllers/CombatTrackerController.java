@@ -93,16 +93,85 @@ public class CombatTrackerController {
         descriptionLabel.setText(creature.getDescription());
         alignmentLabel.setText(creature.getAlignment().toString());
         sizeLabel.setText(creature.getSize().toString());
-        movementSpeedLabel.setText(creature.getMovementSpeed()+"");
-        swimmingSpeedLabel.setText(creature.getSwimSpeed()+"");
-        climbingSpeedLabel.setText(creature.getClimbSpeed()+"");
-        flyingSpeedLabel.setText(creature.getFlySpeed()+"");
-        strLabel.setText(creature.getStrength()+" (" + (creature.getStrength()-10)/2 + ") ");
-        dexLabel.setText(creature.getDexterity()+" (" + (creature.getDexterity()-10)/2 + ") ");
-        contLabel.setText(creature.getConstitution()+" (" + (creature.getConstitution()-10)/2 + ") ");
-        intLabel.setText(creature.getIntelligence()+" (" + (creature.getIntelligence()-10)/2 + ") ");
-        wisLabel.setText(creature.getWisdom()+" (" + (creature.getWisdom()-10)/2 + ") ");
-        chaLabel.setText(creature.getCharisma()+" (" + (creature.getCharisma()-10)/2 + ") ");
+        if (!(creature instanceof PlayerCharacter)) {
+            movementSpeedLabel.setText(creature.getMovementSpeed()+"");
+            swimmingSpeedLabel.setText(creature.getSwimSpeed()+"");
+            climbingSpeedLabel.setText(creature.getClimbSpeed()+"");
+            flyingSpeedLabel.setText(creature.getFlySpeed()+"");
+
+            strLabel.setText(creature.getStrength()+" (" + (creature.getStrength()-10)/2 + ") ");
+            dexLabel.setText(creature.getDexterity()+" (" + (creature.getDexterity()-10)/2 + ") ");
+            contLabel.setText(creature.getConstitution()+" (" + (creature.getConstitution()-10)/2 + ") ");
+            intLabel.setText(creature.getIntelligence()+" (" + (creature.getIntelligence()-10)/2 + ") ");
+            wisLabel.setText(creature.getWisdom()+" (" + (creature.getWisdom()-10)/2 + ") ");
+            chaLabel.setText(creature.getCharisma()+" (" + (creature.getCharisma()-10)/2 + ") ");
+
+            ObservableList<Ability> abilitiesObservable =  FXCollections.observableArrayList();
+            abilitiesObservable.addAll(creature.getAbilities());
+            abilitiesNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            abilitiesDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+            abilityTable.setItems(abilitiesObservable);
+
+            ObservableList<Tool> toolsObservable = FXCollections.observableArrayList();
+            toolsObservable.addAll(creature.getTools());
+            toolsNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            toolsDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+            toolsToHitColumn.setCellValueFactory(new PropertyValueFactory<>("toHit"));
+            toolsDamageColumn.setCellValueFactory(new PropertyValueFactory<>("damage"));
+            toolsDamageTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDamageType()));
+            weaponsTable.setItems(toolsObservable);
+
+            String languagesString = "";
+            for (Language language: creature.getLanguages()) {
+                if (language == Language.DeepSpeech) {
+                    languagesString += "Deep Speech, ";
+                } else {
+                    languagesString += (language.toString() + ", ");
+                }
+            }
+            if (languagesString.length() > 5) {
+                languagesString.trim();
+                languagesString = languagesString.substring(0, (languagesString.length()-2));
+            } else {
+                languagesString = "None";
+            }
+            languagesLabel.setText(languagesString);
+
+            String skillsString = "";
+            for (Skill skill: creature.getSkills()) {
+                if ( skill == Skill.AnimalHandling) {
+                    skillsString += "Animal Handling, ";
+                } else if (skill == Skill.SlightOfHand){
+                    skillsString += "Slight of Hand, ";
+                } else {
+                    skillsString += (skill.toString() + ", ");
+                }
+            }
+            if (skillsString.length() > 5) {
+                skillsString.trim();
+                skillsString = skillsString.substring(0, (skillsString.length()-2));
+            } else {
+                skillsString = "None";
+            }
+            skillsLabel.setText(skillsString);
+        } else {
+            descriptionLabel.setText("Player Character, Ask for stats");
+
+            movementSpeedLabel.setText("");
+            swimmingSpeedLabel.setText("");
+            climbingSpeedLabel.setText("");
+            flyingSpeedLabel.setText("");
+
+            strLabel.setText("");
+            dexLabel.setText("");
+            contLabel.setText("");
+            intLabel.setText("");
+            wisLabel.setText("");
+            chaLabel.setText("");
+
+            languagesLabel.setText("");
+            skillsLabel.setText("");
+        }
 
         if (creature instanceof Monster) {
             creatureTypeLabel.setText(((Monster) creature).getType().toString());
@@ -132,55 +201,6 @@ public class CombatTrackerController {
         levelLabel.setText(creature.getLevel()+"");
 
         acLabel.setText(creature.getArmorClass()+"");
-
-        ObservableList<Ability> abilitiesObservable =  FXCollections.observableArrayList();
-        abilitiesObservable.addAll(creature.getAbilities());
-        abilitiesNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        abilitiesDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
-        abilityTable.setItems(abilitiesObservable);
-
-        ObservableList<Tool> toolsObservable = FXCollections.observableArrayList();
-        toolsObservable.addAll(creature.getTools());
-        toolsNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        toolsDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
-        toolsToHitColumn.setCellValueFactory(new PropertyValueFactory<>("toHit"));
-        toolsDamageColumn.setCellValueFactory(new PropertyValueFactory<>("damage"));
-        toolsDamageTypeColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getDamageType()));
-        weaponsTable.setItems(toolsObservable);
-
-        String languagesString = "";
-        for (Language language: creature.getLanguages()) {
-            if (language == Language.DeepSpeech) {
-                languagesString += "Deep Speech, ";
-            } else {
-                languagesString += (language.toString() + ", ");
-            }
-        }
-        if (languagesString.length() > 5) {
-            languagesString.trim();
-            languagesString = languagesString.substring(0, (languagesString.length()-2));
-        } else {
-            languagesString = "None";
-        }
-        languagesLabel.setText(languagesString);
-
-        String skillsString = "";
-        for (Skill skill: creature.getSkills()) {
-            if ( skill == Skill.AnimalHandling) {
-                skillsString += "Animal Handling, ";
-            } else if (skill == Skill.SlightOfHand){
-                skillsString += "Slight of Hand, ";
-            } else {
-                skillsString += (skill.toString() + ", ");
-            }
-        }
-        if (skillsString.length() > 5) {
-            skillsString.trim();
-            skillsString = skillsString.substring(0, (skillsString.length()-2));
-        } else {
-            skillsString = "None";
-        }
-        skillsLabel.setText(skillsString);
 
         currentConditionComboBox.setValue(creature.getCurrentCondition().toString());
 

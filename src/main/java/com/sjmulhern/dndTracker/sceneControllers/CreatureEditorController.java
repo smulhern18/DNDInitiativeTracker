@@ -8,7 +8,6 @@ import com.sjmulhern.dndTracker.creatures.Monster;
 import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
 import com.sjmulhern.dndTracker.creatures.PlayerCharacter;
 import com.sjmulhern.dndTracker.creatures.Size;
-import com.sjmulhern.dndTracker.creatures.Spells;
 import com.sjmulhern.dndTracker.creatures.Type;
 import com.sjmulhern.dndTracker.tools.Ability;
 import com.sjmulhern.dndTracker.tools.DamageType;
@@ -16,7 +15,6 @@ import com.sjmulhern.dndTracker.tools.Tool;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -106,34 +104,43 @@ public class CreatureEditorController {
 
         switch(creatureType){
             case "Monster":
-//                editedCreature = new Monster(
-//                    nameField.getText(),
-//                    descriptionField.getText(),
-//                    Alignment.valueOf(alignmentField.getValue()),
-//                    Size.valueOf(sizeField.getValue()),
-//                    Integer.parseInt(movementSpeedField.getText()),
-//                    Integer.parseInt(swimmingSpeedField.getText()),
-//                    Integer.parseInt(climbingSpeedField.getText()),
-//                    Integer.parseInt(flyingSpeedField.getText()),
-//                    abilities,
-//                    tools,
-//                    creatureEditing.getSkills(),
-//                    creatureEditing.getLanguages(),
-//                    creatureEditing.getStrength(),
-//                    creatureEditing.getDexterity(),
-//                    creatureEditing.getConstitution(),
-//                    creatureEditing.getIntelligence(),
-//                    creatureEditing.getWisdom(),
-//                    creatureEditing.getCharisma(),
-//                    creatureEditing.getHitPoints(),
-//                    creatureEditing.getArmorClass(),
-//                    creatureEditing.getInitiative(),
-//                    creatureEditing.getLevel(),
-//                    creatureEditing.getCurrentCondition(),
-//                    creatureEditing.getSpells());
+                editedCreature = new Monster(
+                    nameField.getText(),
+                    descriptionField.getText(),
+                    Alignment.valueOf(alignmentField.getValue()),
+                    Size.valueOf(sizeField.getValue()),
+                    Integer.parseInt(movementSpeedField.getText()),
+                    Integer.parseInt(swimmingSpeedField.getText()),
+                    Integer.parseInt(climbingSpeedField.getText()),
+                    Integer.parseInt(flyingSpeedField.getText()),
+                    abilities,
+                    tools,
+                    creatureEditing.getSkills(),
+                    creatureEditing.getLanguages(),
+                    creatureEditing.getStrength(),
+                    creatureEditing.getDexterity(),
+                    creatureEditing.getConstitution(),
+                    creatureEditing.getIntelligence(),
+                    creatureEditing.getWisdom(),
+                    creatureEditing.getCharisma(),
+                    creatureEditing.getHitPoints(),
+                    creatureEditing.getArmorClass(),
+                    creatureEditing.getInitiative(),
+                    creatureEditing.getLevel(),
+                    creatureEditing.getCurrentCondition(),
+                    creatureEditing.getSpells(),
+                    Type.getEnum(creatureTypeField.getItems().indexOf(creatureTypeField.getValue())),
+                    ((NonPlayerCharacter) creatureEditing).getResistances(),
+                    ((NonPlayerCharacter) creatureEditing).getWeaknesses(),
+                    ((NonPlayerCharacter) creatureEditing).getImmunities());
                 break;
             case "Player":
-
+                editedCreature = new PlayerCharacter(
+                    nameField.getText(),
+                    acSpinner.getValue(),
+                    creatureEditing.getInitiative(),
+                    creatureEditing.getLevel(),
+                    creatureEditing.getCurrentCondition());
                 break;
             case "NPC":
                 editedCreature = new NonPlayerCharacter(
@@ -164,16 +171,10 @@ public class CreatureEditorController {
                     null,
                     null,
                     null);
-                App.currentCreature = editedCreature;
                 break;
         }
 
         App.initativeRoundRobin.addCreature(editedCreature);
-        while (!App.currentCreature.equals(editedCreature)) {
-            App.currentCreature = App.initativeRoundRobin.getNext();
-        }
-
-
     }
 
     public void openButtonPressed () {
@@ -373,17 +374,26 @@ public class CreatureEditorController {
     }
 
     public void removeAbility () {
-
+        String nameToRemove = abilityComboBox.getValue();
+        if (nameToRemove != null) {
+            abilityTable.getItems().removeIf(element -> element.getName().equals(nameToRemove));
+            abilityComboBox.getItems().removeIf(element -> element.equals(nameToRemove));
+            abilityComboBox.setValue(null);
+        }
     }
 
     public void removeWeapon () {
-
+        String nameToRemove = weaponComboBox.getValue();
+        if (nameToRemove != null) {
+            weaponsTable.getItems().removeIf(element -> element.getName().equals(nameToRemove));
+            weaponComboBox.getItems().removeIf(element -> element.equals(nameToRemove));
+            weaponComboBox.setValue(null);
+        }
     }
 
     public void editWeaknessesPressed () {
         // initializing the controller
         App.currentCreature = creatureEditing;
-        WeaknessesEditorController popupController = new WeaknessesEditorController();
         Parent layout;
         try {
             layout = FXMLLoader.load(Objects.requireNonNull(
@@ -405,7 +415,6 @@ public class CreatureEditorController {
     public void editResistancesPressed () {
         // initializing the controller
         App.currentCreature = creatureEditing;
-        ResistancesEditorController popupController = new ResistancesEditorController();
         Parent layout;
         try {
             layout = FXMLLoader.load(Objects.requireNonNull(
@@ -427,7 +436,6 @@ public class CreatureEditorController {
     public void editImmunitiesPressed () {
         // initializing the controller
         App.currentCreature = creatureEditing;
-        ImmunitiesEditorController popupController = new ImmunitiesEditorController();
         Parent layout;
         try {
             layout = FXMLLoader.load(Objects.requireNonNull(

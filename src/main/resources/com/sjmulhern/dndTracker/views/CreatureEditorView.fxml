@@ -84,21 +84,21 @@
          <Button fx:id="editLanguagesButton" mnemonicParsing="false" onAction="#editLanguagesButtonPressed" text="Edit Languages" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         </GridPane>
         <Separator layoutY="219.0" prefHeight="3.0" prefWidth="650.0" />
-        <GridPane layoutX="6.0" layoutY="223.0" prefHeight="152.0" prefWidth="642.0">
+        <GridPane layoutX="6.0" layoutY="223.0" prefHeight="200.0" prefWidth="642.0">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.0" minWidth="10.0" prefWidth="112.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="488.0" minWidth="10.0" prefWidth="477.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="112.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="536.0" minWidth="10.0" prefWidth="530.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="76.0" minHeight="10.0" percentHeight="50.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="76.0" minHeight="10.0" percentHeight="50.0" prefHeight="100.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <Label text="Abilities:" />
             <Label text="Weapons:" GridPane.rowIndex="1" />
-         <TableView fx:id="abilityTable" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" GridPane.columnIndex="1">
+         <TableView fx:id="abilityTable" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="100.0" prefWidth="537.0" GridPane.columnIndex="1">
            <columns>
              <TableColumn fx:id="abilitiesNameColumn" prefWidth="75.0" text="Name" />
-             <TableColumn fx:id="abilitiesDescriptionColumn" prefWidth="412.0" text="Description" />
+             <TableColumn fx:id="abilitiesDescriptionColumn" prefWidth="447.0" text="Description" />
            </columns>
          </TableView>
          <TableView fx:id="weaponsTable" editable="true" prefHeight="76.0" prefWidth="557.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -106,8 +106,8 @@
              <TableColumn fx:id="toolsNameColumn" prefWidth="102.0" text="Name" />
                <TableColumn fx:id="toolsToHitColumn" prefWidth="48.0" text="To Hit" />
              <TableColumn fx:id="toolsDamageColumn" prefWidth="55.0" text="Damage" />
-               <TableColumn fx:id="toolsDamageTypeColumn" prefWidth="93.0" text="Damage Type" />
-               <TableColumn fx:id="toolsDescriptionColumn" prefWidth="179.0" text="Description" />
+               <TableColumn fx:id="toolsDamageTypeColumn" minWidth="90.0" prefWidth="-1.0" text="Damage Type" />
+               <TableColumn fx:id="toolsDescriptionColumn" prefWidth="227.0" text="Description" />
            </columns>
          </TableView>
         </GridPane>
@@ -247,7 +247,7 @@
             <RadioButton fx:id="playerRadioButton" mnemonicParsing="false" text="Player" toggleGroup="$types" GridPane.rowIndex="1" />
             <RadioButton fx:id="npcRadioButton" mnemonicParsing="false" text="NPC" toggleGroup="$types" GridPane.rowIndex="2" />
         </GridPane>
-        <GridPane alignment="CENTER" layoutX="122.0" layoutY="375.0" prefHeight="67.0" prefWidth="488.0">
+        <GridPane alignment="CENTER" layoutX="122.0" layoutY="426.0" prefHeight="67.0" prefWidth="488.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -270,8 +270,8 @@
       <ComboBox fx:id="currentConditionCombobox" layoutX="457.0" layoutY="66.0" prefWidth="150.0" />
       <Label layoutX="532.0" layoutY="182.0" text="AC:" />
       <Spinner fx:id="acSpinner" layoutX="560.0" layoutY="177.0" prefHeight="27.0" prefWidth="51.0" stylesheets="@spinner.css" />
-      <Button layoutX="16.0" layoutY="380.0" mnemonicParsing="false" onAction="#editSpellsSelected" text="Edit Spells" />
-      <GridPane layoutX="114.0" layoutY="451.0" prefHeight="27.0" prefWidth="536.0">
+      <Button layoutX="16.0" layoutY="429.0" mnemonicParsing="false" onAction="#editSpellsSelected" text="Edit Spells" />
+      <GridPane layoutX="114.0" layoutY="496.0" prefHeight="27.0" prefWidth="536.0">
          <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />

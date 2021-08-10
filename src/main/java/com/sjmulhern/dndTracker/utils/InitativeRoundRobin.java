@@ -36,7 +36,7 @@ public class InitativeRoundRobin {
 
         Creature creature = (Creature) creaturesArray[currentIndex % creatures.size()];
 
-        while (creature.getHitPoints() == 0) {
+        while (creature.getHitPoints() <= 0) {
             currentIndex++;
             creature = (Creature) creaturesArray[currentIndex%creatures.size()];
         }

@@ -23,13 +23,13 @@ public abstract class Creature {
 
     private Size size = Size.Medium;
 
-    private int movementSpeed = 30;
+    private Integer movementSpeed = 30;
 
-    private int swimSpeed = 15;
+    private Integer swimSpeed = 15;
 
-    private int climbSpeed = 15;
+    private Integer climbSpeed = 15;
 
-    private int flySpeed = 0;
+    private Integer flySpeed = 0;
 
     private ArrayList<Ability> abilities = new ArrayList<>();
 
@@ -51,11 +51,11 @@ public abstract class Creature {
 
     private Integer charisma = 0;
 
-    private int hitPoints = 0;
+    private Integer hitPoints = 0;
 
-    private int armorClass = 0;
+    private Integer armorClass = 0;
 
-    private int initiative = 0;
+    private Integer initiative = 0;
 
     private Double level = 0.0;
 

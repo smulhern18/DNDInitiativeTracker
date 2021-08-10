@@ -12,35 +12,16 @@ import java.util.ArrayList;
 public class PlayerCharacter extends Creature {
 
     public PlayerCharacter (String name,
-        String description,
-        Alignment alignment,
-        Size size,
-        int movementSpeed,
-        int swimSpeed,
-        int climbSpeed,
-        int flySpeed,
-        ArrayList<Ability> abilities,
-        ArrayList<Tool> tools,
-        ArrayList<Skill> skills,
-        ArrayList<Language> languages,
-        int strength,
-        int dexterity,
-        int constitution,
-        int intelligence,
-        int wisdom,
-        int charisma,
-        int hitPoints,
         int armorClass,
         int initiative,
         Double level,
-        Condition currentCondition,
-        Spells spells) {
+        Condition currentCondition) {
 
-        super(name, description, alignment, size, movementSpeed, swimSpeed,
-              climbSpeed,
-              flySpeed, abilities, tools, skills, languages, strength, dexterity,
-              constitution, intelligence, wisdom, charisma, hitPoints, armorClass,
-              initiative, level, currentCondition, spells);
+        super(name, null, Alignment.Unaligned, Size.Medium, null, null,
+              null,
+              null, null, null, null, null, null, null,
+              null, null, null, null, 10, armorClass,
+              initiative, level, currentCondition, null);
     }
 
     @Override
