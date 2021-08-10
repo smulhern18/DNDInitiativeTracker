@@ -33,4 +33,12 @@ public class Spell {
         return jsonObject;
     }
 
+    public Spell(JsonObject jsonObject) {
+        this(jsonObject.get("name").toString(),
+             jsonObject.get("effect").toString(),
+             jsonObject.get("size").getAsInt(),
+             Shape.valueOf(jsonObject.get("shape").getAsString()),
+             jsonObject.get("requirements").toString());
+    }
+
 }

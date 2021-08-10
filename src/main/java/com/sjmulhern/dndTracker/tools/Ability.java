@@ -1,43 +1,29 @@
 package com.sjmulhern.dndTracker.tools;
 
 import com.google.gson.JsonObject;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@AllArgsConstructor
 public class Ability {
 
-    private StringProperty name = null;
+    private String name = null;
 
-    private StringProperty description = null;
+    private String description = null;
 
-    public void setName(String name) {
-        this.name = new SimpleStringProperty(name);
+    public Ability(JsonObject jsonObject) {
+        this(jsonObject.get("name").toString(),
+             jsonObject.get("description").toString());
     }
-
-    public String getName() {
-        return name.getValue();
-    }
-
-    public void setDescription(String description) {
-        this.description = new SimpleStringProperty(description);
-    }
-
-    public String getDescription() {
-        return description.getValue();
-    }
-
-    public Ability(String name, String description) {
-        setName(name);
-        setDescription(description);
-    }
-
 
     public JsonObject toJson() {
         JsonObject jsonObject = new JsonObject();
 
-        jsonObject.addProperty("name", name.getValue());
-        jsonObject.addProperty("description", description.getValue());
+        jsonObject.addProperty("name", name);
+        jsonObject.addProperty("description", description);
 
         return  jsonObject;
     }

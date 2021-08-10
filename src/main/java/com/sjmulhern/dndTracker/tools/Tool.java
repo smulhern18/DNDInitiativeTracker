@@ -22,12 +22,8 @@ public class Tool {
 
     private String damage = null;
 
-    public String getDamageType() {
-        return damageType.name();
-    }
-
-    public int getDamageOrdinal() {
-        return damageType.getOrdinal();
+    public Tool(JsonObject jsonObject) {
+        
     }
 
     public JsonObject toJson() {
@@ -35,7 +31,7 @@ public class Tool {
 
         jsonObject.addProperty("name", getName());
         jsonObject.addProperty("description", getDescription());
-        jsonObject.addProperty("damageType", getDamageOrdinal());
+        jsonObject.addProperty("damageType", getDamageType().toString());
         jsonObject.addProperty("toHit", getToHit());
         jsonObject.addProperty("damage", getDamage());
 
