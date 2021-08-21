@@ -36,11 +36,11 @@ public class PlayerCharacter extends Creature {
 
     public PlayerCharacter(JsonObject jsonObject) {
         this(
-            jsonObject.get("name").toString(),
-            jsonObject.get("armorClass").getAsInt(),
-            jsonObject.get("initative").getAsInt(),
-            jsonObject.get("level").getAsDouble(),
-            Condition.getEnum(jsonObject.get("currentCondition").getAsInt()));
+                jsonObject.get("name").toString(),
+                jsonObject.get("armorClass").getAsInt(),
+                jsonObject.get("initative").getAsInt(),
+                jsonObject.get("level").getAsDouble(),
+                Condition.getEnum(jsonObject.get("currentCondition").getAsInt()));
     }
 
     @Override

@@ -18,7 +18,6 @@ public class InitativeRoundRobin {
     public InitativeRoundRobin() {}
 
     public void addCreature(Creature creature) {
-
         creatures.remove(creature);
         creatures.add(creature);
     }
@@ -44,5 +43,19 @@ public class InitativeRoundRobin {
 
     public Creature getCurrent() {
         return (Creature) creatures.toArray()[currentIndex % creatures.size()];
+    }
+
+    public void setCurrentCreature(String name) {
+        Object[] creatureObjects = creatures.toArray();
+
+        currentIndex = 0;
+        for (int i = 0; i < creatureObjects.length; i++) {
+            if (name.equals(((Creature) creatureObjects[i]).getName())) {
+                currentIndex = i - 1;
+                break;
+            }
+        }
+
+        getNext();
     }
 }

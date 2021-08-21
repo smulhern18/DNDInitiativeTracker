@@ -13,6 +13,8 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Spells {
 
+    public Spells() {}
+
     ArrayList<Spell> cantrips;
     ArrayList<Spell> firstLevel;
     ArrayList<Spell> secondLevel;
