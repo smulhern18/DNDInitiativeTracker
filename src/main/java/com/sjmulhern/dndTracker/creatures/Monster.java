@@ -39,10 +39,10 @@ public class Monster extends NonPlayerCharacter {
             Double level,
             Condition currentCondition,
             Spells spells,
-            Type type,
             ArrayList<DamageType> resistances,
             ArrayList<DamageType> weaknesses,
-            ArrayList<DamageType> immunities) {
+            ArrayList<DamageType> immunities,
+            Type type) {
 
         super(
                 name,
@@ -74,6 +74,12 @@ public class Monster extends NonPlayerCharacter {
                 immunities);
 
         setType(type);
+    }
+
+    public Monster(JsonObject jsonObject) {
+        super(jsonObject);
+
+        setType(Type.getEnum(jsonObject.get("type").getAsInt()));
     }
 
     @Override

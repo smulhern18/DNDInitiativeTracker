@@ -129,10 +129,10 @@ public class CreatureEditorController {
                                 creatureEditing.getLevel(),
                                 creatureEditing.getCurrentCondition(),
                                 creatureEditing.getSpells(),
-                                Type.getEnum(creatureTypeField.getItems().indexOf(creatureTypeField.getValue())),
                                 ((NonPlayerCharacter) creatureEditing).getResistances(),
                                 ((NonPlayerCharacter) creatureEditing).getWeaknesses(),
-                                ((NonPlayerCharacter) creatureEditing).getImmunities());
+                                ((NonPlayerCharacter) creatureEditing).getImmunities(),
+                                Type.getEnum(creatureTypeField.getItems().indexOf(creatureTypeField.getValue())));
                 break;
             case "Player":
                 editedCreature =

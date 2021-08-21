@@ -63,14 +63,67 @@ public abstract class Creature {
     private Spells spells;
 
     public Creature(JsonObject jsonObject) {
-        //        this(jsonObject.get("name").toString(),
-        //             jsonObject.get("description").toString(),
-        //             Alignment.getEnum(jsonObject.get("alignment").toString()),
-        //             Size.getEnum(jsonObject.get("size").getAsDouble()),
-        //             jsonObject.get("movementSpeed").getAsInt(),
-        //             jsonObject.get("swimSpeed").getAsInt(),
-        //             jsonObject.get("climbSpeed").getAsInt(),
-        //             jsonObject.get("flySpeed").getAsInt(),)
+        this(
+                jsonObject.get("name").toString(),
+                jsonObject.get("description").toString(),
+                Alignment.getEnum(jsonObject.get("alignment").getAsString()),
+                Size.getEnum(jsonObject.get("size").getAsDouble()),
+                jsonObject.get("movementSpeed").getAsInt(),
+                jsonObject.get("swimSpeed").getAsInt(),
+                jsonObject.get("climbSpeed").getAsInt(),
+                jsonObject.get("flySpeed").getAsInt(),
+                null,
+                null,
+                null,
+                null,
+                jsonObject.get("strength").getAsInt(),
+                jsonObject.get("dexterity").getAsInt(),
+                jsonObject.get("constitution").getAsInt(),
+                jsonObject.get("intelligence").getAsInt(),
+                jsonObject.get("wisdom").getAsInt(),
+                jsonObject.get("charisma").getAsInt(),
+                jsonObject.get("hitPoints").getAsInt(),
+                jsonObject.get("armorClass").getAsInt(),
+                jsonObject.get("initative").getAsInt(),
+                jsonObject.get("level").getAsDouble(),
+                Condition.getEnum(jsonObject.get("currentCondition").getAsInt()),
+                new Spells(jsonObject.get("Spells").getAsJsonObject()));
+
+        // Abilities
+        ArrayList<Ability> abilities = new ArrayList<>();
+        if (!jsonObject.getAsJsonArray("abilities").isJsonNull()) {
+            jsonObject
+                    .getAsJsonArray("abilities")
+                    .forEach(element -> abilities.add(new Ability((JsonObject) element)));
+        }
+        setAbilities(abilities);
+
+        // Tools
+        ArrayList<Tool> tools = new ArrayList<>();
+        if (!jsonObject.getAsJsonArray("tools").isJsonNull()) {
+            jsonObject
+                    .getAsJsonArray("tools")
+                    .forEach(element -> tools.add(new Tool((JsonObject) element)));
+        }
+        setTools(tools);
+
+        // Skills
+        ArrayList<Skill> skills = new ArrayList<>();
+        if (!jsonObject.getAsJsonArray("skills").isJsonNull()) {
+            jsonObject
+                    .getAsJsonArray("skills")
+                    .forEach(element -> skills.add(Skill.getEnum(element.getAsInt())));
+        }
+        setSkills(skills);
+
+        // Languages
+        ArrayList<Language> languages = new ArrayList<>();
+        if (!jsonObject.getAsJsonArray("languages").isJsonNull()) {
+            jsonObject
+                    .getAsJsonArray("languages")
+                    .forEach(element -> languages.add(Language.getEnum(element.getAsInt())));
+        }
+        setLanguages(languages);
     }
 
     public JsonObject toJson() {

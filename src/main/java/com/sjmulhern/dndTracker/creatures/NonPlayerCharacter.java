@@ -79,6 +79,37 @@ public class NonPlayerCharacter extends Creature {
         setImmunities(immunities);
     }
 
+    public NonPlayerCharacter(JsonObject jsonObject) {
+        super(jsonObject);
+
+        // Resistances
+        ArrayList<DamageType> resistances = new ArrayList<>();
+        if (!jsonObject.getAsJsonArray("resistances").isJsonNull()) {
+            jsonObject
+                    .getAsJsonArray("resistances")
+                    .forEach(element -> resistances.add(DamageType.getEnum(element.getAsInt())));
+        }
+        setResistances(resistances);
+
+        // Weaknesses
+        ArrayList<DamageType> weaknesses = new ArrayList<>();
+        if (!jsonObject.getAsJsonArray("weaknesses").isJsonNull()) {
+            jsonObject
+                    .getAsJsonArray("weaknesses")
+                    .forEach(element -> weaknesses.add(DamageType.getEnum(element.getAsInt())));
+        }
+        setWeaknesses(weaknesses);
+
+        // Immunities
+        ArrayList<DamageType> immunities = new ArrayList<>();
+        if (!jsonObject.getAsJsonArray("immunities").isJsonNull()) {
+            jsonObject
+                    .getAsJsonArray("immunities")
+                    .forEach(element -> immunities.add(DamageType.getEnum(element.getAsInt())));
+        }
+        setImmunities(immunities);
+    }
+
     @Override
     public JsonObject toJson() {
 

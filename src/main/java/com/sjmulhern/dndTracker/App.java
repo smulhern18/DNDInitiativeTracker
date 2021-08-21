@@ -138,10 +138,10 @@ public class App extends Application {
                                                         "Bat piss and Brimstone"))),
                                 new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0, 10)),
                                 new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0, 0))),
-                        Type.Humanoid,
                         new ArrayList<>(Arrays.asList(DamageType.Acid, DamageType.Cold)),
                         new ArrayList<>(Arrays.asList(DamageType.Fire, DamageType.Piercing)),
-                        null));
+                        null,
+                        Type.Humanoid));
         currentCreature = initativeRoundRobin.getNext();
     }
 
