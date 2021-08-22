@@ -1,7 +1,6 @@
 package com.sjmulhern.dndTracker.sceneControllers;
 
 import com.sjmulhern.dndTracker.App;
-import com.sjmulhern.dndTracker.InitativeRoundRobin;
 import com.sjmulhern.dndTracker.creatures.Condition;
 import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Language;
@@ -79,10 +78,8 @@ public class CombatTrackerController {
         }
     }
 
-    InitativeRoundRobin initativeRoundRobin = App.initativeRoundRobin;
-
     public void nextInitiativeButtonPressed() {
-        creature = initativeRoundRobin.getNext();
+        creature = App.initativeRoundRobin.getNext();
         reset();
     }
 
@@ -132,7 +129,6 @@ public class CombatTrackerController {
                 }
             }
             if (languagesString.length() > 5) {
-                languagesString.trim();
                 languagesString = languagesString.substring(0, (languagesString.length() - 2));
             } else {
                 languagesString = "None";
@@ -150,7 +146,6 @@ public class CombatTrackerController {
                 }
             }
             if (skillsString.length() > 5) {
-                skillsString.trim();
                 skillsString = skillsString.substring(0, (skillsString.length() - 2));
             } else {
                 skillsString = "None";
@@ -196,13 +191,11 @@ public class CombatTrackerController {
         } else {
             SpinnerValueFactory<Integer> hitPointsFactory =
                     new SpinnerValueFactory.IntegerSpinnerValueFactory(
-                            0, Integer.MAX_VALUE, initativeRoundRobin.getCurrent().getHitPoints());
+                            -1, Integer.MAX_VALUE, App.initativeRoundRobin.getCurrent().getHitPoints());
             hitPointsSpinner.setValueFactory(hitPointsFactory);
             hitPointsFactory
                     .valueProperty()
-                    .addListener(
-                            ((observable, oldValue, newValue) ->
-                                    initativeRoundRobin.getCurrent().setHitPoints(newValue)));
+                    .addListener(((observable, oldValue, newValue) -> creature.setHitPoints(newValue)));
         }
 
         levelLabel.setText(creature.getLevel() + "");
@@ -217,12 +210,12 @@ public class CombatTrackerController {
         } else {
             spellView.setVisible(true);
             spellView.setDisable(false);
+            spellViewController.reset(creature.getSpells());
         }
     }
 
     public void initialize() {
-        nextInitiativeButtonPressed();
-        // App.spellViewController.reset(creature.getSpells());
+        creature = App.initativeRoundRobin.getCurrent();
         addToComboBox(App.initativeRoundRobin.getCreatures().toArray());
         ArrayList<String> conditions = new ArrayList<>();
         for (Condition condition : Condition.values()) {
@@ -233,6 +226,7 @@ public class CombatTrackerController {
         currentConditionComboBox.setOnAction(
                 event ->
                         creature.setCurrentCondition(Condition.valueOf(currentConditionComboBox.getValue())));
+        reset();
     }
 
     public void addToComboBox(Object[] creatures) {
@@ -279,7 +273,8 @@ public class CombatTrackerController {
     public TableColumn<Tool, String> toolsDescriptionColumn;
     public Label levelDescriptor;
     public ComboBox<String> currentConditionComboBox;
-    public AnchorPane spellView;
+    @FXML private AnchorPane spellView;
+    @FXML private SpellViewController spellViewController;
     public Label acLabel;
     public Button viewModifiersButton;
 }

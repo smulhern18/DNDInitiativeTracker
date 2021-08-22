@@ -11,6 +11,7 @@
         <Button mnemonicParsing="false" onAction="#mainMenuPressed" text="Main Menu" />
         <MenuButton fx:id="encounterPropertiesMenu" mnemonicParsing="false" text="Encounter Properties">
             <items>
+            <MenuItem mnemonicParsing="false" onAction="#recalculateInitiativePressed" text="Recalculate Initiative" />
                 <MenuItem mnemonicParsing="false" onAction="#initiativeControllerPressed" text="Initiative Controller" />
                 <MenuItem mnemonicParsing="false" onAction="#addNewCreaturePressed" text="Add New Creature" />
                 <MenuItem mnemonicParsing="false" onAction="#editCreaturePressed" text="Edit Current Creature" />

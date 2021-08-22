@@ -2,7 +2,6 @@ package com.sjmulhern.dndTracker;
 
 import com.sjmulhern.dndTracker.creatures.Alignment;
 import com.sjmulhern.dndTracker.creatures.Condition;
-import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Language;
 import com.sjmulhern.dndTracker.creatures.Monster;
 import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
@@ -30,7 +29,6 @@ public class App extends Application {
 
     public static Stage pStage;
     public static FXMLLoader fxmlLoader = new FXMLLoader();
-    public static ArrayList<Creature> encounterArray = null;
 
     public App() {}
 
@@ -96,7 +94,7 @@ public class App extends Application {
                         15,
                         16,
                         30,
-                        69,
+                        420,
                         20,
                         1,
                         0.25,
@@ -138,6 +136,21 @@ public class App extends Application {
         Scene primaryScene = new Scene(new AnchorPane());
         Parent root =
                 FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Views/MainView.fxml")));
+        //        fxmlLoader.setControllerFactory(
+        //                controllerClass -> {
+        //                    if (controllerClass.equals(MainController.class)) {
+        //                        return mainController;
+        //                    } else if (controllerClass.equals(CombatTrackerController.class)) {
+        //                        return combatTrackerController;
+        //                    } else if (controllerClass.equals(CreatureEditorController.class)) {
+        //                        return creatureEditorController;
+        //                    } else if (controllerClass.equals(ToolbarController.class)) {
+        //                        return toolbarController;
+        //                    } else if (controllerClass.equals(SpellViewController.class)) {
+        //                        return spellViewController;
+        //                    }
+        //                    return null;
+        //                });
         primaryScene.setRoot(root);
         primaryStage.setScene(primaryScene);
         primaryStage.show();

@@ -21,7 +21,6 @@ import javafx.stage.Stage;
 public class ToolbarController {
 
     public void addNewCreaturePressed() throws IOException {
-
         // initializing the controller
         Parent layout;
         try {
@@ -60,6 +59,10 @@ public class ToolbarController {
         exit();
     }
 
+    public void recalculateInitiativePressed() throws IOException {
+        App.mainSceneController.switchScene("RecalculateInitiative");
+    }
+
     public MenuButton encounterPropertiesMenu;
 
     public void changeEncounterButtonPressed() {}
@@ -78,10 +81,6 @@ public class ToolbarController {
         File file = fileChooser.showSaveDialog(App.pStage);
         if (file != null) {
             FileWriter fileWriter = new FileWriter(file);
-            if (App.encounterArray != null) {
-            } else {
-                fileWriter.write("[]");
-            }
             fileWriter.close();
         }
     }

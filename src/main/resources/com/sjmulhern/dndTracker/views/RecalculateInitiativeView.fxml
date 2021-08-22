@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="360.0" prefWidth="340.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.RecalculateInitiativeController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0">
+         <children>
+            <TableView fx:id="playerTableView" prefHeight="235.0" prefWidth="319.0">
+              <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="152.0" text="Name" />
+                <TableColumn fx:id="initRollColumn" prefWidth="166.0" text="Initiative Roll" />
+              </columns>
+            </TableView>
+            <Button layoutY="281.0" mnemonicParsing="false" onAction="#addNewPlayer" prefHeight="27.0" prefWidth="319.0" text="Add New Player" />
+            <ComboBox fx:id="playerNames" layoutX="127.0" layoutY="244.0" prefHeight="27.0" prefWidth="192.0" />
+            <Button layoutY="244.0" mnemonicParsing="false" onAction="#removeSelectedPressed" prefHeight="27.0" prefWidth="114.0" text="Remove Selected" />
+            <Button layoutY="314.0" mnemonicParsing="false" onAction="#reRollPressed" prefHeight="27.0" prefWidth="319.0" text="Re-Roll" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

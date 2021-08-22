@@ -17,13 +17,15 @@ import javafx.scene.layout.AnchorPane;
 
 public class SpellViewController {
 
+    ArrayList<Tab> tabsToRemove = new ArrayList<>();
+
     Creature creature = App.initativeRoundRobin.getCurrent();
 
     public void reset(Spells spells) {
         if (spells == null) {
-            tabPane.setVisible(false);
             return;
         }
+
         ArrayList<Spell> cantrips = spells.getCantrips();
         ArrayList<Spell> firstLevel = spells.getFirstLevel();
         ArrayList<Spell> secondLevel = spells.getSecondLevel();
@@ -35,10 +37,8 @@ public class SpellViewController {
         ArrayList<Spell> eighthLevel = spells.getEighthLevel();
         ArrayList<Spell> ninthLevel = spells.getNinthLevel();
 
-        ArrayList<Tab> tabsToRemove = new ArrayList<>();
-
         if (cantrips != null && cantrips.size() != 0) {
-            cantripTable.getItems().addAll(cantrips);
+            cantripTable.getItems().setAll(cantrips);
             cantripName.setCellValueFactory(new PropertyValueFactory<>("name"));
             cantripEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
             cantripSize.setCellValueFactory(new PropertyValueFactory<>("size"));
@@ -49,7 +49,7 @@ public class SpellViewController {
         }
 
         if (firstLevel != null && firstLevel.size() != 0) {
-            firstTable.getItems().addAll(firstLevel);
+            firstTable.getItems().setAll(firstLevel);
             firstName.setCellValueFactory(new PropertyValueFactory<>("name"));
             firstEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
             firstSize.setCellValueFactory(new PropertyValueFactory<>("size"));
@@ -62,7 +62,7 @@ public class SpellViewController {
         }
 
         if (secondLevel != null && secondLevel.size() != 0) {
-            secondTable.getItems().addAll(secondLevel);
+            secondTable.getItems().setAll(secondLevel);
             secondName.setCellValueFactory(new PropertyValueFactory<>("name"));
             secondEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
             secondSize.setCellValueFactory(new PropertyValueFactory<>("size"));
@@ -75,7 +75,7 @@ public class SpellViewController {
         }
 
         if (thirdLevel != null && thirdLevel.size() != 0) {
-            thirdTable.getItems().addAll(thirdLevel);
+            thirdTable.getItems().setAll(thirdLevel);
             thirdName.setCellValueFactory(new PropertyValueFactory<>("name"));
             thirdEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
             thirdSize.setCellValueFactory(new PropertyValueFactory<>("size"));
@@ -88,7 +88,7 @@ public class SpellViewController {
         }
 
         if (forthLevel != null && forthLevel.size() != 0) {
-            forthTable.getItems().addAll(forthLevel);
+            forthTable.getItems().setAll(forthLevel);
             forthName.setCellValueFactory(new PropertyValueFactory<>("name"));
             forthEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
             forthSize.setCellValueFactory(new PropertyValueFactory<>("size"));
@@ -101,7 +101,7 @@ public class SpellViewController {
         }
 
         if (fifthLevel != null && fifthLevel.size() != 0) {
-            fifthTable.getItems().addAll(fifthLevel);
+            fifthTable.getItems().setAll(fifthLevel);
             fifthName.setCellValueFactory(new PropertyValueFactory<>("name"));
             fifthEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
             fifthSize.setCellValueFactory(new PropertyValueFactory<>("size"));
@@ -114,7 +114,7 @@ public class SpellViewController {
         }
 
         if (sixthLevel != null && sixthLevel.size() != 0) {
-            sixthTable.getItems().addAll(sixthLevel);
+            sixthTable.getItems().setAll(sixthLevel);
             sixthName.setCellValueFactory(new PropertyValueFactory<>("name"));
             sixthEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
             sixthSize.setCellValueFactory(new PropertyValueFactory<>("size"));
@@ -127,7 +127,7 @@ public class SpellViewController {
         }
 
         if (seventhLevel != null && seventhLevel.size() != 0) {
-            seventhTable.getItems().addAll(seventhLevel);
+            seventhTable.getItems().setAll(seventhLevel);
             seventhName.setCellValueFactory(new PropertyValueFactory<>("name"));
             seventhEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
             seventhSize.setCellValueFactory(new PropertyValueFactory<>("size"));
@@ -140,7 +140,7 @@ public class SpellViewController {
         }
 
         if (eighthLevel != null && eighthLevel.size() != 0) {
-            eighthTable.getItems().addAll(eighthLevel);
+            eighthTable.getItems().setAll(eighthLevel);
             eighthName.setCellValueFactory(new PropertyValueFactory<>("name"));
             eighthEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
             eighthSize.setCellValueFactory(new PropertyValueFactory<>("size"));
@@ -152,8 +152,8 @@ public class SpellViewController {
             tabsToRemove.add(this.eighthLevel);
         }
 
-        if (ninthLevel != null && ninthLevel.size() != 0) {
-            ninthTable.getItems().addAll(ninthLevel);
+        if (ninthLevel != null && ninthLevel.size() != 0 && ninthTable != null) {
+            ninthTable.getItems().setAll(ninthLevel);
             ninthName.setCellValueFactory(new PropertyValueFactory<>("name"));
             ninthEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
             ninthSize.setCellValueFactory(new PropertyValueFactory<>("size"));
@@ -165,13 +165,16 @@ public class SpellViewController {
             tabsToRemove.add(this.ninthLevel);
         }
 
-        tabPane.getTabs().removeAll(tabsToRemove);
+        if (tabPane != null) {
+            tabPane.getTabs().removeAll(tabsToRemove);
+        }
     }
 
     public void initialize() {
-        if (creature != null) {
-            reset(creature.getSpells());
-        }
+        System.out.println("Spell View initializing");
+        creature = App.initativeRoundRobin.getCurrent();
+        System.out.println(creature.getName());
+        reset(creature.getSpells());
     }
 
     @FXML public AnchorPane basePane;

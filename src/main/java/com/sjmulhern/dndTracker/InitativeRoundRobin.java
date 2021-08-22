@@ -106,6 +106,7 @@ public class InitativeRoundRobin {
                 creature -> {
                     if (!(creature instanceof PlayerCharacter)) {
                         creature.setInitiative(Utilities.rollD20((creature.getDexterity() - 10) / 2));
+                        System.out.println(creature.getName() + " " + creature.getInitiative());
                     }
                 });
 
