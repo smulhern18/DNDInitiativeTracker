@@ -1,6 +1,7 @@
 package com.sjmulhern.dndTracker.creatures;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.sjmulhern.dndTracker.tools.Ability;
 import com.sjmulhern.dndTracker.tools.Tool;
@@ -64,8 +65,8 @@ public abstract class Creature {
 
     public Creature(JsonObject jsonObject) {
         this(
-                jsonObject.get("name").toString(),
-                jsonObject.get("description").toString(),
+                jsonObject.get("name").getAsString(),
+                jsonObject.get("description").getAsString(),
                 Alignment.getEnum(jsonObject.get("alignment").getAsString()),
                 Size.getEnum(jsonObject.get("size").getAsDouble()),
                 jsonObject.get("movementSpeed").getAsInt(),
@@ -84,10 +85,10 @@ public abstract class Creature {
                 jsonObject.get("charisma").getAsInt(),
                 jsonObject.get("hitPoints").getAsInt(),
                 jsonObject.get("armorClass").getAsInt(),
-                jsonObject.get("initative").getAsInt(),
+                jsonObject.get("initiative").getAsInt(),
                 jsonObject.get("level").getAsDouble(),
                 Condition.getEnum(jsonObject.get("currentCondition").getAsInt()),
-                new Spells(jsonObject.get("Spells").getAsJsonObject()));
+                null);
 
         // Abilities
         ArrayList<Ability> abilities = new ArrayList<>();
@@ -124,6 +125,12 @@ public abstract class Creature {
                     .forEach(element -> languages.add(Language.getEnum(element.getAsInt())));
         }
         setLanguages(languages);
+
+        JsonElement spellsJson = jsonObject.get("spells");
+
+        if (!spellsJson.isJsonNull()) {
+            setSpells(new Spells((JsonObject) spellsJson));
+        }
     }
 
     public JsonObject toJson() {
@@ -172,6 +179,10 @@ public abstract class Creature {
         jsonObject.addProperty("armorClass", getArmorClass());
         jsonObject.addProperty("initiative", getInitiative());
         jsonObject.addProperty("currentCondition", getCurrentCondition().getOrdinal());
+
+        if (spells == null) {
+            spells = new Spells();
+        }
 
         jsonObject.add("spells", getSpells().toJson());
 

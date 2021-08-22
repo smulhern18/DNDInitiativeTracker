@@ -15,7 +15,7 @@ public class Ability {
     private String description;
 
     public Ability(JsonObject jsonObject) {
-        this(jsonObject.get("name").toString(), jsonObject.get("description").toString());
+        this(jsonObject.get("name").getAsString(), jsonObject.get("description").getAsString());
     }
 
     public JsonObject toJson() {

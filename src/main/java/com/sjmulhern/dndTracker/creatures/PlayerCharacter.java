@@ -36,7 +36,7 @@ public class PlayerCharacter extends Creature {
 
     public PlayerCharacter(JsonObject jsonObject) {
         this(
-                jsonObject.get("name").toString(),
+                jsonObject.get("name").getAsString(),
                 jsonObject.get("armorClass").getAsInt(),
                 jsonObject.get("initative").getAsInt(),
                 jsonObject.get("level").getAsDouble(),

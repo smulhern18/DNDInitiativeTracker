@@ -24,7 +24,7 @@ public class Tool {
         this(
                 jsonObject.get("name").toString(),
                 jsonObject.get("description").toString(),
-                DamageType.valueOf(jsonObject.get("damageType").toString()),
+                DamageType.getEnum(jsonObject.get("damageType").getAsInt()),
                 jsonObject.get("toHit").toString(),
                 jsonObject.get("damage").toString());
     }
@@ -34,7 +34,7 @@ public class Tool {
 
         jsonObject.addProperty("name", getName());
         jsonObject.addProperty("description", getDescription());
-        jsonObject.addProperty("damageType", getDamageType().toString());
+        jsonObject.addProperty("damageType", getDamageType().ordinal());
         jsonObject.addProperty("toHit", getToHit());
         jsonObject.addProperty("damage", getDamage());
 

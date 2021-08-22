@@ -26,7 +26,7 @@ public class Spell {
         jsonObject.addProperty("name", name);
         jsonObject.addProperty("effect", effect);
         jsonObject.addProperty("size", size);
-        jsonObject.addProperty("shape", shape.name());
+        jsonObject.addProperty("shape", shape.ordinal());
         jsonObject.addProperty("requirements", requirements);
 
         return jsonObject;
@@ -34,10 +34,10 @@ public class Spell {
 
     public Spell(JsonObject jsonObject) {
         this(
-                jsonObject.get("name").toString(),
-                jsonObject.get("effect").toString(),
+                jsonObject.get("name").getAsString(),
+                jsonObject.get("effect").getAsString(),
                 jsonObject.get("size").getAsInt(),
-                Shape.valueOf(jsonObject.get("shape").getAsString()),
-                jsonObject.get("requirements").toString());
+                Shape.getEnum(jsonObject.get("shape").getAsInt()),
+                jsonObject.get("requirements").getAsString());
     }
 }

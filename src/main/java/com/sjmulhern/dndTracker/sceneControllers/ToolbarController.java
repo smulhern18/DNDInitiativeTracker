@@ -3,58 +3,43 @@ package com.sjmulhern.dndTracker.sceneControllers;
 import static javafx.application.Platform.exit;
 
 import com.sjmulhern.dndTracker.App;
-import com.sjmulhern.dndTracker.creatures.Alignment;
-import com.sjmulhern.dndTracker.creatures.Condition;
-import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
-import com.sjmulhern.dndTracker.creatures.Size;
-import com.sjmulhern.dndTracker.creatures.Spells;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
+import java.util.Objects;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 public class ToolbarController {
 
     public void addNewCreaturePressed() throws IOException {
-        String name = "" + (new Random().nextInt() % 50000);
-        App.initativeRoundRobin.addCreature(
-                new NonPlayerCharacter(
-                        name,
-                        "This is a brand spanking new Creature," +
-                        " please change the randomly generated name",
-                        Alignment.Unaligned,
-                        Size.Medium,
-                        30,
-                        15,
-                        15,
-                        0,
-                        new ArrayList<>(),
-                        new ArrayList<>(),
-                        new ArrayList<>(),
-                        new ArrayList<>(),
-                        10,
-                        10,
-                        10,
-                        10,
-                        10,
-                        10,
-                        5,
-                        10,
-                        1,
-                        1.0,
-                        Condition.None,
-                        new Spells(),
-                        new ArrayList<>(),
-                        new ArrayList<>(),
-                        new ArrayList<>()));
 
-        App.initativeRoundRobin.setCurrentCreature(name);
+        // initializing the controller
+        Parent layout;
+        try {
+            layout =
+                    FXMLLoader.load(
+                            Objects.requireNonNull(
+                                    App.class.getResource("views/CreatureCreationPopupView.fxml")));
+            Scene scene = new Scene(layout);
+            // this is the popup stage
+            Stage popupStage = new Stage();
+            popupStage.initOwner(App.getPrimaryStage());
+            popupStage.initModality(Modality.WINDOW_MODAL);
+            popupStage.setScene(scene);
+            popupStage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         App.mainSceneController.switchScene("CreatureEditor");
     }
 

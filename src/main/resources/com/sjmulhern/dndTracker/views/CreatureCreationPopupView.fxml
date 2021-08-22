@@ -3,33 +3,31 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.CreatureCreationPopupController">
+<AnchorPane prefHeight="186.0" prefWidth="165.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.CreatureCreationPopupController">
    <children>
-      <AnchorPane prefHeight="186.0" prefWidth="333.0">
+      <GridPane layoutX="7.0" layoutY="5.0" prefHeight="186.0" prefWidth="158.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <Button layoutX="172.0" layoutY="39.0" mnemonicParsing="false" onAction="#currentCreaturePressed" text="Current Creature" />
-            <ComboBox fx:id="creatureNameComboBox" layoutX="172.0" layoutY="113.0" prefWidth="150.0" />
-            <Button layoutX="172.0" layoutY="77.0" mnemonicParsing="false" onAction="#selectedCreaturePressed" text="Selected Creature" />
-            <AnchorPane layoutX="14.0" layoutY="14.0">
-               <children>
-                  <RadioButton fx:id="monsterRadio" layoutX="2.0" layoutY="18.0" mnemonicParsing="false" text="Monster">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="creatureType" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="playerRadio" layoutX="2.0" layoutY="38.0" mnemonicParsing="false" text="Player Character" toggleGroup="$creatureType" />
-                  <RadioButton fx:id="npcRadio" layoutX="2.0" layoutY="59.0" mnemonicParsing="false" text="NPC" toggleGroup="$creatureType" />
-                  <Label text="Create as:" />
-               </children>
-            </AnchorPane>
-            <Label layoutX="172.0" layoutY="14.0" text="Template off:" />
-            <Button layoutX="172.0" layoutY="150.0" mnemonicParsing="false" onAction="#nothingPressed" text="Nothing" />
+            <Button mnemonicParsing="false" onAction="#currentCreaturePressed" text="Current Creature" GridPane.rowIndex="1" />
+            <ComboBox fx:id="creatureNameComboBox" prefWidth="150.0" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#selectedCreaturePressed" text="Selected Creature" GridPane.rowIndex="2" />
+            <Label text="Template off:" />
+            <Button mnemonicParsing="false" onAction="#nothingPressed" text="Nothing" GridPane.rowIndex="4" />
          </children>
-      </AnchorPane>
+      </GridPane>
    </children>
 </AnchorPane>

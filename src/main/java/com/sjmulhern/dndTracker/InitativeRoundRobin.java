@@ -51,11 +51,27 @@ public class InitativeRoundRobin {
         currentIndex = 0;
         for (int i = 0; i < creatureObjects.length; i++) {
             if (name.equals(((Creature) creatureObjects[i]).getName())) {
-                currentIndex = i - 1;
+                currentIndex = i;
+                break;
+            }
+        }
+    }
+
+    public Creature getCreature(String name) {
+        Creature creature;
+
+        Object[] creatureObjects = creatures.toArray();
+
+        currentIndex = 0;
+        for (int i = 0; i < creatureObjects.length; i++) {
+            if (name.equals(((Creature) creatureObjects[i]).getName())) {
+                currentIndex = i;
                 break;
             }
         }
 
-        getNext();
+        creature = getCurrent();
+
+        return creature;
     }
 }

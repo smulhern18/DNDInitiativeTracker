@@ -45,8 +45,6 @@ public class CreatureEditorController {
 
     public void initialize() {
 
-        addToComboBox(App.initativeRoundRobin.getCreatures().toArray());
-
         ArrayList<String> alignmentStrings = new ArrayList<>();
         for (Alignment value : Alignment.values()) {
             alignmentStrings.add(value.toString());
@@ -101,82 +99,82 @@ public class CreatureEditorController {
         ArrayList<Ability> abilities = new ArrayList<>(abilityTable.getItems());
         ArrayList<Tool> tools = new ArrayList<>(weaponsTable.getItems());
 
+        App.initativeRoundRobin.getCreatures().remove(creatureEditing);
+
         switch (creatureType) {
-            case "Monster":
-                editedCreature =
-                        new Monster(
-                                nameField.getText(),
-                                descriptionField.getText(),
-                                Alignment.valueOf(alignmentField.getValue()),
-                                Size.valueOf(sizeField.getValue()),
-                                Integer.parseInt(movementSpeedField.getText()),
-                                Integer.parseInt(swimmingSpeedField.getText()),
-                                Integer.parseInt(climbingSpeedField.getText()),
-                                Integer.parseInt(flyingSpeedField.getText()),
-                                abilities,
-                                tools,
-                                creatureEditing.getSkills(),
-                                creatureEditing.getLanguages(),
-                                creatureEditing.getStrength(),
-                                creatureEditing.getDexterity(),
-                                creatureEditing.getConstitution(),
-                                creatureEditing.getIntelligence(),
-                                creatureEditing.getWisdom(),
-                                creatureEditing.getCharisma(),
-                                creatureEditing.getHitPoints(),
-                                creatureEditing.getArmorClass(),
-                                creatureEditing.getInitiative(),
-                                creatureEditing.getLevel(),
-                                creatureEditing.getCurrentCondition(),
-                                creatureEditing.getSpells(),
-                                ((NonPlayerCharacter) creatureEditing).getResistances(),
-                                ((NonPlayerCharacter) creatureEditing).getWeaknesses(),
-                                ((NonPlayerCharacter) creatureEditing).getImmunities(),
-                                Type.getEnum(creatureTypeField.getItems().indexOf(creatureTypeField.getValue())));
-                break;
-            case "Player":
-                editedCreature =
-                        new PlayerCharacter(
-                                nameField.getText(),
-                                acSpinner.getValue(),
-                                creatureEditing.getInitiative(),
-                                creatureEditing.getLevel(),
-                                creatureEditing.getCurrentCondition());
-                break;
-            case "NPC":
-                editedCreature =
-                        new NonPlayerCharacter(
-                                nameField.getText(),
-                                descriptionField.getText(),
-                                Alignment.valueOf(alignmentField.getValue()),
-                                Size.valueOf(sizeField.getValue()),
-                                Integer.parseInt(movementSpeedField.getText()),
-                                Integer.parseInt(swimmingSpeedField.getText()),
-                                Integer.parseInt(climbingSpeedField.getText()),
-                                Integer.parseInt(flyingSpeedField.getText()),
-                                abilities,
-                                tools,
-                                creatureEditing.getSkills(),
-                                creatureEditing.getLanguages(),
-                                creatureEditing.getStrength(),
-                                creatureEditing.getDexterity(),
-                                creatureEditing.getConstitution(),
-                                creatureEditing.getIntelligence(),
-                                creatureEditing.getWisdom(),
-                                creatureEditing.getCharisma(),
-                                creatureEditing.getHitPoints(),
-                                creatureEditing.getArmorClass(),
-                                creatureEditing.getInitiative(),
-                                creatureEditing.getLevel(),
-                                creatureEditing.getCurrentCondition(),
-                                creatureEditing.getSpells(),
-                                null,
-                                null,
-                                null);
-                break;
+            case "Monster" -> editedCreature =
+                    new Monster(
+                            nameField.getText(),
+                            descriptionField.getText(),
+                            Alignment.valueOf(alignmentField.getValue()),
+                            Size.valueOf(sizeField.getValue()),
+                            Integer.parseInt(movementSpeedField.getText()),
+                            Integer.parseInt(swimmingSpeedField.getText()),
+                            Integer.parseInt(climbingSpeedField.getText()),
+                            Integer.parseInt(flyingSpeedField.getText()),
+                            abilities,
+                            tools,
+                            creatureEditing.getSkills(),
+                            creatureEditing.getLanguages(),
+                            creatureEditing.getStrength(),
+                            creatureEditing.getDexterity(),
+                            creatureEditing.getConstitution(),
+                            creatureEditing.getIntelligence(),
+                            creatureEditing.getWisdom(),
+                            creatureEditing.getCharisma(),
+                            creatureEditing.getHitPoints(),
+                            creatureEditing.getArmorClass(),
+                            creatureEditing.getInitiative(),
+                            creatureEditing.getLevel(),
+                            creatureEditing.getCurrentCondition(),
+                            creatureEditing.getSpells(),
+                            ((NonPlayerCharacter) creatureEditing).getResistances(),
+                            ((NonPlayerCharacter) creatureEditing).getWeaknesses(),
+                            ((NonPlayerCharacter) creatureEditing).getImmunities(),
+                            Type.getEnum(creatureTypeField.getItems().indexOf(creatureTypeField.getValue())));
+            case "Player" -> editedCreature =
+                    new PlayerCharacter(
+                            nameField.getText(),
+                            acSpinner.getValue(),
+                            creatureEditing.getInitiative(),
+                            creatureEditing.getLevel(),
+                            creatureEditing.getCurrentCondition());
+            case "NPC" -> editedCreature =
+                    new NonPlayerCharacter(
+                            nameField.getText(),
+                            descriptionField.getText(),
+                            Alignment.valueOf(alignmentField.getValue()),
+                            Size.valueOf(sizeField.getValue()),
+                            Integer.parseInt(movementSpeedField.getText()),
+                            Integer.parseInt(swimmingSpeedField.getText()),
+                            Integer.parseInt(climbingSpeedField.getText()),
+                            Integer.parseInt(flyingSpeedField.getText()),
+                            abilities,
+                            tools,
+                            creatureEditing.getSkills(),
+                            creatureEditing.getLanguages(),
+                            creatureEditing.getStrength(),
+                            creatureEditing.getDexterity(),
+                            creatureEditing.getConstitution(),
+                            creatureEditing.getIntelligence(),
+                            creatureEditing.getWisdom(),
+                            creatureEditing.getCharisma(),
+                            creatureEditing.getHitPoints(),
+                            creatureEditing.getArmorClass(),
+                            creatureEditing.getInitiative(),
+                            creatureEditing.getLevel(),
+                            creatureEditing.getCurrentCondition(),
+                            creatureEditing.getSpells(),
+                            null,
+                            null,
+                            null);
         }
 
         App.initativeRoundRobin.addCreature(editedCreature);
+        App.currentCreature = editedCreature;
+        App.initativeRoundRobin.setCurrentCreature(editedCreature.getName());
+        creatureEditing = editedCreature;
+        reset();
     }
 
     public void openButtonPressed() {
@@ -198,6 +196,8 @@ public class CreatureEditorController {
     }
 
     public void reset() {
+        creatureNames.setItems(FXCollections.observableArrayList());
+        addToComboBox(App.initativeRoundRobin.getCreatures().toArray());
         if (creatureEditing instanceof Monster) {
             levelDescriptor.setText("DC:");
         }

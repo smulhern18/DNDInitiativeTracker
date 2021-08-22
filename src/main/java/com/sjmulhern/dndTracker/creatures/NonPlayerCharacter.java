@@ -116,18 +116,27 @@ public class NonPlayerCharacter extends Creature {
         JsonObject jsonObject = super.toJson();
 
         JsonArray resistancesArray = new JsonArray();
+        if (resistances == null) {
+            resistances = new ArrayList<>();
+        }
         for (DamageType damType : getResistances()) {
             resistancesArray.add(damType.getOrdinal());
         }
         jsonObject.add("resistances", resistancesArray);
 
         JsonArray weaknessesArray = new JsonArray();
+        if (weaknesses == null) {
+            weaknesses = new ArrayList<>();
+        }
         for (DamageType damType : getWeaknesses()) {
             weaknessesArray.add(damType.getOrdinal());
         }
         jsonObject.add("weaknesses", weaknessesArray);
 
         JsonArray immunitiesArray = new JsonArray();
+        if (immunities == null) {
+            immunities = new ArrayList<>();
+        }
         for (DamageType damType : getImmunities()) {
             immunitiesArray.add(damType.getOrdinal());
         }
