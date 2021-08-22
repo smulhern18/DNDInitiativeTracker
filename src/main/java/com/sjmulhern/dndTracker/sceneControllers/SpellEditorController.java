@@ -33,7 +33,7 @@ public class SpellEditorController {
 
     private Stage stage = null;
 
-    public void saveButtonPressed () {
+    public void saveButtonPressed() {
         App.initativeRoundRobin
                 .getCurrent()
                 .setSpells(
@@ -86,19 +86,19 @@ public class SpellEditorController {
         String nameToRemove = spellNameComboBox.getValue();
         if (nameToRemove != null) {
             ObservableList<Spell> spellsToUpdate =
-                switch (tabPane.getSelectionModel().getSelectedItem().getText()) {
-                    case "Cantrips" -> cantripTable.getItems();
-                    case "First Level" -> firstTable.getItems();
-                    case "Second" -> secondTable.getItems();
-                    case "Third" -> thirdTable.getItems();
-                    case "Forth" -> forthTable.getItems();
-                    case "Fifth" -> fifthTable.getItems();
-                    case "Sixth" -> sixthTable.getItems();
-                    case "Seventh" -> seventhTable.getItems();
-                    case "Eighth" -> eighthTable.getItems();
-                    case "Ninth" -> ninthTable.getItems();
-                    default -> FXCollections.observableArrayList();
-                };
+                    switch (tabPane.getSelectionModel().getSelectedItem().getText()) {
+                        case "Cantrips" -> cantripTable.getItems();
+                        case "First Level" -> firstTable.getItems();
+                        case "Second" -> secondTable.getItems();
+                        case "Third" -> thirdTable.getItems();
+                        case "Forth" -> forthTable.getItems();
+                        case "Fifth" -> fifthTable.getItems();
+                        case "Sixth" -> sixthTable.getItems();
+                        case "Seventh" -> seventhTable.getItems();
+                        case "Eighth" -> eighthTable.getItems();
+                        case "Ninth" -> ninthTable.getItems();
+                        default -> FXCollections.observableArrayList();
+                    };
 
             spellsToUpdate.removeIf(element -> element.getName().equals(nameToRemove));
             spellNameComboBox.getItems().removeIf(element -> element.equals(nameToRemove));

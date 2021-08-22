@@ -14,7 +14,6 @@ import com.sjmulhern.dndTracker.tools.Tool;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.Set;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

@@ -19,7 +19,8 @@ public class Encounter {
     public Encounter(JsonObject jsonObject) {
         setName(jsonObject.get("name").getAsString());
         setDescription(jsonObject.get("description").getAsString());
-        setInitativeRoundRobin(new InitativeRoundRobin(jsonObject.get("initativeRoundRobin").getAsJsonObject()));
+        setInitativeRoundRobin(
+                new InitativeRoundRobin(jsonObject.get("initativeRoundRobin").getAsJsonObject()));
     }
 
     public JsonObject toJson() {

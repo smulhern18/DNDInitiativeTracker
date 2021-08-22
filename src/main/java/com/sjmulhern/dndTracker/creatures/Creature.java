@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public abstract class Creature implements Comparable<Creature>{
+public abstract class Creature implements Comparable<Creature> {
 
     private String name;
 

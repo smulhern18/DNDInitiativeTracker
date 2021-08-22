@@ -4,14 +4,13 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.sjmulhern.dndTracker.creatures.Creature;
+import com.sjmulhern.dndTracker.creatures.Monster;
+import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
+import com.sjmulhern.dndTracker.creatures.PlayerCharacter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-
-import com.sjmulhern.dndTracker.creatures.Monster;
-import com.sjmulhern.dndTracker.creatures.NonPlayerCharacter;
-import com.sjmulhern.dndTracker.creatures.PlayerCharacter;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,7 +30,7 @@ public class InitativeRoundRobin {
 
         JsonArray creatureArray = jsonObject.getAsJsonArray("creatures");
 
-        for (JsonElement jsonElement: creatureArray) {
+        for (JsonElement jsonElement : creatureArray) {
             JsonObject creatureJson = (JsonObject) jsonElement;
             if (creatureJson.has("type")) {
                 creatures.add(new Monster(creatureJson));
@@ -103,11 +102,12 @@ public class InitativeRoundRobin {
     }
 
     public void recalculateInitative() {
-        creatures.forEach(creature -> {
-            if (!(creature instanceof PlayerCharacter)) {
-                creature.setInitiative(Utilities.rollD20() + ((creature.getDexterity()-10)/2));
-            }
-        });
+        creatures.forEach(
+                creature -> {
+                    if (!(creature instanceof PlayerCharacter)) {
+                        creature.setInitiative(Utilities.rollD20((creature.getDexterity() - 10) / 2));
+                    }
+                });
 
         Collections.sort(creatures);
         setCurrentIndex(0);
@@ -117,7 +117,7 @@ public class InitativeRoundRobin {
         JsonObject jsonObject = new JsonObject();
 
         JsonArray jsonArray = new JsonArray();
-        for (Creature creature: creatures) {
+        for (Creature creature : creatures) {
             jsonArray.add(creature.toJson());
         }
         jsonObject.add("creatures", jsonArray);

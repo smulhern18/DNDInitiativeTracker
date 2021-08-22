@@ -5,6 +5,7 @@ import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Spells;
 import com.sjmulhern.dndTracker.tools.Shape;
 import com.sjmulhern.dndTracker.tools.Spell;
+import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -13,8 +14,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-
-import java.util.ArrayList;
 
 public class SpellViewController {
 

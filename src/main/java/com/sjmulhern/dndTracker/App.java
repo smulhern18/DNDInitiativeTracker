@@ -10,11 +10,6 @@ import com.sjmulhern.dndTracker.creatures.Size;
 import com.sjmulhern.dndTracker.creatures.Skill;
 import com.sjmulhern.dndTracker.creatures.Spells;
 import com.sjmulhern.dndTracker.creatures.Type;
-import com.sjmulhern.dndTracker.sceneControllers.CombatTrackerController;
-import com.sjmulhern.dndTracker.sceneControllers.CreatureEditorController;
-import com.sjmulhern.dndTracker.sceneControllers.MainController;
-import com.sjmulhern.dndTracker.sceneControllers.SpellViewController;
-import com.sjmulhern.dndTracker.sceneControllers.ToolbarController;
 import com.sjmulhern.dndTracker.tools.Ability;
 import com.sjmulhern.dndTracker.tools.DamageType;
 import com.sjmulhern.dndTracker.tools.Shape;
@@ -39,19 +34,9 @@ public class App extends Application {
 
     public App() {}
 
-    public static MainSceneController mainSceneController;
-    private final MainController mainController = new MainController();
-    public static final CombatTrackerController combatTrackerController =
-            new CombatTrackerController();
-    public static final CreatureEditorController creatureEditorController =
-            new CreatureEditorController();
-    private final ToolbarController toolbarController = new ToolbarController();
-    public static final SpellViewController spellViewController = new SpellViewController();
-
     public static InitativeRoundRobin initativeRoundRobin = new InitativeRoundRobin();
 
-    @Override
-    public void init() {
+    static {
         initativeRoundRobin.addCreature(
                 new NonPlayerCharacter(
                         "Goblin",
@@ -143,27 +128,14 @@ public class App extends Application {
         initativeRoundRobin.getNext();
     }
 
+    public static MainSceneController mainSceneController;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
 
         pStage = primaryStage;
 
         Scene primaryScene = new Scene(new AnchorPane());
-        fxmlLoader.setControllerFactory(
-                controllerClass -> {
-                    if (controllerClass.equals(MainController.class)) {
-                        return mainController;
-                    } else if (controllerClass.equals(CombatTrackerController.class)) {
-                        return combatTrackerController;
-                    } else if (controllerClass.equals(CreatureEditorController.class)) {
-                        return creatureEditorController;
-                    } else if (controllerClass.equals(ToolbarController.class)) {
-                        return toolbarController;
-                    } else if (controllerClass.equals(SpellViewController.class)) {
-                        return spellViewController;
-                    }
-                    return null;
-                });
         Parent root =
                 FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Views/MainView.fxml")));
         primaryScene.setRoot(root);
