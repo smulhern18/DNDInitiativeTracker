@@ -17,7 +17,7 @@ import javafx.scene.control.ComboBox;
 
 public class CreatureCreationPopupController {
 
-    Creature currentCreature = App.currentCreature;
+    Creature currentCreature = App.initativeRoundRobin.getCurrent();
 
     public void nothingPressed() {
         String name = "" + new Random().nextInt();
@@ -74,7 +74,6 @@ public class CreatureCreationPopupController {
         }
 
         App.initativeRoundRobin.setCurrentCreature(newName);
-        App.currentCreature = App.initativeRoundRobin.getCurrent();
     }
 
     public void selectedCreaturePressed() {
@@ -84,8 +83,6 @@ public class CreatureCreationPopupController {
         }
 
         App.initativeRoundRobin.setCurrentCreature(creatureNameComboBox.getValue());
-
-        App.currentCreature = App.initativeRoundRobin.getCurrent();
 
         String newName = currentCreature.getName() + "_copy";
 
@@ -103,7 +100,6 @@ public class CreatureCreationPopupController {
         }
 
         App.initativeRoundRobin.setCurrentCreature(newName);
-        App.currentCreature = App.initativeRoundRobin.getCurrent();
     }
 
     public void initialize() {

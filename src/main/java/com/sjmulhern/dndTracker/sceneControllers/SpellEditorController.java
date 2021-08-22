@@ -10,7 +10,6 @@ import java.util.Arrays;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -34,7 +33,7 @@ public class SpellEditorController {
 
     private Stage stage = null;
 
-    public void saveButtonPressed(ActionEvent actionEvent) {
+    public void saveButtonPressed () {
         App.initativeRoundRobin
                 .getCurrent()
                 .setSpells(
@@ -49,11 +48,11 @@ public class SpellEditorController {
                                 new ArrayList<>(seventhTable.getItems()),
                                 new ArrayList<>(eighthTable.getItems()),
                                 new ArrayList<>(ninthTable.getItems()),
-                                App.currentCreature.getSpells().getSlots(),
-                                App.currentCreature.getSpells().getSlotsUsed()));
+                                creature.getSpells().getSlots(),
+                                creature.getSpells().getSlotsUsed()));
     }
 
-    Creature creature = App.currentCreature;
+    Creature creature = App.initativeRoundRobin.getCurrent();
 
     private Spells result =
             new Spells(
@@ -86,43 +85,20 @@ public class SpellEditorController {
 
         String nameToRemove = spellNameComboBox.getValue();
         if (nameToRemove != null) {
-            ObservableList<Spell> spellsToUpdate;
-
-            switch (tabPane.getSelectionModel().getSelectedItem().getText()) {
-                case "Cantrips":
-                    spellsToUpdate = cantripTable.getItems();
-                    break;
-                case "First Level":
-                    spellsToUpdate = firstTable.getItems();
-                    break;
-                case "Second":
-                    spellsToUpdate = secondTable.getItems();
-                    break;
-                case "Third":
-                    spellsToUpdate = thirdTable.getItems();
-                    break;
-                case "Forth":
-                    spellsToUpdate = forthTable.getItems();
-                    break;
-                case "Fifth":
-                    spellsToUpdate = fifthTable.getItems();
-                    break;
-                case "Sixth":
-                    spellsToUpdate = sixthTable.getItems();
-                    break;
-                case "Seventh":
-                    spellsToUpdate = seventhTable.getItems();
-                    break;
-                case "Eighth":
-                    spellsToUpdate = eighthTable.getItems();
-                    break;
-                case "Ninth":
-                    spellsToUpdate = ninthTable.getItems();
-                    break;
-                default:
-                    spellsToUpdate = FXCollections.observableArrayList();
-                    break;
-            }
+            ObservableList<Spell> spellsToUpdate =
+                switch (tabPane.getSelectionModel().getSelectedItem().getText()) {
+                    case "Cantrips" -> cantripTable.getItems();
+                    case "First Level" -> firstTable.getItems();
+                    case "Second" -> secondTable.getItems();
+                    case "Third" -> thirdTable.getItems();
+                    case "Forth" -> forthTable.getItems();
+                    case "Fifth" -> fifthTable.getItems();
+                    case "Sixth" -> sixthTable.getItems();
+                    case "Seventh" -> seventhTable.getItems();
+                    case "Eighth" -> eighthTable.getItems();
+                    case "Ninth" -> ninthTable.getItems();
+                    default -> FXCollections.observableArrayList();
+                };
 
             spellsToUpdate.removeIf(element -> element.getName().equals(nameToRemove));
             spellNameComboBox.getItems().removeIf(element -> element.equals(nameToRemove));
@@ -138,7 +114,7 @@ public class SpellEditorController {
             creature.setSpells(result);
             spells = result;
         } else {
-            System.out.println(spells.toString());
+            System.out.println(spells);
         }
 
         // Initialize the spinners
@@ -288,9 +264,9 @@ public class SpellEditorController {
             spells.setNinthLevel(new ArrayList<>());
         }
 
-        App.currentCreature.setSpells(spells);
+        creature.setSpells(spells);
 
-        cantripTable.getItems().addAll(App.currentCreature.getSpells().getCantrips());
+        cantripTable.getItems().addAll(creature.getSpells().getCantrips());
         cantripName.setCellValueFactory(new PropertyValueFactory<>("name"));
         cantripName.setCellFactory(TextFieldTableCell.forTableColumn());
         cantripName.setOnEditCommit(
@@ -323,7 +299,7 @@ public class SpellEditorController {
                                 .setRequirements(event.getNewValue()));
         cantripTable.setEditable(true);
 
-        firstTable.getItems().addAll(App.currentCreature.getSpells().getFirstLevel());
+        firstTable.getItems().addAll(creature.getSpells().getFirstLevel());
         firstName.setCellValueFactory(new PropertyValueFactory<>("name"));
         firstName.setCellFactory(TextFieldTableCell.forTableColumn());
         firstName.setOnEditCommit(
@@ -356,7 +332,7 @@ public class SpellEditorController {
                                 .setRequirements(event.getNewValue()));
         firstTable.setEditable(true);
 
-        secondTable.getItems().addAll(App.currentCreature.getSpells().getSecondLevel());
+        secondTable.getItems().addAll(creature.getSpells().getSecondLevel());
         secondName.setCellValueFactory(new PropertyValueFactory<>("name"));
         secondName.setCellFactory(TextFieldTableCell.forTableColumn());
         secondName.setOnEditCommit(
@@ -389,7 +365,7 @@ public class SpellEditorController {
                                 .setRequirements(event.getNewValue()));
         secondTable.setEditable(true);
 
-        thirdTable.getItems().addAll(App.currentCreature.getSpells().getThirdLevel());
+        thirdTable.getItems().addAll(creature.getSpells().getThirdLevel());
         thirdName.setCellValueFactory(new PropertyValueFactory<>("name"));
         thirdName.setCellFactory(TextFieldTableCell.forTableColumn());
         thirdName.setOnEditCommit(
@@ -422,7 +398,7 @@ public class SpellEditorController {
                                 .setRequirements(event.getNewValue()));
         thirdTable.setEditable(true);
 
-        forthTable.getItems().addAll(App.currentCreature.getSpells().getForthLevel());
+        forthTable.getItems().addAll(creature.getSpells().getForthLevel());
         forthName.setCellValueFactory(new PropertyValueFactory<>("name"));
         forthName.setCellFactory(TextFieldTableCell.forTableColumn());
         forthName.setOnEditCommit(
@@ -455,7 +431,7 @@ public class SpellEditorController {
                                 .setRequirements(event.getNewValue()));
         forthTable.setEditable(true);
 
-        fifthTable.getItems().addAll(App.currentCreature.getSpells().getFifthLevel());
+        fifthTable.getItems().addAll(creature.getSpells().getFifthLevel());
         fifthName.setCellValueFactory(new PropertyValueFactory<>("name"));
         fifthName.setCellFactory(TextFieldTableCell.forTableColumn());
         fifthName.setOnEditCommit(
@@ -488,7 +464,7 @@ public class SpellEditorController {
                                 .setRequirements(event.getNewValue()));
         fifthTable.setEditable(true);
 
-        sixthTable.getItems().addAll(App.currentCreature.getSpells().getSixthLevel());
+        sixthTable.getItems().addAll(creature.getSpells().getSixthLevel());
         sixthName.setCellValueFactory(new PropertyValueFactory<>("name"));
         sixthName.setCellFactory(TextFieldTableCell.forTableColumn());
         sixthName.setOnEditCommit(
@@ -521,7 +497,7 @@ public class SpellEditorController {
                                 .setRequirements(event.getNewValue()));
         sixthTable.setEditable(true);
 
-        seventhTable.getItems().addAll(App.currentCreature.getSpells().getSeventhLevel());
+        seventhTable.getItems().addAll(creature.getSpells().getSeventhLevel());
         seventhName.setCellValueFactory(new PropertyValueFactory<>("name"));
         seventhName.setCellFactory(TextFieldTableCell.forTableColumn());
         seventhName.setOnEditCommit(
@@ -554,7 +530,7 @@ public class SpellEditorController {
                                 .setRequirements(event.getNewValue()));
         seventhTable.setEditable(true);
 
-        eighthTable.getItems().addAll(App.currentCreature.getSpells().getEighthLevel());
+        eighthTable.getItems().addAll(creature.getSpells().getEighthLevel());
         eighthName.setCellValueFactory(new PropertyValueFactory<>("name"));
         eighthName.setCellFactory(TextFieldTableCell.forTableColumn());
         eighthName.setOnEditCommit(
@@ -587,7 +563,7 @@ public class SpellEditorController {
                                 .setRequirements(event.getNewValue()));
         eighthTable.setEditable(true);
 
-        ninthTable.getItems().addAll(App.currentCreature.getSpells().getNinthLevel());
+        ninthTable.getItems().addAll(creature.getSpells().getNinthLevel());
         ninthName.setCellValueFactory(new PropertyValueFactory<>("name"));
         ninthName.setCellFactory(TextFieldTableCell.forTableColumn());
         ninthName.setOnEditCommit(
@@ -642,45 +618,19 @@ public class SpellEditorController {
 
     private ObservableList<Spell> getSpellsBasedOnTabName(Tab newTab) {
 
-        ObservableList<Spell> spellsToUpdate;
-
-        switch (newTab.getText()) {
-            case "Cantrips":
-                spellsToUpdate = cantripTable.getItems();
-                break;
-            case "First Level":
-                spellsToUpdate = firstTable.getItems();
-                break;
-            case "Second":
-                spellsToUpdate = secondTable.getItems();
-                break;
-            case "Third":
-                spellsToUpdate = thirdTable.getItems();
-                break;
-            case "Forth":
-                spellsToUpdate = forthTable.getItems();
-                break;
-            case "Fifth":
-                spellsToUpdate = fifthTable.getItems();
-                break;
-            case "Sixth":
-                spellsToUpdate = sixthTable.getItems();
-                break;
-            case "Seventh":
-                spellsToUpdate = seventhTable.getItems();
-                break;
-            case "Eighth":
-                spellsToUpdate = eighthTable.getItems();
-                break;
-            case "Ninth":
-                spellsToUpdate = ninthTable.getItems();
-                break;
-            default:
-                spellsToUpdate = FXCollections.observableArrayList();
-                break;
-        }
-
-        return spellsToUpdate;
+        return switch (newTab.getText()) {
+            case "Cantrips" -> cantripTable.getItems();
+            case "First Level" -> firstTable.getItems();
+            case "Second" -> secondTable.getItems();
+            case "Third" -> thirdTable.getItems();
+            case "Forth" -> forthTable.getItems();
+            case "Fifth" -> fifthTable.getItems();
+            case "Sixth" -> sixthTable.getItems();
+            case "Seventh" -> seventhTable.getItems();
+            case "Eighth" -> eighthTable.getItems();
+            case "Ninth" -> ninthTable.getItems();
+            default -> FXCollections.observableArrayList();
+        };
     }
 
     @FXML public AnchorPane basePane;

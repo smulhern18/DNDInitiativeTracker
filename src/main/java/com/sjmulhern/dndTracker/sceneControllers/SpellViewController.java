@@ -5,7 +5,6 @@ import com.sjmulhern.dndTracker.creatures.Creature;
 import com.sjmulhern.dndTracker.creatures.Spells;
 import com.sjmulhern.dndTracker.tools.Shape;
 import com.sjmulhern.dndTracker.tools.Spell;
-import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -14,11 +13,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class SpellViewController {
 
-    Creature creature = App.currentCreature;
+    Creature creature = App.initativeRoundRobin.getCurrent();
 
     public void reset(Spells spells) {
         if (spells == null) {
@@ -173,10 +173,6 @@ public class SpellViewController {
         if (creature != null) {
             reset(creature.getSpells());
         }
-    }
-
-    public void start(Stage stage) {
-        creature = App.currentCreature;
     }
 
     @FXML public AnchorPane basePane;

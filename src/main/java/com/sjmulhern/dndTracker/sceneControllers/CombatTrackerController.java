@@ -65,7 +65,7 @@ public class CombatTrackerController {
     public void openButtonPressed() {
         String creatureName = creatureNames.getValue();
 
-        Set<Creature> creatures = App.initativeRoundRobin.getCreatures();
+        ArrayList<Creature> creatures = App.initativeRoundRobin.getCreatures();
 
         Creature wantedCreature = null;
         for (Creature creature : creatures) {
@@ -84,7 +84,6 @@ public class CombatTrackerController {
 
     public void nextInitiativeButtonPressed() {
         creature = initativeRoundRobin.getNext();
-        App.currentCreature = creature;
         reset();
     }
 

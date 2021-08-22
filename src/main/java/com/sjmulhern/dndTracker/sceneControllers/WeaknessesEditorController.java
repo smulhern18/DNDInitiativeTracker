@@ -10,7 +10,7 @@ public class WeaknessesEditorController {
 
     private ArrayList<DamageType> result;
 
-    NonPlayerCharacter creature = (NonPlayerCharacter) App.currentCreature;
+    NonPlayerCharacter creature = (NonPlayerCharacter) App.initativeRoundRobin.getCurrent();
 
     public void saveButtonPressed() {
         ((NonPlayerCharacter) App.initativeRoundRobin.getCurrent()).setWeaknesses(result);
@@ -18,7 +18,7 @@ public class WeaknessesEditorController {
 
     public void initialize() {
 
-        result = ((NonPlayerCharacter) App.currentCreature).getWeaknesses();
+        result = ((NonPlayerCharacter) App.initativeRoundRobin.getCurrent()).getWeaknesses();
 
         if (result != null && !result.isEmpty()) {
             for (DamageType damageType : result) {

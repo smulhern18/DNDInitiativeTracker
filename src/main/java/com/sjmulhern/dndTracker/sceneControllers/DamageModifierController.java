@@ -16,7 +16,7 @@ public class DamageModifierController {
 
     Stage stage = null;
 
-    NonPlayerCharacter currentCreature = (NonPlayerCharacter) App.currentCreature;
+    NonPlayerCharacter currentCreature = (NonPlayerCharacter) App.initativeRoundRobin.getCurrent();
 
     public void initialize() {
         String weaknessString = "";

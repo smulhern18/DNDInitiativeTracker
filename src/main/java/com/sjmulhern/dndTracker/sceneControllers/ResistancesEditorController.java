@@ -10,7 +10,7 @@ public class ResistancesEditorController {
 
     private ArrayList<DamageType> result;
 
-    private NonPlayerCharacter creature = (NonPlayerCharacter) App.currentCreature;
+    private NonPlayerCharacter creature = (NonPlayerCharacter) App.initativeRoundRobin.getCurrent();
 
     public void saveButtonPressed() {
         ((NonPlayerCharacter) App.initativeRoundRobin.getCurrent()).setResistances(result);
@@ -18,7 +18,7 @@ public class ResistancesEditorController {
 
     public void initialize() {
 
-        result = ((NonPlayerCharacter) App.currentCreature).getResistances();
+        result = ((NonPlayerCharacter) App.initativeRoundRobin.getCurrent()).getResistances();
 
         if (result != null && !result.isEmpty()) {
             for (DamageType damageType : result) {

@@ -10,7 +10,7 @@ public class ImmunitiesEditorController {
 
     private ArrayList<DamageType> result;
 
-    private NonPlayerCharacter creature = (NonPlayerCharacter) App.currentCreature;
+    private NonPlayerCharacter creature = (NonPlayerCharacter) App.initativeRoundRobin.getCurrent();
 
     public void saveButtonPressed() {
         ((NonPlayerCharacter) App.initativeRoundRobin.getCurrent()).setImmunities(result);
@@ -19,7 +19,7 @@ public class ImmunitiesEditorController {
 
     public void initialize() {
 
-        result = ((NonPlayerCharacter) App.currentCreature).getImmunities();
+        result = ((NonPlayerCharacter) App.initativeRoundRobin.getCurrent()).getImmunities();
 
         if (result != null && !result.isEmpty()) {
             for (DamageType damageType : result) {

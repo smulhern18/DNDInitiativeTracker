@@ -41,7 +41,7 @@ import javafx.stage.Stage;
 
 public class CreatureEditorController {
 
-    private Creature creatureEditing = null;
+    private Creature creatureEditing = App.initativeRoundRobin.getCurrent();
 
     public void initialize() {
 
@@ -171,7 +171,6 @@ public class CreatureEditorController {
         }
 
         App.initativeRoundRobin.addCreature(editedCreature);
-        App.currentCreature = editedCreature;
         App.initativeRoundRobin.setCurrentCreature(editedCreature.getName());
         creatureEditing = editedCreature;
         reset();
@@ -180,7 +179,7 @@ public class CreatureEditorController {
     public void openButtonPressed() {
         String creatureName = creatureNames.getValue();
 
-        Set<Creature> creatures = App.initativeRoundRobin.getCreatures();
+        ArrayList<Creature> creatures = App.initativeRoundRobin.getCreatures();
 
         Creature wantedCreature = null;
         for (Creature creature : creatures) {
@@ -331,7 +330,6 @@ public class CreatureEditorController {
 
     public void editSkillsButtonPressed() {
         // initializing the controller
-        App.currentCreature = creatureEditing;
         SkillEditPopupController popupController = new SkillEditPopupController();
         Parent layout;
         try {
@@ -356,7 +354,6 @@ public class CreatureEditorController {
 
     public void editLanguagesButtonPressed() {
         // initializing the controller
-        App.currentCreature = creatureEditing;
         LanguageEditPopupController popupController = new LanguageEditPopupController();
         Parent layout;
         try {
@@ -381,7 +378,6 @@ public class CreatureEditorController {
 
     public void editSpellsSelected() {
         // initializing the controller
-        App.currentCreature = creatureEditing;
         SpellEditorController popupController = new SpellEditorController();
         Parent layout;
         try {
@@ -424,7 +420,6 @@ public class CreatureEditorController {
 
     public void editWeaknessesPressed() {
         // initializing the controller
-        App.currentCreature = creatureEditing;
         Parent layout;
         try {
             layout =
@@ -446,7 +441,6 @@ public class CreatureEditorController {
 
     public void editResistancesPressed() {
         // initializing the controller
-        App.currentCreature = creatureEditing;
         Parent layout;
         try {
             layout =
@@ -469,7 +463,6 @@ public class CreatureEditorController {
 
     public void editImmunitiesPressed() {
         // initializing the controller
-        App.currentCreature = creatureEditing;
         Parent layout;
         try {
             layout =

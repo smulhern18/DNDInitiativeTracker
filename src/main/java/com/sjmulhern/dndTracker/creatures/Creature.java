@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public abstract class Creature {
+public abstract class Creature implements Comparable<Creature>{
 
     private String name;
 
@@ -201,5 +201,9 @@ public abstract class Creature {
     @Override
     public int hashCode() {
         return name.hashCode();
+    }
+
+    public int compareTo(Creature creature) {
+        return this.getInitiative().compareTo(creature.getInitiative());
     }
 }

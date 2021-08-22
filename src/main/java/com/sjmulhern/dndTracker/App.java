@@ -50,8 +50,6 @@ public class App extends Application {
 
     public static InitativeRoundRobin initativeRoundRobin = new InitativeRoundRobin();
 
-    public static Creature currentCreature;
-
     @Override
     public void init() {
         initativeRoundRobin.addCreature(
@@ -142,7 +140,7 @@ public class App extends Application {
                         new ArrayList<>(Arrays.asList(DamageType.Fire, DamageType.Piercing)),
                         null,
                         Type.Humanoid));
-        currentCreature = initativeRoundRobin.getNext();
+        initativeRoundRobin.getNext();
     }
 
     @Override
