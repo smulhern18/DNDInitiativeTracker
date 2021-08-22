@@ -18,7 +18,7 @@ public class LanguageEditPopupController {
 
     private ArrayList<Language> result = new ArrayList<>();
 
-    Creature creature = App.initativeRoundRobin.getCurrent();
+    Creature creature = App.getInitativeRoundRobin().getCurrent();
 
     public void initialize() {
 

@@ -19,7 +19,7 @@ public class SpellViewController {
 
     ArrayList<Tab> tabsToRemove = new ArrayList<>();
 
-    Creature creature = App.initativeRoundRobin.getCurrent();
+    Creature creature = App.getInitativeRoundRobin().getCurrent();
 
     public void reset(Spells spells) {
         if (spells == null) {
@@ -171,9 +171,7 @@ public class SpellViewController {
     }
 
     public void initialize() {
-        System.out.println("Spell View initializing");
-        creature = App.initativeRoundRobin.getCurrent();
-        System.out.println(creature.getName());
+        creature = App.getInitativeRoundRobin().getCurrent();
         reset(creature.getSpells());
     }
 

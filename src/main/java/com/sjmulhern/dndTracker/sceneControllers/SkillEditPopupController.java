@@ -21,7 +21,7 @@ public class SkillEditPopupController implements Initializable {
 
     private ArrayList<Skill> result = new ArrayList<>();
 
-    Creature creature = App.initativeRoundRobin.getCurrent();
+    Creature creature = App.getInitativeRoundRobin().getCurrent();
 
     public void initialize() {
 

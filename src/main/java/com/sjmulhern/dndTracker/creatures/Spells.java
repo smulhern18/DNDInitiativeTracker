@@ -30,9 +30,10 @@ public class Spells {
     ArrayList<Integer> slotsUsed;
 
     public Spells(JsonObject jsonObject) {
+
         // Cantrips
         ArrayList<Spell> cantrips = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("cantrips").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("cantrips") == null)) {
             jsonObject
                     .getAsJsonArray("cantrips")
                     .forEach(element -> cantrips.add(new Spell((JsonObject) element)));
@@ -41,7 +42,7 @@ public class Spells {
 
         // FirstLevel
         ArrayList<Spell> firstLevel = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("firstLevel").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("firstLevel") == null)) {
             jsonObject
                     .getAsJsonArray("firstLevel")
                     .forEach(element -> firstLevel.add(new Spell((JsonObject) element)));
@@ -50,7 +51,7 @@ public class Spells {
 
         // SecondLevel
         ArrayList<Spell> secondLevel = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("secondLevel").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("secondLevel") == null)) {
             jsonObject
                     .getAsJsonArray("secondLevel")
                     .forEach(element -> secondLevel.add(new Spell((JsonObject) element)));
@@ -59,7 +60,7 @@ public class Spells {
 
         // ThirdLevel
         ArrayList<Spell> thirdLevel = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("thirdLevel").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("thirdLevel") == null)) {
             jsonObject
                     .getAsJsonArray("thirdLevel")
                     .forEach(element -> thirdLevel.add(new Spell((JsonObject) element)));
@@ -68,7 +69,7 @@ public class Spells {
 
         // ForthLevel
         ArrayList<Spell> forthLevel = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("forthLevel").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("forthLevel") == null)) {
             jsonObject
                     .getAsJsonArray("forthLevel")
                     .forEach(element -> forthLevel.add(new Spell((JsonObject) element)));
@@ -77,7 +78,7 @@ public class Spells {
 
         // FifthLevel
         ArrayList<Spell> fifthLevel = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("fifthLevel").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("fifthLevel") == null)) {
             jsonObject
                     .getAsJsonArray("fifthLevel")
                     .forEach(element -> fifthLevel.add(new Spell((JsonObject) element)));
@@ -86,7 +87,7 @@ public class Spells {
 
         // SixthLevel
         ArrayList<Spell> sixthLevel = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("sixthLevel").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("sixthLevel") == null)) {
             jsonObject
                     .getAsJsonArray("sixthLevel")
                     .forEach(element -> sixthLevel.add(new Spell((JsonObject) element)));
@@ -95,7 +96,7 @@ public class Spells {
 
         // SeventhLevel
         ArrayList<Spell> seventhLevel = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("seventhLevel").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("seventhLevel") == null)) {
             jsonObject
                     .getAsJsonArray("seventhLevel")
                     .forEach(element -> seventhLevel.add(new Spell((JsonObject) element)));
@@ -104,7 +105,7 @@ public class Spells {
 
         // EighthLevel
         ArrayList<Spell> eighthLevel = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("eighthLevel").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("eighthLevel") == null)) {
             jsonObject
                     .getAsJsonArray("eighthLevel")
                     .forEach(element -> eighthLevel.add(new Spell((JsonObject) element)));
@@ -113,7 +114,7 @@ public class Spells {
 
         // NinthLevel
         ArrayList<Spell> ninthLevel = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("ninthLevel").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("ninthLevel") == null)) {
             jsonObject
                     .getAsJsonArray("ninthLevel")
                     .forEach(element -> ninthLevel.add(new Spell((JsonObject) element)));
@@ -122,14 +123,14 @@ public class Spells {
 
         // Slots
         ArrayList<Integer> slots = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("slots").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("slots") == null)) {
             jsonObject.getAsJsonArray("slots").forEach(element -> slots.add(element.getAsInt()));
         }
         setSlots(slots);
 
         // Slots Used
         ArrayList<Integer> slotsUsed = new ArrayList<>();
-        if (!jsonObject.getAsJsonArray("slotsUsed").isJsonNull()) {
+        if (!(jsonObject.getAsJsonArray("slotsUsed") == null)) {
             jsonObject.getAsJsonArray("slotsUsed").forEach(element -> slotsUsed.add(element.getAsInt()));
         }
         setSlotsUsed(slotsUsed);

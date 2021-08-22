@@ -22,11 +22,11 @@ public class Tool {
 
     public Tool(JsonObject jsonObject) {
         this(
-                jsonObject.get("name").toString(),
-                jsonObject.get("description").toString(),
+                jsonObject.get("name").getAsString(),
+                jsonObject.get("description").getAsString(),
                 DamageType.getEnum(jsonObject.get("damageType").getAsInt()),
-                jsonObject.get("toHit").toString(),
-                jsonObject.get("damage").toString());
+                jsonObject.get("toHit").getAsString(),
+                jsonObject.get("damage").getAsString());
     }
 
     public JsonObject toJson() {

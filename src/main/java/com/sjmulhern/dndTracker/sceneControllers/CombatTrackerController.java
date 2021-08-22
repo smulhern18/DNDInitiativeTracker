@@ -63,7 +63,7 @@ public class CombatTrackerController {
     public void openButtonPressed() {
         String creatureName = creatureNames.getValue();
 
-        ArrayList<Creature> creatures = App.initativeRoundRobin.getCreatures();
+        ArrayList<Creature> creatures = App.getInitativeRoundRobin().getCreatures();
 
         Creature wantedCreature = null;
         for (Creature creature : creatures) {
@@ -79,7 +79,7 @@ public class CombatTrackerController {
     }
 
     public void nextInitiativeButtonPressed() {
-        creature = App.initativeRoundRobin.getNext();
+        creature = App.getInitativeRoundRobin().getNext();
         reset();
     }
 
@@ -191,7 +191,7 @@ public class CombatTrackerController {
         } else {
             SpinnerValueFactory<Integer> hitPointsFactory =
                     new SpinnerValueFactory.IntegerSpinnerValueFactory(
-                            -1, Integer.MAX_VALUE, App.initativeRoundRobin.getCurrent().getHitPoints());
+                            -1, Integer.MAX_VALUE, App.getInitativeRoundRobin().getCurrent().getHitPoints());
             hitPointsSpinner.setValueFactory(hitPointsFactory);
             hitPointsFactory
                     .valueProperty()
@@ -215,8 +215,8 @@ public class CombatTrackerController {
     }
 
     public void initialize() {
-        creature = App.initativeRoundRobin.getCurrent();
-        addToComboBox(App.initativeRoundRobin.getCreatures().toArray());
+        creature = App.getInitativeRoundRobin().getCurrent();
+        addToComboBox(App.getInitativeRoundRobin().getCreatures().toArray());
         ArrayList<String> conditions = new ArrayList<>();
         for (Condition condition : Condition.values()) {
             conditions.add(condition.toString());

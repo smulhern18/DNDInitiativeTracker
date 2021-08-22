@@ -2,9 +2,13 @@ package com.sjmulhern.dndTracker.sceneControllers;
 
 import static javafx.application.Platform.exit;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.sjmulhern.dndTracker.App;
+import com.sjmulhern.dndTracker.Encounter;
+import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Objects;
@@ -49,9 +53,9 @@ public class ToolbarController {
     public void deleteCreaturePressed() {}
 
     public void initiativeControllerPressed() throws IOException {
-        int current = App.initativeRoundRobin.getCurrentIndex();
-        App.initativeRoundRobin.setCurrentIndex(
-                App.initativeRoundRobin.getCreatures().size() + current - 1);
+        int current = App.getInitativeRoundRobin().getCurrentIndex();
+        App.getInitativeRoundRobin()
+                .setCurrentIndex(App.getInitativeRoundRobin().getCreatures().size() + current - 1);
         App.mainSceneController.switchScene("CombatTracker");
     }
 
@@ -67,20 +71,30 @@ public class ToolbarController {
 
     public void changeEncounterButtonPressed() {}
 
-    public void importButtonPressed() throws FileNotFoundException {
+    public void importButtonPressed() throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Import an Encounter JSON file!");
         fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("JSON files", "json"));
-        File file = fileChooser.showOpenDialog(App.pStage);
+        File file = fileChooser.showOpenDialog(App.getPrimaryStage());
+        BufferedReader buffRead = new BufferedReader(new FileReader(file));
+        String fullLine = "";
+        String line;
+        while ((line = buffRead.readLine()) != null) {
+            fullLine += line;
+        }
+        JsonObject encounterJson = JsonParser.parseString(fullLine).getAsJsonObject();
+        App.encounter = new Encounter(encounterJson);
+        App.mainSceneController.switchScene("CombatTracker");
     }
 
     public void exportButtonPressed() throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Export an Encounter JSON file!");
-        fileChooser.setInitialFileName("encounter.json");
-        File file = fileChooser.showSaveDialog(App.pStage);
+        fileChooser.setInitialFileName(App.encounter.getName() + ".json");
+        File file = fileChooser.showSaveDialog(App.getPrimaryStage());
         if (file != null) {
             FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write(App.encounter.toString());
             fileWriter.close();
         }
     }

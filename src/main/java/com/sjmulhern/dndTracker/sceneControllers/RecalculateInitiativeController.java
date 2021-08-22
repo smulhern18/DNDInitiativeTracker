@@ -22,7 +22,7 @@ public class RecalculateInitiativeController {
         PlayerCharacter newPlayer =
                 new PlayerCharacter("New Player " + new Random().nextInt(), 10, 0, 1.0, Condition.None);
         playerTableView.getItems().add(newPlayer);
-        App.initativeRoundRobin.addCreature(newPlayer);
+        App.getInitativeRoundRobin().addCreature(newPlayer);
         playerNames.getItems().add(newPlayer.getName());
     }
 
@@ -35,12 +35,12 @@ public class RecalculateInitiativeController {
     }
 
     public void reRollPressed() throws IOException {
-        App.initativeRoundRobin.recalculateInitative();
+        App.getInitativeRoundRobin().recalculateInitative();
         App.mainSceneController.switchScene("CombatTracker");
     }
 
     public void initialize() {
-        ArrayList<Creature> creatures = App.initativeRoundRobin.getCreatures();
+        ArrayList<Creature> creatures = App.getInitativeRoundRobin().getCreatures();
         for (Creature creature : creatures) {
             if (creature instanceof PlayerCharacter) {
                 playerCharacters.add((PlayerCharacter) creature);

@@ -17,43 +17,45 @@ import javafx.scene.control.ComboBox;
 
 public class CreatureCreationPopupController {
 
-    Creature currentCreature = App.initativeRoundRobin.getCurrent();
+    Creature currentCreature = App.getInitativeRoundRobin().getCurrent();
 
     public void nothingPressed() {
         String name = "" + new Random().nextInt();
-        App.initativeRoundRobin.addCreature(
-                new NonPlayerCharacter(
-                        name,
-                        "This is a brand spanking new Creature," + " please change the randomly generated name",
-                        Alignment.Unaligned,
-                        Size.Medium,
-                        30,
-                        15,
-                        15,
-                        0,
-                        new ArrayList<>(),
-                        new ArrayList<>(),
-                        new ArrayList<>(),
-                        new ArrayList<>(),
-                        10,
-                        10,
-                        10,
-                        10,
-                        10,
-                        10,
-                        5,
-                        10,
-                        1,
-                        1.0,
-                        Condition.None,
-                        new Spells(),
-                        new ArrayList<>(),
-                        new ArrayList<>(),
-                        new ArrayList<>()));
+        App.getInitativeRoundRobin()
+                .addCreature(
+                        new NonPlayerCharacter(
+                                name,
+                                "This is a brand spanking new Creature,"
+                                        + " please change the randomly generated name",
+                                Alignment.Unaligned,
+                                Size.Medium,
+                                30,
+                                15,
+                                15,
+                                0,
+                                new ArrayList<>(),
+                                new ArrayList<>(),
+                                new ArrayList<>(),
+                                new ArrayList<>(),
+                                10,
+                                10,
+                                10,
+                                10,
+                                10,
+                                10,
+                                5,
+                                10,
+                                1,
+                                1.0,
+                                Condition.None,
+                                new Spells(),
+                                new ArrayList<>(),
+                                new ArrayList<>(),
+                                new ArrayList<>()));
     }
 
     public void currentCreaturePressed() {
-        if (App.initativeRoundRobin.getCreatures().size() == 0) {
+        if (App.getInitativeRoundRobin().getCreatures().size() == 0) {
             nothingPressed();
             return;
         }
@@ -66,23 +68,23 @@ public class CreatureCreationPopupController {
         creatureJson.addProperty("name", newName);
 
         if (currentCreature instanceof NonPlayerCharacter) {
-            App.initativeRoundRobin.addCreature(new NonPlayerCharacter(creatureJson));
+            App.getInitativeRoundRobin().addCreature(new NonPlayerCharacter(creatureJson));
         } else if (currentCreature instanceof PlayerCharacter) {
-            App.initativeRoundRobin.addCreature(new PlayerCharacter(creatureJson));
+            App.getInitativeRoundRobin().addCreature(new PlayerCharacter(creatureJson));
         } else {
-            App.initativeRoundRobin.addCreature(new Monster(creatureJson));
+            App.getInitativeRoundRobin().addCreature(new Monster(creatureJson));
         }
 
-        App.initativeRoundRobin.setCurrentCreature(newName);
+        App.getInitativeRoundRobin().setCurrentCreature(newName);
     }
 
     public void selectedCreaturePressed() {
-        if (App.initativeRoundRobin.getCreatures().size() == 0) {
+        if (App.getInitativeRoundRobin().getCreatures().size() == 0) {
             nothingPressed();
             return;
         }
 
-        App.initativeRoundRobin.setCurrentCreature(creatureNameComboBox.getValue());
+        App.getInitativeRoundRobin().setCurrentCreature(creatureNameComboBox.getValue());
 
         String newName = currentCreature.getName() + "_copy";
 
@@ -92,21 +94,21 @@ public class CreatureCreationPopupController {
         creatureJson.addProperty("name", newName);
 
         if (currentCreature instanceof NonPlayerCharacter) {
-            App.initativeRoundRobin.addCreature(new NonPlayerCharacter(creatureJson));
+            App.getInitativeRoundRobin().addCreature(new NonPlayerCharacter(creatureJson));
         } else if (currentCreature instanceof PlayerCharacter) {
-            App.initativeRoundRobin.addCreature(new PlayerCharacter(creatureJson));
+            App.getInitativeRoundRobin().addCreature(new PlayerCharacter(creatureJson));
         } else {
-            App.initativeRoundRobin.addCreature(new Monster(creatureJson));
+            App.getInitativeRoundRobin().addCreature(new Monster(creatureJson));
         }
 
-        App.initativeRoundRobin.setCurrentCreature(newName);
+        App.getInitativeRoundRobin().setCurrentCreature(newName);
     }
 
     public void initialize() {
 
         // Initialize Combobox
         ArrayList<String> names = new ArrayList<>();
-        for (Creature creature : App.initativeRoundRobin.getCreatures()) {
+        for (Creature creature : App.getInitativeRoundRobin().getCreatures()) {
             names.add(creature.getName());
         }
         creatureNameComboBox.getItems().addAll(names);

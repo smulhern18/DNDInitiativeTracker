@@ -40,7 +40,7 @@ import javafx.stage.Stage;
 
 public class CreatureEditorController {
 
-    private Creature creatureEditing = App.initativeRoundRobin.getCurrent();
+    private Creature creatureEditing = App.getInitativeRoundRobin().getCurrent();
 
     public void initialize() {
 
@@ -69,7 +69,7 @@ public class CreatureEditorController {
         addToComboBox(creatureTypeField, typeStrings);
         addToComboBox(currentConditionCombobox, conditionStrings);
 
-        creatureEditing = App.initativeRoundRobin.getCurrent();
+        creatureEditing = App.getInitativeRoundRobin().getCurrent();
         reset();
     }
 
@@ -98,7 +98,7 @@ public class CreatureEditorController {
         ArrayList<Ability> abilities = new ArrayList<>(abilityTable.getItems());
         ArrayList<Tool> tools = new ArrayList<>(weaponsTable.getItems());
 
-        App.initativeRoundRobin.getCreatures().remove(creatureEditing);
+        App.getInitativeRoundRobin().getCreatures().remove(creatureEditing);
 
         switch (creatureType) {
             case "Monster" -> editedCreature =
@@ -169,8 +169,8 @@ public class CreatureEditorController {
                             null);
         }
 
-        App.initativeRoundRobin.addCreature(editedCreature);
-        App.initativeRoundRobin.setCurrentCreature(editedCreature.getName());
+        App.getInitativeRoundRobin().addCreature(editedCreature);
+        App.getInitativeRoundRobin().setCurrentCreature(editedCreature.getName());
         creatureEditing = editedCreature;
         reset();
     }
@@ -178,7 +178,7 @@ public class CreatureEditorController {
     public void openButtonPressed() {
         String creatureName = creatureNames.getValue();
 
-        ArrayList<Creature> creatures = App.initativeRoundRobin.getCreatures();
+        ArrayList<Creature> creatures = App.getInitativeRoundRobin().getCreatures();
 
         Creature wantedCreature = null;
         for (Creature creature : creatures) {
@@ -195,7 +195,7 @@ public class CreatureEditorController {
 
     public void reset() {
         creatureNames.setItems(FXCollections.observableArrayList());
-        addToComboBox(App.initativeRoundRobin.getCreatures().toArray());
+        addToComboBox(App.getInitativeRoundRobin().getCreatures().toArray());
         if (creatureEditing instanceof Monster) {
             levelDescriptor.setText("DC:");
         }
@@ -431,7 +431,7 @@ public class CreatureEditorController {
             popupStage.initModality(Modality.WINDOW_MODAL);
             popupStage.setScene(scene);
             popupStage.showAndWait();
-            ((NonPlayerCharacter) App.initativeRoundRobin.getCurrent())
+            ((NonPlayerCharacter) App.getInitativeRoundRobin().getCurrent())
                     .setWeaknesses(((NonPlayerCharacter) creatureEditing).getWeaknesses());
         } catch (IOException e) {
             e.printStackTrace();
@@ -453,7 +453,7 @@ public class CreatureEditorController {
             popupStage.initModality(Modality.WINDOW_MODAL);
             popupStage.setScene(scene);
             popupStage.showAndWait();
-            ((NonPlayerCharacter) App.initativeRoundRobin.getCurrent())
+            ((NonPlayerCharacter) App.getInitativeRoundRobin().getCurrent())
                     .setResistances(((NonPlayerCharacter) creatureEditing).getResistances());
         } catch (IOException e) {
             e.printStackTrace();

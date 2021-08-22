@@ -34,7 +34,7 @@ public class SpellEditorController {
     private Stage stage = null;
 
     public void saveButtonPressed() {
-        App.initativeRoundRobin
+        App.getInitativeRoundRobin()
                 .getCurrent()
                 .setSpells(
                         new Spells(
@@ -52,7 +52,7 @@ public class SpellEditorController {
                                 creature.getSpells().getSlotsUsed()));
     }
 
-    Creature creature = App.initativeRoundRobin.getCurrent();
+    Creature creature = App.getInitativeRoundRobin().getCurrent();
 
     private Spells result =
             new Spells(
@@ -113,8 +113,6 @@ public class SpellEditorController {
         if (spells == null) {
             creature.setSpells(result);
             spells = result;
-        } else {
-            System.out.println(spells);
         }
 
         // Initialize the spinners

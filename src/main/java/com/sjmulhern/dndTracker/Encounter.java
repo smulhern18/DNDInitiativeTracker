@@ -21,6 +21,7 @@ public class Encounter {
         setDescription(jsonObject.get("description").getAsString());
         setInitativeRoundRobin(
                 new InitativeRoundRobin(jsonObject.get("initativeRoundRobin").getAsJsonObject()));
+        initativeRoundRobin.getNext();
     }
 
     public JsonObject toJson() {
@@ -31,5 +32,9 @@ public class Encounter {
         jsonObject.add("initativeRoundRobin", initativeRoundRobin.toJson());
 
         return jsonObject;
+    }
+
+    public String toString() {
+        return this.toJson().toString();
     }
 }

@@ -127,7 +127,7 @@ public abstract class Creature implements Comparable<Creature> {
         setLanguages(languages);
 
         JsonElement spellsJson = jsonObject.get("spells");
-
+        System.out.println(spellsJson);
         if (!spellsJson.isJsonNull()) {
             setSpells(new Spells((JsonObject) spellsJson));
         }
