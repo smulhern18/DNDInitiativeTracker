@@ -36,8 +36,7 @@ public class GetEncounterController {
     }
 
     public void importFromDatabase() throws IOException {
-        System.out.println("Not yet Implemented!");
-        brandNewEncounter();
+        App.mainSceneController.switchScene("ImportFromDatabase");
     }
 
     public void brandNewEncounter() throws IOException {
