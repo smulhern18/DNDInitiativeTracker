@@ -9,7 +9,6 @@ import com.sjmulhern.dndTracker.Encounter;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Objects;
 import javafx.fxml.FXML;
@@ -69,12 +68,14 @@ public class ToolbarController {
 
     public MenuButton encounterPropertiesMenu;
 
-    public void changeEncounterButtonPressed() {}
+    public void changeEncounterButtonPressed() throws IOException {
+        App.mainSceneController.switchScene("GetEncounter");
+    }
 
     public void importButtonPressed() throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Import an Encounter JSON file!");
-        fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("JSON files", "json"));
+        fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("JSON files", "*.json"));
         File file = fileChooser.showOpenDialog(App.getPrimaryStage());
         BufferedReader buffRead = new BufferedReader(new FileReader(file));
         String fullLine = "";
@@ -88,15 +89,7 @@ public class ToolbarController {
     }
 
     public void exportButtonPressed() throws IOException {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Export an Encounter JSON file!");
-        fileChooser.setInitialFileName(App.encounter.getName() + ".json");
-        File file = fileChooser.showSaveDialog(App.getPrimaryStage());
-        if (file != null) {
-            FileWriter fileWriter = new FileWriter(file);
-            fileWriter.write(App.encounter.toString());
-            fileWriter.close();
-        }
+        App.mainSceneController.switchScene("ExportEncounter");
     }
 
     public void mainMenuPressed() throws IOException {

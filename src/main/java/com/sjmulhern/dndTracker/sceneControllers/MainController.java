@@ -12,7 +12,8 @@ public class MainController {
     public void combatTrackerPressed(ActionEvent actionEvent) throws IOException {
         if (App.encounter == null) {
             App.mainSceneController.switchScene("GetEncounter");
+        } else {
+            App.mainSceneController.switchScene("CombatTracker");
         }
-        App.mainSceneController.switchScene("CombatTracker");
     }
 }
