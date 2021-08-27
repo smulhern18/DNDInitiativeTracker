@@ -223,21 +223,28 @@ public class CreatureEditorController {
         swimmingSpeedField.setText(creatureEditing.getSwimSpeed() + "");
         climbingSpeedField.setText(creatureEditing.getClimbSpeed() + "");
         flyingSpeedField.setText(creatureEditing.getFlySpeed() + "");
-        SpinnerValueFactory<Integer> strFactory =
+        SpinnerValueFactory<Integer> strFactory;
+        SpinnerValueFactory<Integer> dexFactory;
+        SpinnerValueFactory<Integer> contFactory;
+        SpinnerValueFactory<Integer> intFactory;
+        SpinnerValueFactory<Integer> wisFactory;
+        SpinnerValueFactory<Integer> chaFactory;
+        SpinnerValueFactory<Integer> hitPointsFactory;
+        strFactory =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, creatureEditing.getStrength());
-        SpinnerValueFactory<Integer> dexFactory =
+        dexFactory =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, creatureEditing.getDexterity());
-        SpinnerValueFactory<Integer> contFactory =
+        contFactory =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(
                         0, 30, creatureEditing.getConstitution());
-        SpinnerValueFactory<Integer> intFactory =
+        intFactory =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(
                         0, 30, creatureEditing.getIntelligence());
-        SpinnerValueFactory<Integer> wisFactory =
+        wisFactory =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, creatureEditing.getWisdom());
-        SpinnerValueFactory<Integer> chaFactory =
+        chaFactory =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, creatureEditing.getCharisma());
-        SpinnerValueFactory<Integer> hitPointsFactory =
+        hitPointsFactory =
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(
                         0, Integer.MAX_VALUE, creatureEditing.getHitPoints());
         strField.setValueFactory(strFactory);
@@ -263,6 +270,8 @@ public class CreatureEditorController {
         }
 
         ObservableList<Ability> abilitiesObservable = FXCollections.observableArrayList();
+        abilitiesObservable.addAll(creatureEditing.getAbilities());
+
         abilitiesObservable.addAll(creatureEditing.getAbilities());
         abilitiesNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         abilitiesNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
