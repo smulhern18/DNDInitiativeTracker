@@ -4,11 +4,11 @@ This program is a graphical interface to be used during a session of Dungeons an
 
 ![DND Logo](documentation/pictures/dndLogo.png)
 
-###Requirements for this project
+### Requirements for this project
 
 * Java JDK 15 at least
 * Gradle 7.0
 * An internet connection
 
-###To run this project
+### To run this project
 1.
