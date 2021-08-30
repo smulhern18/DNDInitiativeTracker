@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
+<?import javafx.scene.control.Spinner?>
 <AnchorPane fx:id="basePane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.SpellViewController">
    <children>
       <TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="650.0" tabClosingPolicy="UNAVAILABLE">
@@ -63,7 +64,7 @@
                                   <Label text="Spell Slots:" />
                                   <Label text="Used:" GridPane.columnIndex="2" />
                                   <Label fx:id="firstSlots" text="# here" GridPane.columnIndex="1" />
-                                  <Label fx:id="firstSlotsExpended" prefHeight="17.0" prefWidth="37.0" text="# here" GridPane.columnIndex="3" />
+                                  <Spinner fx:id="firstSlotsExpended" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="3" />
                               </children>
                           </GridPane>
                     </children>
@@ -100,7 +101,7 @@
                                   <Label text="Spell Slots:" />
                                   <Label text="Used:" GridPane.columnIndex="2" />
                                   <Label fx:id="secondSlots" text="# here" GridPane.columnIndex="1" />
-                                  <Label fx:id="secondSlotsExpended" prefHeight="17.0" prefWidth="37.0" text="# here" GridPane.columnIndex="3" />
+                                  <Spinner fx:id="secondSlotsExpended" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="3" />
                               </children>
                           </GridPane>
                       </children>
@@ -137,7 +138,7 @@
                                   <Label text="Spell Slots:" />
                                   <Label text="Used:" GridPane.columnIndex="2" />
                                   <Label fx:id="thirdSlots" text="# here" GridPane.columnIndex="1" />
-                                  <Label fx:id="thirdSlotsExpended" prefHeight="17.0" prefWidth="37.0" text="# here" GridPane.columnIndex="3" />
+                                  <Spinner fx:id="thirdSlotsExpended" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="3" />
                               </children>
                           </GridPane>
                       </children>
@@ -174,7 +175,7 @@
                                   <Label text="Spell Slots:" />
                                   <Label text="Used:" GridPane.columnIndex="2" />
                                   <Label fx:id="forthSlots" text="# here" GridPane.columnIndex="1" />
-                                  <Label fx:id="forthSlotsExpended" prefHeight="17.0" prefWidth="37.0" text="# here" GridPane.columnIndex="3" />
+                                  <Spinner fx:id="forthSlotsExpended" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="3" />
                               </children>
                           </GridPane>
                       </children>
@@ -211,7 +212,7 @@
                                   <Label text="Spell Slots:" />
                                   <Label text="Used:" GridPane.columnIndex="2" />
                                   <Label fx:id="fifthSlots" text="# here" GridPane.columnIndex="1" />
-                                  <Label fx:id="fifthSlotsExpended" prefHeight="17.0" prefWidth="37.0" text="# here" GridPane.columnIndex="3" />
+                                  <Spinner fx:id="fifthSlotsExpended" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="3" />
                               </children>
                           </GridPane>
                       </children>
@@ -248,7 +249,7 @@
                                   <Label text="Spell Slots:" />
                                   <Label text="Used:" GridPane.columnIndex="2" />
                                   <Label fx:id="sixthSlots" text="# here" GridPane.columnIndex="1" />
-                                  <Label fx:id="sixthSlotsExpended" prefHeight="17.0" prefWidth="37.0" text="# here" GridPane.columnIndex="3" />
+                                  <Spinner fx:id="sixthSlotsExpended" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="3" />
                               </children>
                           </GridPane>
                       </children>
@@ -285,7 +286,7 @@
                                   <Label text="Spell Slots:" />
                                   <Label text="Used:" GridPane.columnIndex="2" />
                                   <Label fx:id="seventhSlots" text="# here" GridPane.columnIndex="1" />
-                                  <Label fx:id="seventhSlotsExpended" prefHeight="17.0" prefWidth="37.0" text="# here" GridPane.columnIndex="3" />
+                                  <Spinner fx:id="seventhSlotsExpended" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="3" />
                               </children>
                           </GridPane>
                       </children>
@@ -320,7 +321,7 @@
                           <Label text="Spell Slots:" />
                           <Label text="Used:" GridPane.columnIndex="2" />
                           <Label fx:id="eighthSlots" text="# here" GridPane.columnIndex="1" />
-                          <Label fx:id="eighthSlotsExpended" prefHeight="17.0" prefWidth="37.0" text="# here" GridPane.columnIndex="3" />
+                          <Spinner fx:id="eighthSlotsExpended" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="3" />
                       </children>
                   </GridPane>
               </AnchorPane>
@@ -355,7 +356,7 @@
                                   <Label text="Spell Slots:" />
                                   <Label text="Used:" GridPane.columnIndex="2" />
                                   <Label fx:id="ninthSlots" text="# here" GridPane.columnIndex="1" />
-                                  <Label fx:id="ninthSlotsExpended" prefHeight="17.0" prefWidth="37.0" text="# here" GridPane.columnIndex="3" />
+                                  <Spinner fx:id="ninthSlotsExpended" prefHeight="17.0" prefWidth="75.0" GridPane.columnIndex="3" />
                               </children>
                           </GridPane>
                       </children>

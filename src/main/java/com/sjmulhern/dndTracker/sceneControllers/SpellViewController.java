@@ -7,11 +7,7 @@ import com.sjmulhern.dndTracker.tools.Shape;
 import com.sjmulhern.dndTracker.tools.Spell;
 import java.util.ArrayList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
@@ -56,7 +52,19 @@ public class SpellViewController {
             firstShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             firstRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
             firstSlots.setText(spells.getSlots().get(1) + "");
-            firstSlotsExpended.setText(spells.getSlotsUsed().get(1) + "");
+
+            SpinnerValueFactory<Integer> firstSlotsFactory =
+                    new SpinnerValueFactory.IntegerSpinnerValueFactory(
+                            0, spells.getSlots().get(1), spells.getSlotsUsed().get(1));
+            firstSlotsExpended.setValueFactory(firstSlotsFactory);
+            firstSlotsFactory
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                ArrayList<Integer> slotsUsed = spells.getSlotsUsed();
+                                slotsUsed.set(1, newValue);
+                                spells.setSlotsUsed(slotsUsed);
+                            }));
         } else {
             tabsToRemove.add(this.firstLevel);
         }
@@ -69,7 +77,19 @@ public class SpellViewController {
             secondShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             secondRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
             secondSlots.setText(spells.getSlots().get(2) + "");
-            secondSlotsExpended.setText(spells.getSlotsUsed().get(2) + "");
+
+            SpinnerValueFactory<Integer> secondSlotsFactory =
+                    new SpinnerValueFactory.IntegerSpinnerValueFactory(
+                            0, spells.getSlots().get(2), spells.getSlotsUsed().get(2));
+            secondSlotsExpended.setValueFactory(secondSlotsFactory);
+            secondSlotsFactory
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                ArrayList<Integer> slotsUsed = spells.getSlotsUsed();
+                                slotsUsed.set(2, newValue);
+                                spells.setSlotsUsed(slotsUsed);
+                            }));
         } else {
             tabsToRemove.add(this.secondLevel);
         }
@@ -82,7 +102,19 @@ public class SpellViewController {
             thirdShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             thirdRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
             thirdSlots.setText(spells.getSlots().get(3) + "");
-            thirdSlotsExpended.setText(spells.getSlotsUsed().get(3) + "");
+
+            SpinnerValueFactory<Integer> thirdSlotsFactory =
+                    new SpinnerValueFactory.IntegerSpinnerValueFactory(
+                            0, spells.getSlots().get(3), spells.getSlotsUsed().get(3));
+            thirdSlotsExpended.setValueFactory(thirdSlotsFactory);
+            thirdSlotsFactory
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                ArrayList<Integer> slotsUsed = spells.getSlotsUsed();
+                                slotsUsed.set(3, newValue);
+                                spells.setSlotsUsed(slotsUsed);
+                            }));
         } else {
             tabsToRemove.add(this.thirdLevel);
         }
@@ -95,7 +127,19 @@ public class SpellViewController {
             forthShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             forthRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
             forthSlots.setText(spells.getSlots().get(4) + "");
-            forthSlotsExpended.setText(spells.getSlotsUsed().get(4) + "");
+
+            SpinnerValueFactory<Integer> forthSlotsFactory =
+                    new SpinnerValueFactory.IntegerSpinnerValueFactory(
+                            0, spells.getSlots().get(4), spells.getSlotsUsed().get(4));
+            forthSlotsExpended.setValueFactory(forthSlotsFactory);
+            forthSlotsFactory
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                ArrayList<Integer> slotsUsed = spells.getSlotsUsed();
+                                slotsUsed.set(4, newValue);
+                                spells.setSlotsUsed(slotsUsed);
+                            }));
         } else {
             tabsToRemove.add(this.forthLevel);
         }
@@ -108,7 +152,19 @@ public class SpellViewController {
             fifthShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             fifthRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
             fifthSlots.setText(spells.getSlots().get(5) + "");
-            fifthSlotsExpended.setText(spells.getSlotsUsed().get(5) + "");
+
+            SpinnerValueFactory<Integer> fifthSlotsFactory =
+                    new SpinnerValueFactory.IntegerSpinnerValueFactory(
+                            0, spells.getSlots().get(5), spells.getSlotsUsed().get(5));
+            fifthSlotsExpended.setValueFactory(fifthSlotsFactory);
+            fifthSlotsFactory
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                ArrayList<Integer> slotsUsed = spells.getSlotsUsed();
+                                slotsUsed.set(5, newValue);
+                                spells.setSlotsUsed(slotsUsed);
+                            }));
         } else {
             tabsToRemove.add(this.fifthLevel);
         }
@@ -121,7 +177,19 @@ public class SpellViewController {
             sixthShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             sixthRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
             sixthSlots.setText(spells.getSlots().get(6) + "");
-            sixthSlotsExpended.setText(spells.getSlotsUsed().get(6) + "");
+
+            SpinnerValueFactory<Integer> sixthSlotsFactory =
+                    new SpinnerValueFactory.IntegerSpinnerValueFactory(
+                            0, spells.getSlots().get(6), spells.getSlotsUsed().get(6));
+            sixthSlotsExpended.setValueFactory(sixthSlotsFactory);
+            sixthSlotsFactory
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                ArrayList<Integer> slotsUsed = spells.getSlotsUsed();
+                                slotsUsed.set(6, newValue);
+                                spells.setSlotsUsed(slotsUsed);
+                            }));
         } else {
             tabsToRemove.add(this.sixthLevel);
         }
@@ -134,7 +202,19 @@ public class SpellViewController {
             seventhShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             seventhRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
             seventhSlots.setText(spells.getSlots().get(7) + "");
-            seventhSlotsExpended.setText(spells.getSlotsUsed().get(7) + "");
+
+            SpinnerValueFactory<Integer> seventhSlotsFactory =
+                    new SpinnerValueFactory.IntegerSpinnerValueFactory(
+                            0, spells.getSlots().get(7), spells.getSlotsUsed().get(7));
+            seventhSlotsExpended.setValueFactory(seventhSlotsFactory);
+            seventhSlotsFactory
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                ArrayList<Integer> slotsUsed = spells.getSlotsUsed();
+                                slotsUsed.set(7, newValue);
+                                spells.setSlotsUsed(slotsUsed);
+                            }));
         } else {
             tabsToRemove.add(this.seventhLevel);
         }
@@ -147,7 +227,19 @@ public class SpellViewController {
             eighthShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             eighthRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
             eighthSlots.setText(spells.getSlots().get(8) + "");
-            eighthSlotsExpended.setText(spells.getSlotsUsed().get(8) + "");
+
+            SpinnerValueFactory<Integer> eighthSlotsFactory =
+                    new SpinnerValueFactory.IntegerSpinnerValueFactory(
+                            0, spells.getSlots().get(8), spells.getSlotsUsed().get(8));
+            eighthSlotsExpended.setValueFactory(eighthSlotsFactory);
+            eighthSlotsFactory
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                ArrayList<Integer> slotsUsed = spells.getSlotsUsed();
+                                slotsUsed.set(8, newValue);
+                                spells.setSlotsUsed(slotsUsed);
+                            }));
         } else {
             tabsToRemove.add(this.eighthLevel);
         }
@@ -160,7 +252,19 @@ public class SpellViewController {
             ninthShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
             ninthRequirements.setCellValueFactory(new PropertyValueFactory<>("requirements"));
             ninthSlots.setText(spells.getSlots().get(9) + "");
-            ninthSlotsExpended.setText(spells.getSlotsUsed().get(9) + "");
+
+            SpinnerValueFactory<Integer> ninthSlotsFactory =
+                    new SpinnerValueFactory.IntegerSpinnerValueFactory(
+                            0, spells.getSlots().get(9), spells.getSlotsUsed().get(9));
+            ninthSlotsExpended.setValueFactory(ninthSlotsFactory);
+            ninthSlotsFactory
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                ArrayList<Integer> slotsUsed = spells.getSlotsUsed();
+                                slotsUsed.set(9, newValue);
+                                spells.setSlotsUsed(slotsUsed);
+                            }));
         } else {
             tabsToRemove.add(this.ninthLevel);
         }
@@ -192,7 +296,7 @@ public class SpellViewController {
     @FXML public TableColumn<Spell, Shape> firstShape;
     @FXML public TableColumn<Spell, String> firstRequirements;
     @FXML public Label firstSlots;
-    @FXML public Label firstSlotsExpended;
+    @FXML public Spinner<Integer> firstSlotsExpended;
     @FXML public Tab secondLevel;
     @FXML public TableView<Spell> secondTable;
     @FXML public TableColumn<Spell, String> secondName;
@@ -201,7 +305,7 @@ public class SpellViewController {
     @FXML public TableColumn<Spell, Shape> secondShape;
     @FXML public TableColumn<Spell, String> secondRequirements;
     @FXML public Label secondSlots;
-    @FXML public Label secondSlotsExpended;
+    @FXML public Spinner<Integer> secondSlotsExpended;
     @FXML public Tab thirdLevel;
     @FXML public TableView<Spell> thirdTable;
     @FXML public TableColumn<Spell, String> thirdName;
@@ -210,7 +314,7 @@ public class SpellViewController {
     @FXML public TableColumn<Spell, Shape> thirdShape;
     @FXML public TableColumn<Spell, String> thirdRequirements;
     @FXML public Label thirdSlots;
-    @FXML public Label thirdSlotsExpended;
+    @FXML public Spinner<Integer> thirdSlotsExpended;
     @FXML public Tab forthLevel;
     @FXML public TableView<Spell> forthTable;
     @FXML public TableColumn<Spell, String> forthName;
@@ -219,7 +323,7 @@ public class SpellViewController {
     @FXML public TableColumn<Spell, Shape> forthShape;
     @FXML public TableColumn<Spell, String> forthRequirements;
     @FXML public Label forthSlots;
-    @FXML public Label forthSlotsExpended;
+    @FXML public Spinner<Integer> forthSlotsExpended;
     @FXML public Tab fifthLevel;
     @FXML public TableView<Spell> fifthTable;
     @FXML public TableColumn<Spell, String> fifthName;
@@ -228,7 +332,7 @@ public class SpellViewController {
     @FXML public TableColumn<Spell, Shape> fifthShape;
     @FXML public TableColumn<Spell, String> fifthRequirements;
     @FXML public Label fifthSlots;
-    @FXML public Label fifthSlotsExpended;
+    @FXML public Spinner<Integer> fifthSlotsExpended;
     @FXML public Tab sixthLevel;
     @FXML public TableView<Spell> sixthTable;
     @FXML public TableColumn<Spell, String> sixthName;
@@ -237,7 +341,7 @@ public class SpellViewController {
     @FXML public TableColumn<Spell, Shape> sixthShape;
     @FXML public TableColumn<Spell, String> sixthRequirements;
     @FXML public Label sixthSlots;
-    @FXML public Label sixthSlotsExpended;
+    @FXML public Spinner<Integer> sixthSlotsExpended;
     @FXML public Tab seventhLevel;
     @FXML public TableView<Spell> seventhTable;
     @FXML public TableColumn<Spell, String> seventhName;
@@ -246,7 +350,7 @@ public class SpellViewController {
     @FXML public TableColumn<Spell, Shape> seventhShape;
     @FXML public TableColumn<Spell, String> seventhRequirements;
     @FXML public Label seventhSlots;
-    @FXML public Label seventhSlotsExpended;
+    @FXML public Spinner<Integer> seventhSlotsExpended;
     @FXML public Tab eighthLevel;
     @FXML public TableView<Spell> eighthTable;
     @FXML public TableColumn<Spell, String> eighthName;
@@ -255,7 +359,7 @@ public class SpellViewController {
     @FXML public TableColumn<Spell, Shape> eighthShape;
     @FXML public TableColumn<Spell, String> eighthRequirements;
     @FXML public Label eighthSlots;
-    @FXML public Label eighthSlotsExpended;
+    @FXML public Spinner<Integer> eighthSlotsExpended;
     @FXML public Tab ninthLevel;
     @FXML public TableView<Spell> ninthTable;
     @FXML public TableColumn<Spell, String> ninthName;
@@ -264,5 +368,5 @@ public class SpellViewController {
     @FXML public TableColumn<Spell, Shape> ninthShape;
     @FXML public TableColumn<Spell, String> ninthRequirements;
     @FXML public Label ninthSlots;
-    @FXML public Label ninthSlotsExpended;
+    @FXML public Spinner<Integer> ninthSlotsExpended;
 }
