@@ -5,12 +5,12 @@ import com.google.gson.JsonParser;
 import com.sjmulhern.dndTracker.App;
 import com.sjmulhern.dndTracker.Encounter;
 import com.sjmulhern.dndTracker.InitativeRoundRobin;
-import com.sjmulhern.dndTracker.creatures.Condition;
-import com.sjmulhern.dndTracker.creatures.PlayerCharacter;
+import com.sjmulhern.dndTracker.creatures.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 
@@ -42,7 +42,36 @@ public class GetEncounterController {
     public void brandNewEncounter() throws IOException {
 
         InitativeRoundRobin irr = new InitativeRoundRobin();
-        irr.addCreature(new PlayerCharacter("A brand new Encounter!", 10, 1, 1.0, Condition.None));
+        irr.addCreature(
+                new NonPlayerCharacter(
+                        "A brand new Encounter!",
+                        "description",
+                        Alignment.Unaligned,
+                        Size.Medium,
+                        30,
+                        15,
+                        15,
+                        0,
+                        new ArrayList<>(),
+                        new ArrayList<>(),
+                        new ArrayList<>(),
+                        new ArrayList<>(),
+                        10,
+                        10,
+                        10,
+                        10,
+                        10,
+                        10,
+                        10,
+                        10,
+                        10,
+                        1.0,
+                        Condition.None,
+                        null,
+                        new ArrayList<>(),
+                        new ArrayList<>(),
+                        new ArrayList<>()));
+
         App.encounter = new Encounter("New Encounter!", "The description of the encounter", irr);
         App.mainSceneController.switchScene("CombatTracker");
     }

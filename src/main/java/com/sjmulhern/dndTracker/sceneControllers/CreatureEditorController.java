@@ -97,6 +97,18 @@ public class CreatureEditorController {
 
         ArrayList<Ability> abilities = new ArrayList<>(abilityTable.getItems());
         ArrayList<Tool> tools = new ArrayList<>(weaponsTable.getItems());
+        ArrayList<DamageType> resistances =
+                (creatureEditing instanceof PlayerCharacter
+                        ? null
+                        : ((NonPlayerCharacter) creatureEditing).getResistances());
+        ArrayList<DamageType> weaknesses =
+                (creatureEditing instanceof PlayerCharacter
+                        ? null
+                        : ((NonPlayerCharacter) creatureEditing).getWeaknesses());
+        ArrayList<DamageType> immunities =
+                (creatureEditing instanceof PlayerCharacter
+                        ? null
+                        : ((NonPlayerCharacter) creatureEditing).getImmunities());
 
         App.getInitativeRoundRobin().getCreatures().remove(creatureEditing);
 
@@ -115,21 +127,21 @@ public class CreatureEditorController {
                             tools,
                             creatureEditing.getSkills(),
                             creatureEditing.getLanguages(),
-                            creatureEditing.getStrength(),
-                            creatureEditing.getDexterity(),
-                            creatureEditing.getConstitution(),
-                            creatureEditing.getIntelligence(),
-                            creatureEditing.getWisdom(),
-                            creatureEditing.getCharisma(),
-                            creatureEditing.getHitPoints(),
+                            strField.getValue(),
+                            dexField.getValue(),
+                            contField.getValue(),
+                            intField.getValue(),
+                            wisField.getValue(),
+                            chaField.getValue(),
+                            hitPointsField.getValue(),
                             creatureEditing.getArmorClass(),
                             creatureEditing.getInitiative(),
                             creatureEditing.getLevel(),
                             creatureEditing.getCurrentCondition(),
                             creatureEditing.getSpells(),
-                            ((NonPlayerCharacter) creatureEditing).getResistances(),
-                            ((NonPlayerCharacter) creatureEditing).getWeaknesses(),
-                            ((NonPlayerCharacter) creatureEditing).getImmunities(),
+                            resistances,
+                            weaknesses,
+                            immunities,
                             Type.getEnum(creatureTypeField.getItems().indexOf(creatureTypeField.getValue())));
             case "Player" -> editedCreature =
                     new PlayerCharacter(
@@ -152,21 +164,21 @@ public class CreatureEditorController {
                             tools,
                             creatureEditing.getSkills(),
                             creatureEditing.getLanguages(),
-                            creatureEditing.getStrength(),
-                            creatureEditing.getDexterity(),
-                            creatureEditing.getConstitution(),
-                            creatureEditing.getIntelligence(),
-                            creatureEditing.getWisdom(),
-                            creatureEditing.getCharisma(),
-                            creatureEditing.getHitPoints(),
+                            strField.getValue(),
+                            dexField.getValue(),
+                            contField.getValue(),
+                            intField.getValue(),
+                            wisField.getValue(),
+                            chaField.getValue(),
+                            hitPointsField.getValue(),
                             creatureEditing.getArmorClass(),
                             creatureEditing.getInitiative(),
                             creatureEditing.getLevel(),
                             creatureEditing.getCurrentCondition(),
                             creatureEditing.getSpells(),
-                            null,
-                            null,
-                            null);
+                            resistances,
+                            weaknesses,
+                            immunities);
         }
 
         App.getInitativeRoundRobin().addCreature(editedCreature);
@@ -313,6 +325,10 @@ public class CreatureEditorController {
                 cellData -> new SimpleStringProperty(cellData.getValue().getDamageType().toString()));
         toolsDamageTypeColumn.setCellFactory(
                 ComboBoxTableCell.forTableColumn(DamageType.getStringValues()));
+        toolsDamageTypeColumn.setOnEditCommit(
+                event ->
+                        (event.getTableView().getItems().get(event.getTablePosition().getRow()))
+                                .setDamageType(DamageType.valueOf(event.getNewValue())));
         weaponsTable.setItems(toolsObservable);
         weaponsTable.setEditable(true);
 

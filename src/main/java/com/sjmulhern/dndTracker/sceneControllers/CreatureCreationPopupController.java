@@ -67,12 +67,12 @@ public class CreatureCreationPopupController {
         creatureJson.remove("name");
         creatureJson.addProperty("name", newName);
 
-        if (currentCreature instanceof NonPlayerCharacter) {
-            App.getInitativeRoundRobin().addCreature(new NonPlayerCharacter(creatureJson));
+        if (currentCreature instanceof Monster) {
+            App.getInitativeRoundRobin().addCreature(new Monster(creatureJson));
         } else if (currentCreature instanceof PlayerCharacter) {
             App.getInitativeRoundRobin().addCreature(new PlayerCharacter(creatureJson));
         } else {
-            App.getInitativeRoundRobin().addCreature(new Monster(creatureJson));
+            App.getInitativeRoundRobin().addCreature(new NonPlayerCharacter(creatureJson));
         }
 
         App.getInitativeRoundRobin().setCurrentCreature(newName);
@@ -93,12 +93,12 @@ public class CreatureCreationPopupController {
         creatureJson.remove("name");
         creatureJson.addProperty("name", newName);
 
-        if (currentCreature instanceof NonPlayerCharacter) {
-            App.getInitativeRoundRobin().addCreature(new NonPlayerCharacter(creatureJson));
+        if (currentCreature instanceof Monster) {
+            App.getInitativeRoundRobin().addCreature(new Monster(creatureJson));
         } else if (currentCreature instanceof PlayerCharacter) {
             App.getInitativeRoundRobin().addCreature(new PlayerCharacter(creatureJson));
         } else {
-            App.getInitativeRoundRobin().addCreature(new Monster(creatureJson));
+            App.getInitativeRoundRobin().addCreature(new NonPlayerCharacter(creatureJson));
         }
 
         App.getInitativeRoundRobin().setCurrentCreature(newName);

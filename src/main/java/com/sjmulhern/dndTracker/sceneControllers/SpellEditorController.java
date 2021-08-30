@@ -73,7 +73,7 @@ public class SpellEditorController {
         Tab selectedTab = tabPane.getSelectionModel().getSelectedItem();
         ObservableList<Spell> spellsToUpdate = getSpellsBasedOnTabName(selectedTab);
 
-        spellsToUpdate.add(new Spell("Just added", "", 0, Shape.None, ""));
+        spellsToUpdate.add(new Spell("Just added", "effect", 0, Shape.None, "requirements"));
 
         ObservableList<String> spellNames = FXCollections.observableArrayList();
         spellsToUpdate.forEach(element -> spellNames.add(element.getName()));

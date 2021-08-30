@@ -33,7 +33,7 @@ public class App extends Application {
 
         Scene primaryScene = new Scene(new AnchorPane());
         Parent root =
-                FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Views/MainView.fxml")));
+                FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/MainView.fxml")));
         primaryScene.setRoot(root);
         primaryStage.setScene(primaryScene);
         primaryStage.show();
