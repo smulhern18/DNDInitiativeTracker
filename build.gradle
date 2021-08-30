@@ -42,6 +42,10 @@ test {
 compileJava.dependsOn 'spotlessApply'
 
 spotless {
+    json {
+        target '**/*.json'
+        simple().indentWithSpaces(4)
+    }
     java {
         importOrder()
         removeUnusedImports()

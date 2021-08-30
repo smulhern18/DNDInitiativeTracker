@@ -3,6 +3,112 @@
     "description": "Encounter with devils on the way to the monastery",
     "initativeRoundRobin": {"creatures": [
         {
+            "swimSpeed": 10,
+            "constitution": 13,
+            "strength": 6,
+            "description": "Monster Manual pg. 76",
+            "resistances": [],
+            "movementSpeed": 20,
+            "type": 7,
+            "flySpeed": 40,
+            "tools": [{
+                "damage": "1d4 + 3",
+                "name": "Sting",
+                "description": "DC 11 cont throw, 3d6 poison on fail, half on success",
+                "damageType": 1,
+                "toHit": "+5"
+            }],
+            "charisma": 14,
+            "wisdom": 12,
+            "abilities": [
+                {
+                    "name": "Magical Resistance",
+                    "description": " Advantage on saving throws for spells"
+                },
+                {
+                    "name": "Polymorph",
+                    "description": "Can polymorph to a rat, raven, or spider"
+                }
+            ],
+            "skills": [
+                4,
+                6,
+                12,
+                15
+            ],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 11,
+            "spells": null,
+            "initiative": 1,
+            "languages": [
+                12,
+                0
+            ],
+            "immunities": [],
+            "level": 1,
+            "currentCondition": 15,
+            "intelligence": 11,
+            "dexterity": 17,
+            "size": 0.25,
+            "name": "Imp 1",
+            "climbSpeed": 10,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 10,
+            "constitution": 13,
+            "strength": 6,
+            "description": "Monster Manual pg. 76",
+            "resistances": [],
+            "movementSpeed": 20,
+            "type": 7,
+            "flySpeed": 40,
+            "tools": [{
+                "damage": "1d4 + 3",
+                "name": "Sting",
+                "description": "DC 11 cont throw, 3d6 poison on fail, half on success",
+                "damageType": 1,
+                "toHit": "+5"
+            }],
+            "charisma": 14,
+            "wisdom": 12,
+            "abilities": [
+                {
+                    "name": "Magical Resistance",
+                    "description": " Advantage on saving throws for spells"
+                },
+                {
+                    "name": "Polymorph",
+                    "description": "Can polymorph to a rat, raven, or spider"
+                }
+            ],
+            "skills": [
+                4,
+                6,
+                12,
+                15
+            ],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 9,
+            "spells": null,
+            "initiative": 1,
+            "languages": [
+                12,
+                0
+            ],
+            "immunities": [],
+            "level": 1,
+            "currentCondition": 15,
+            "intelligence": 11,
+            "dexterity": 17,
+            "size": 0.25,
+            "name": "Imp 2",
+            "climbSpeed": 10,
+            "alignment": "LE"
+        },
+        {
             "swimSpeed": 15,
             "constitution": 12,
             "strength": 15,
@@ -290,6 +396,112 @@
             "alignment": "LE"
         },
         {
+            "swimSpeed": 10,
+            "constitution": 13,
+            "strength": 6,
+            "description": "Monster Manual pg. 76",
+            "resistances": [],
+            "movementSpeed": 20,
+            "type": 7,
+            "flySpeed": 40,
+            "tools": [{
+                "damage": "1d4 + 3",
+                "name": "Sting",
+                "description": "DC 11 cont throw, 3d6 poison on fail, half on success",
+                "damageType": 1,
+                "toHit": "+5"
+            }],
+            "charisma": 14,
+            "wisdom": 12,
+            "abilities": [
+                {
+                    "name": "Magical Resistance",
+                    "description": " Advantage on saving throws for spells"
+                },
+                {
+                    "name": "Polymorph",
+                    "description": "Can polymorph to a rat, raven, or spider"
+                }
+            ],
+            "skills": [
+                4,
+                6,
+                12,
+                15
+            ],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 11,
+            "spells": null,
+            "initiative": 1,
+            "languages": [
+                12,
+                0
+            ],
+            "immunities": [],
+            "level": 1,
+            "currentCondition": 15,
+            "intelligence": 11,
+            "dexterity": 17,
+            "size": 0.25,
+            "name": "Imp 3",
+            "climbSpeed": 10,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 10,
+            "constitution": 13,
+            "strength": 6,
+            "description": "Monster Manual pg. 76",
+            "resistances": [],
+            "movementSpeed": 20,
+            "type": 7,
+            "flySpeed": 40,
+            "tools": [{
+                "damage": "1d4 + 3",
+                "name": "Sting",
+                "description": "DC 11 cont throw, 3d6 poison on fail, half on success",
+                "damageType": 1,
+                "toHit": "+5"
+            }],
+            "charisma": 14,
+            "wisdom": 12,
+            "abilities": [
+                {
+                    "name": "Magical Resistance",
+                    "description": " Advantage on saving throws for spells"
+                },
+                {
+                    "name": "Polymorph",
+                    "description": "Can polymorph to a rat, raven, or spider"
+                }
+            ],
+            "skills": [
+                4,
+                6,
+                12,
+                15
+            ],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 11,
+            "spells": null,
+            "initiative": 1,
+            "languages": [
+                12,
+                0
+            ],
+            "immunities": [],
+            "level": 1,
+            "currentCondition": 15,
+            "intelligence": 11,
+            "dexterity": 17,
+            "size": 0.25,
+            "name": "Imp 4",
+            "climbSpeed": 10,
+            "alignment": "LE"
+        },
+        {
             "swimSpeed": 15,
             "constitution": 15,
             "strength": 16,
@@ -339,7 +551,61 @@
             "intelligence": 9,
             "dexterity": 15,
             "size": 1,
-            "name": "Bearded Devil",
+            "name": "Bearded Devil 1",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 15,
+            "strength": 16,
+            "description": "Monster Manual pg. 70",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 7,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d8 +2 ",
+                    "name": "Beard",
+                    "description": " DC 12 cont throw or poison for 1 min",
+                    "damageType": 1,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "1d10 + 3",
+                    "name": "Glaive",
+                    "description": "DC 12 cont throw or lost 1d10 hp every turn, can heal with magic healing",
+                    "damageType": 0,
+                    "toHit": "+5"
+                }
+            ],
+            "charisma": 11,
+            "wisdom": 11,
+            "abilities": [
+                {
+                    "name": "Magical Resistance",
+                    "description": " Advantage on saving throws for spells"
+                },
+                {
+                    "name": "Multi Attack",
+                    "description": "Attacks once with beard, once with Glaive per turn"
+                }
+            ],
+            "skills": [],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 53,
+            "spells": null,
+            "initiative": 1,
+            "languages": [],
+            "immunities": [],
+            "level": 1,
+            "currentCondition": 15,
+            "intelligence": 9,
+            "dexterity": 15,
+            "size": 1,
+            "name": "Bearded Devil 2",
             "climbSpeed": 15,
             "alignment": "LE"
         },
@@ -392,7 +658,7 @@
             "intelligence": 11,
             "dexterity": 17,
             "size": 0.25,
-            "name": "Imp 1",
+            "name": "Imp  5",
             "climbSpeed": 10,
             "alignment": "LE"
         },
@@ -432,7 +698,7 @@
             ],
             "armorClass": 13,
             "weaknesses": [],
-            "hitPoints": 9,
+            "hitPoints": 11,
             "spells": null,
             "initiative": 1,
             "languages": [
@@ -445,8 +711,126 @@
             "intelligence": 11,
             "dexterity": 17,
             "size": 0.25,
-            "name": "Imp 2",
+            "name": "Imp  6",
             "climbSpeed": 10,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 12,
+            "strength": 15,
+            "description": "Cultist in disguise",
+            "resistances": [],
+            "movementSpeed": 30,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d4+4",
+                "name": "Dagger",
+                "description": "reach 5ft, can be thrown 20/60",
+                "damageType": 1,
+                "toHit": "+6"
+            }],
+            "charisma": 11,
+            "wisdom": 13,
+            "abilities": [],
+            "skills": [
+                5,
+                11,
+                15
+            ],
+            "armorClass": 12,
+            "weaknesses": [],
+            "hitPoints": 29,
+            "spells": null,
+            "initiative": 10,
+            "languages": [
+                0,
+                12
+            ],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 10,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Villager 8",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 18,
+            "strength": 16,
+            "description": "Tomb of Foes pg. 163, use white abishai",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 7,
+            "flySpeed": 40,
+            "tools": [
+                {
+                    "damage": "1d8 + 3",
+                    "name": "Longsword",
+                    "description": " Reach 5 ft",
+                    "damageType": 0,
+                    "toHit": "+6"
+                },
+                {
+                    "damage": "1d4",
+                    "name": "Whip",
+                    "description": " On hit pushes a creature away 5 ft",
+                    "damageType": 2,
+                    "toHit": " +3"
+                },
+                {
+                    "damage": " 1d4 + 3",
+                    "name": "Bite",
+                    "description": "Also inflicts 1d6 cold damage",
+                    "damageType": 1,
+                    "toHit": "+6"
+                }
+            ],
+            "charisma": 13,
+            "wisdom": 12,
+            "abilities": [
+                {
+                    "name": "Multiattack",
+                    "description": "Can Attack with Whip and Longsword on one turn"
+                },
+                {
+                    "name": "Magical Resistance",
+                    "description": "Advantage on saving throws from spells"
+                },
+                {
+                    "name": "Magical Weapon",
+                    "description": " Weapon Attacks are Magical"
+                },
+                {
+                    "name": "Reckless",
+                    "description": "can gain advantage on all attacks that turn, but attackers gain advantage also"
+                },
+                {
+                    "name": "Vicious Reprisal",
+                    "description": "On taking damage, attempts to bite random creature within range "
+                }
+            ],
+            "skills": [],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 74,
+            "spells": null,
+            "initiative": 1,
+            "languages": [
+                10,
+                12
+            ],
+            "immunities": [],
+            "level": 6,
+            "currentCondition": 15,
+            "intelligence": 11,
+            "dexterity": 11,
+            "size": 1,
+            "name": "Black Abishai",
+            "climbSpeed": 15,
             "alignment": "LE"
         }
     ]}
