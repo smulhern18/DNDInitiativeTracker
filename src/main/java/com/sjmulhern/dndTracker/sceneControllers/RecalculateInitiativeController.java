@@ -66,6 +66,8 @@ public class RecalculateInitiativeController {
                                 .setInitiative(event.getNewValue()));
 
         playerCharacters.forEach(character -> playerNames.getItems().add(character.getName()));
+
+        playerTableView.setEditable(true);
     }
 
     public TableColumn<PlayerCharacter, String> nameColumn;

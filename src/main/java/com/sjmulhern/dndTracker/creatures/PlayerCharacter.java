@@ -1,6 +1,7 @@
 package com.sjmulhern.dndTracker.creatures;
 
 import com.google.gson.JsonObject;
+
 import java.util.ArrayList;
 
 public class PlayerCharacter extends Creature {
@@ -21,12 +22,12 @@ public class PlayerCharacter extends Creature {
                 new ArrayList<>(),
                 new ArrayList<>(),
                 new ArrayList<>(),
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
+                10,
+                10,
+                10,
+                10,
+                10,
+                10,
                 -1,
                 armorClass,
                 initiative,
