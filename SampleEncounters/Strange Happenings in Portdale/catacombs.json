@@ -1,0 +1,638 @@
+{
+    "name": "catacombs",
+    "description": "Catacombs attack",
+    "initativeRoundRobin": {"creatures": [
+        {
+            "swimSpeed": 20,
+            "constitution": 15,
+            "strength": 18,
+            "description": "Monster Manual pg 273",
+            "resistances": [],
+            "movementSpeed": 40,
+            "type": 13,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "2d8+4",
+                    "name": "Gore",
+                    "description": " reach 5 ft, single target",
+                    "damageType": 1,
+                    "toHit": " +6"
+                },
+                {
+                    "damage": " 2d12+4",
+                    "name": "Greataxe",
+                    "description": " reach 5 ft, single target",
+                    "damageType": 0,
+                    "toHit": "+6"
+                }
+            ],
+            "charisma": 5,
+            "wisdom": 8,
+            "abilities": [{
+                "name": "Charge",
+                "description": "If this creautre moves 10 ft and gores, target takes 2d8 extra damage, and if a DC 14 strength check fails, pushed 10 ft and knocked prone"
+            }],
+            "skills": [],
+            "armorClass": 12,
+            "weaknesses": [],
+            "hitPoints": 74,
+            "spells": null,
+            "initiative": 1,
+            "languages": [8],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 6,
+            "dexterity": 11,
+            "size": 2,
+            "name": "Minotaur Skeleton 1",
+            "climbSpeed": 20,
+            "alignment": "UA"
+        },
+        {
+            "swimSpeed": 20,
+            "constitution": 15,
+            "strength": 18,
+            "description": "Monster Manual pg 273",
+            "resistances": [],
+            "movementSpeed": 40,
+            "type": 13,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "2d8+4",
+                    "name": "Gore",
+                    "description": " reach 5 ft, single target",
+                    "damageType": 1,
+                    "toHit": " +6"
+                },
+                {
+                    "damage": " 2d12+4",
+                    "name": "Greataxe",
+                    "description": " reach 5 ft, single target",
+                    "damageType": 0,
+                    "toHit": "+6"
+                }
+            ],
+            "charisma": 5,
+            "wisdom": 8,
+            "abilities": [{
+                "name": "Charge",
+                "description": "If this creautre moves 10 ft and gores, target takes 2d8 extra damage, and if a DC 14 strength check fails, pushed 10 ft and knocked prone"
+            }],
+            "skills": [
+                3,
+                5,
+                6,
+                11
+            ],
+            "armorClass": 12,
+            "weaknesses": [],
+            "hitPoints": 67,
+            "spells": null,
+            "initiative": 1,
+            "languages": [
+                2,
+                0,
+                12,
+                8,
+                13
+            ],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 6,
+            "dexterity": 11,
+            "size": 2,
+            "name": "Minotaur Skeleton 2",
+            "climbSpeed": 20,
+            "alignment": "UA"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 12,
+            "strength": 15,
+            "description": "Cultist in disguise",
+            "resistances": [],
+            "movementSpeed": 30,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d4+4",
+                "name": "Dagger",
+                "description": "reach 5ft, can be thrown 20/60",
+                "damageType": 1,
+                "toHit": "+6"
+            }],
+            "charisma": 11,
+            "wisdom": 13,
+            "abilities": [],
+            "skills": [
+                5,
+                11,
+                15
+            ],
+            "armorClass": 12,
+            "weaknesses": [],
+            "hitPoints": 29,
+            "spells": null,
+            "initiative": 10,
+            "languages": [
+                0,
+                12
+            ],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 10,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Villager 3",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 12,
+            "strength": 15,
+            "description": "Cultist in disguise",
+            "resistances": [],
+            "movementSpeed": 30,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d4+4",
+                "name": "Dagger",
+                "description": "reach 5ft, can be thrown 20/60",
+                "damageType": 1,
+                "toHit": "+6"
+            }],
+            "charisma": 11,
+            "wisdom": 13,
+            "abilities": [],
+            "skills": [
+                5,
+                11,
+                15
+            ],
+            "armorClass": 12,
+            "weaknesses": [],
+            "hitPoints": 26,
+            "spells": null,
+            "initiative": 10,
+            "languages": [
+                0,
+                12
+            ],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 10,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Villager 1",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 12,
+            "strength": 15,
+            "description": "Cultist in disguise",
+            "resistances": [],
+            "movementSpeed": 30,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d4+4",
+                "name": "Dagger",
+                "description": "reach 5ft, can be thrown 20/60",
+                "damageType": 1,
+                "toHit": "+6"
+            }],
+            "charisma": 11,
+            "wisdom": 13,
+            "abilities": [],
+            "skills": [
+                5,
+                11,
+                15
+            ],
+            "armorClass": 12,
+            "weaknesses": [],
+            "hitPoints": 21,
+            "spells": null,
+            "initiative": 10,
+            "languages": [
+                0,
+                12
+            ],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 10,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Villager 2",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 15,
+            "strength": 10,
+            "description": "Skeleton Archer",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 15,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d6+2",
+                "name": "Shortbow",
+                "description": "range 80/320 ft",
+                "damageType": 1,
+                "toHit": "+4"
+            }],
+            "charisma": 5,
+            "wisdom": 8,
+            "abilities": [],
+            "skills": [],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 9,
+            "spells": null,
+            "initiative": 10,
+            "languages": [],
+            "immunities": [],
+            "level": 0.25,
+            "currentCondition": 15,
+            "intelligence": 6,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Skeleton 5",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 15,
+            "strength": 10,
+            "description": "Skeleton Archer",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 15,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d6+2",
+                "name": "Shortbow",
+                "description": "range 80/320 ft",
+                "damageType": 1,
+                "toHit": "+4"
+            }],
+            "charisma": 5,
+            "wisdom": 8,
+            "abilities": [],
+            "skills": [],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 19,
+            "spells": null,
+            "initiative": 10,
+            "languages": [],
+            "immunities": [],
+            "level": 0.25,
+            "currentCondition": 15,
+            "intelligence": 6,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Skeleton 4",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 15,
+            "strength": 10,
+            "description": "Skeleton Swordsman",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 13,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d6+2",
+                "name": "Shortsword",
+                "description": "reach 5ft",
+                "damageType": 0,
+                "toHit": "+4"
+            }],
+            "charisma": 5,
+            "wisdom": 8,
+            "abilities": [],
+            "skills": [],
+            "armorClass": 13,
+            "weaknesses": [2],
+            "hitPoints": 12,
+            "spells": null,
+            "initiative": 10,
+            "languages": [],
+            "immunities": [],
+            "level": 0.25,
+            "currentCondition": 15,
+            "intelligence": 6,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Skeleton 1",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 15,
+            "strength": 10,
+            "description": "Skeleton Swordsman",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 15,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d6+2",
+                "name": "Shortsword",
+                "description": "reach 5ft",
+                "damageType": 0,
+                "toHit": "+4"
+            }],
+            "charisma": 5,
+            "wisdom": 8,
+            "abilities": [],
+            "skills": [],
+            "armorClass": 13,
+            "weaknesses": [2],
+            "hitPoints": 12,
+            "spells": null,
+            "initiative": 10,
+            "languages": [],
+            "immunities": [],
+            "level": 0.25,
+            "currentCondition": 15,
+            "intelligence": 6,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Skeleton 2",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 15,
+            "strength": 10,
+            "description": "Skeleton Swordsman",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 15,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d6+2",
+                "name": "Shortsword",
+                "description": "reach 5ft",
+                "damageType": 0,
+                "toHit": "+4"
+            }],
+            "charisma": 5,
+            "wisdom": 8,
+            "abilities": [],
+            "skills": [],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 7,
+            "spells": null,
+            "initiative": 10,
+            "languages": [],
+            "immunities": [],
+            "level": 0.25,
+            "currentCondition": 15,
+            "intelligence": 6,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Skeleton 3",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 15,
+            "strength": 10,
+            "description": "Skeleton Archer",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 15,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d6+2",
+                "name": "Shortbow",
+                "description": "range 80/320 ft",
+                "damageType": 1,
+                "toHit": "+4"
+            }],
+            "charisma": 5,
+            "wisdom": 8,
+            "abilities": [],
+            "skills": [],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 12,
+            "spells": null,
+            "initiative": 10,
+            "languages": [],
+            "immunities": [],
+            "level": 0.25,
+            "currentCondition": 15,
+            "intelligence": 6,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Skeleton 6",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 12,
+            "strength": 9,
+            "description": "This is the necromancer, AC 15 with mage Armor",
+            "resistances": [],
+            "movementSpeed": 30,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "2d4",
+                "name": "WIthering Touch",
+                "description": "Reach 5 ft",
+                "damageType": 8,
+                "toHit": "+7"
+            }],
+            "charisma": 11,
+            "wisdom": 12,
+            "abilities": [],
+            "skills": [],
+            "armorClass": 12,
+            "weaknesses": [],
+            "hitPoints": 55,
+            "spells": {
+                "secondLevel": [
+                    {
+                        "requirements": "Con saving throw against spell save DC",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "Blind a foe",
+                        "name": "Blindness / Deafness"
+                    },
+                    {
+                        "requirements": "None",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "Half damage from strength",
+                        "name": "Ray of Enfeeblement"
+                    },
+                    {
+                        "requirements": "difficult terrain up to 10 ft away",
+                        "size": 20,
+                        "shape": 2,
+                        "effect": "create webs",
+                        "name": "Web"
+                    }
+                ],
+                "eigthLevel": [],
+                "slots": [
+                    0,
+                    4,
+                    3,
+                    3,
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "cantrips": [
+                    {
+                        "requirements": "Range of 120 ft",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "3d8 necrotic dmg",
+                        "name": "Chill Touch"
+                    },
+                    {
+                        "requirements": "Can move each light 60 ft each turn",
+                        "size": 10,
+                        "shape": 4,
+                        "effect": "Create 4 torch lights",
+                        "name": "Dancing Lights"
+                    },
+                    {
+                        "requirements": "Can only be 30ft away, and bitch slap",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "Create a spectral hand",
+                        "name": "Mage Hand"
+                    },
+                    {
+                        "requirements": "None",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "Repairs single broken object",
+                        "name": "Mending"
+                    }
+                ],
+                "thirdLevel": [
+                    {
+                        "requirements": "Player's Handbone pg 218",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "Lots",
+                        "name": "Bestow Curse"
+                    },
+                    {
+                        "requirements": "Must make melee attack, gain half hp back, for 10 rounds",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "3d6 Necrotic",
+                        "name": "Vampiric Touch"
+                    },
+                    {
+                        "requirements": "None",
+                        "size": 10,
+                        "shape": 4,
+                        "effect": "Animate 3 dead creatures",
+                        "name": "Animate Dead"
+                    }
+                ],
+                "ninthLevel": [],
+                "forthLevel": [
+                    {
+                        "requirements": "Make consitution saving throw, 1/2 as much otherwise",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "4d8 necrotic damage",
+                        "name": "Blight"
+                    },
+                    {
+                        "requirements": "Creature you touch has resistance to bludgeoning, piercing, and slashing",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "change resistances",
+                        "name": "Stoneskin"
+                    }
+                ],
+                "fifthLevel": [],
+                "sixthLevel": [],
+                "firstLevel": [
+                    {
+                        "requirements": "None",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "+ 1d4 +4 temp hp",
+                        "name": "False Life"
+                    },
+                    {
+                        "requirements": "None",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "Increase AC to 15",
+                        "name": "Mage Armor"
+                    },
+                    {
+                        "requirements": "If a cont saving throw fails, creature is poisoned",
+                        "size": 60,
+                        "shape": 0,
+                        "effect": "2d8 Poison damage",
+                        "name": "Ray of Sickness"
+                    }
+                ],
+                "slotsUsed": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "seventhLevel": []
+            },
+            "initiative": 1,
+            "languages": [],
+            "immunities": [],
+            "level": 11,
+            "currentCondition": 15,
+            "intelligence": 17,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Ralokian Fogbreath",
+            "climbSpeed": 15,
+            "alignment": "UA"
+        }
+    ]}
+}

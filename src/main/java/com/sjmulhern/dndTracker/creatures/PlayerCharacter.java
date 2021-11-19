@@ -28,7 +28,7 @@ public class PlayerCharacter extends Creature {
                 10,
                 10,
                 10,
-                -1,
+                10,
                 armorClass,
                 initiative,
                 level,
