@@ -169,6 +169,7 @@ public class CreatureEditorController {
                             null);
         }
 
+        assert editedCreature != null;
         App.getInitativeRoundRobin().addCreature(editedCreature);
         App.getInitativeRoundRobin().setCurrentCreature(editedCreature.getName());
         creatureEditing = editedCreature;
