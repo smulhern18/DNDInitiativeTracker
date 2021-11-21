@@ -1,0 +1,153 @@
+{
+    "name": "Room 17",
+    "description": "Underwater Room with sliver of air at top",
+    "initativeRoundRobin": {"creatures": [
+        {
+            "swimSpeed": 40,
+            "constitution": 9,
+            "strength": 13,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 0,
+            "type": 14,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "4d6",
+                    "name": "Bites",
+                    "description": " ",
+                    "damageType": 1,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "2d6",
+                    "name": "below 1/2 bite",
+                    "description": " ",
+                    "damageType": 13,
+                    "toHit": "+5"
+                }
+            ],
+            "charisma": 2,
+            "wisdom": 7,
+            "abilities": [
+                {
+                    "name": "Blood Frenzy",
+                    "description": "Has advantage on creatures with less than full hit points"
+                },
+                {
+                    "name": "Swarm",
+                    "description": "Can occupy the same space as another creature"
+                }
+            ],
+            "skills": [11],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 27,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 1,
+            "currentCondition": 15,
+            "intelligence": 1,
+            "dexterity": 16,
+            "size": 1,
+            "name": "Swarm of Quippers 1",
+            "climbSpeed": 0,
+            "alignment": "UA"
+        },
+        {
+            "swimSpeed": 40,
+            "constitution": 9,
+            "strength": 13,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 0,
+            "type": 14,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "4d6",
+                    "name": "Bites",
+                    "description": " ",
+                    "damageType": 1,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "2d6",
+                    "name": "below 1/2 bite",
+                    "description": " ",
+                    "damageType": 13,
+                    "toHit": "+5"
+                }
+            ],
+            "charisma": 2,
+            "wisdom": 7,
+            "abilities": [
+                {
+                    "name": "Blood Frenzy",
+                    "description": "Has advantage on creatures with less than full hit points"
+                },
+                {
+                    "name": "Swarm",
+                    "description": "Can occupy the same space as another creature"
+                }
+            ],
+            "skills": [11],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 26,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 1,
+            "currentCondition": 15,
+            "intelligence": 1,
+            "dexterity": 16,
+            "size": 1,
+            "name": "Swarm of Quippers 2",
+            "climbSpeed": 0,
+            "alignment": "UA"
+        },
+        {
+            "swimSpeed": 20,
+            "constitution": 15,
+            "strength": 16,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 10,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d8+3",
+                "name": "Pincer",
+                "description": "Target is grappled",
+                "damageType": 0,
+                "toHit": "+5"
+            }],
+            "charisma": 8,
+            "wisdom": 10,
+            "abilities": [{
+                "name": "Multiattack",
+                "description": "Can attack twice with pincers"
+            }],
+            "skills": [11],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 26,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 1,
+            "currentCondition": 15,
+            "intelligence": 10,
+            "dexterity": 12,
+            "size": 2,
+            "name": "Crabman",
+            "climbSpeed": 15,
+            "alignment": "TN"
+        }
+    ]}
+}

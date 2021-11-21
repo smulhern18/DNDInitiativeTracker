@@ -1,0 +1,272 @@
+{
+    "name": "Room 15",
+    "description": "Managerie",
+    "initativeRoundRobin": {"creatures": [
+        {
+            "swimSpeed": 5,
+            "constitution": 18,
+            "strength": 20,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 10,
+            "type": 1,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d8+5",
+                "name": "Bite",
+                "description": "5ft reach",
+                "damageType": 2,
+                "toHit": "+7"
+            }],
+            "charisma": 5,
+            "wisdom": 10,
+            "abilities": [{
+                "name": "Withdraw",
+                "description": " Can't attack or move, +4 to AC"
+            }],
+            "skills": [
+                4,
+                6,
+                14,
+                15
+            ],
+            "armorClass": 18,
+            "weaknesses": [],
+            "hitPoints": 102,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 2,
+            "dexterity": 3,
+            "size": 2,
+            "name": "Giant Tortoise 1",
+            "climbSpeed": 5,
+            "alignment": "UA"
+        },
+        {
+            "swimSpeed": 5,
+            "constitution": 18,
+            "strength": 20,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 10,
+            "type": 1,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d8+5",
+                "name": "Bite",
+                "description": "5ft reach",
+                "damageType": 2,
+                "toHit": "+7"
+            }],
+            "charisma": 5,
+            "wisdom": 10,
+            "abilities": [{
+                "name": "Withdraw",
+                "description": " Can't attack or move, +4 to AC"
+            }],
+            "skills": [
+                4,
+                6,
+                14,
+                15
+            ],
+            "armorClass": 18,
+            "weaknesses": [],
+            "hitPoints": 97,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 2,
+            "dexterity": 3,
+            "size": 2,
+            "name": "Giant Tortoise 2",
+            "climbSpeed": 5,
+            "alignment": "UA"
+        },
+        {
+            "swimSpeed": 40,
+            "constitution": 15,
+            "strength": 18,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 0,
+            "type": 1,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "2d8+5",
+                "name": "Bite",
+                "description": "5ft reach",
+                "damageType": 1,
+                "toHit": "+6"
+            }],
+            "charisma": 4,
+            "wisdom": 10,
+            "abilities": [{
+                "name": "Blood Frenzy",
+                "description": "Advantage on less than full health creatures"
+            }],
+            "skills": [
+                4,
+                6,
+                14,
+                15
+            ],
+            "armorClass": 12,
+            "weaknesses": [],
+            "hitPoints": 45,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 1,
+            "dexterity": 13,
+            "size": 2,
+            "name": "Hunter Shark",
+            "climbSpeed": 0,
+            "alignment": "UA"
+        },
+        {
+            "swimSpeed": 15,
+            "constitution": 14,
+            "strength": 14,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 9,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d4+2",
+                "name": "Dagger",
+                "description": "5ft reach",
+                "damageType": 1,
+                "toHit": "+4"
+            }],
+            "charisma": 15,
+            "wisdom": 11,
+            "abilities": [{
+                "name": "Olhydra's Armor",
+                "description": "Mage Armor at Will"
+            }],
+            "skills": [
+                4,
+                6,
+                14,
+                15
+            ],
+            "armorClass": 10,
+            "weaknesses": [],
+            "hitPoints": 51,
+            "spells": {
+                "secondLevel": [{
+                    "requirements": "Ends when attacking or casting",
+                    "size": 0,
+                    "shape": 5,
+                    "effect": "become invisible",
+                    "name": "Invisibility"
+                }],
+                "eigthLevel": [],
+                "slots": [
+                    0,
+                    2,
+                    2,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "cantrips": [
+                    {
+                        "requirements": "Ranged spell attack",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "2d8 Necrotic damage",
+                        "name": "Chill touch"
+                    },
+                    {
+                        "requirements": "120 ft range",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "2 beams, 1d10 force each",
+                        "name": "Eldritch Blast"
+                    }
+                ],
+                "thirdLevel": [
+                    {
+                        "requirements": "requirements",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "effect",
+                        "name": "Just added"
+                    },
+                    {
+                        "requirements": "requirements",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "effect",
+                        "name": "Just added"
+                    }
+                ],
+                "ninthLevel": [],
+                "forthLevel": [],
+                "fifthLevel": [],
+                "sixthLevel": [],
+                "firstLevel": [
+                    {
+                        "requirements": "If attacked, attacking creature takes 5 cold damage",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "Get 5 temp hp",
+                        "name": "Armor of Agathys"
+                    },
+                    {
+                        "requirements": "Concetration",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "Can take dash as bonus action",
+                        "name": "Expeditious Retreat"
+                    }
+                ],
+                "slotsUsed": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "seventhLevel": []
+            },
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 11,
+            "dexterity": 11,
+            "size": 1,
+            "name": "Fathomer",
+            "climbSpeed": 15,
+            "alignment": "NE"
+        }
+    ]}
+}

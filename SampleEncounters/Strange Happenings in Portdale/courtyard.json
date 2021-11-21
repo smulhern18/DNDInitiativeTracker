@@ -568,12 +568,10 @@
             ],
             "charisma": 15,
             "wisdom": 13,
-            "abilities": [
-                {
-                    "name": "Multiattack",
-                    "description": " Can attack twice with longsword, or once with longsword and once with life drain"
-                }
-            ],
+            "abilities": [{
+                "name": "Multiattack",
+                "description": " Can attack twice with longsword, or once with longsword and once with life drain"
+            }],
             "skills": [],
             "armorClass": 14,
             "weaknesses": [],
@@ -618,12 +616,10 @@
             ],
             "charisma": 15,
             "wisdom": 13,
-            "abilities": [
-                {
-                    "name": "Multiattack",
-                    "description": " Can attack twice with longsword, or once with longsword and once with life drain"
-                }
-            ],
+            "abilities": [{
+                "name": "Multiattack",
+                "description": " Can attack twice with longsword, or once with longsword and once with life drain"
+            }],
             "skills": [],
             "armorClass": 14,
             "weaknesses": [],

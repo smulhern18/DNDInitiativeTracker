@@ -285,7 +285,6 @@ public class CreatureEditorController {
         ObservableList<Ability> abilitiesObservable = FXCollections.observableArrayList();
         abilitiesObservable.addAll(creatureEditing.getAbilities());
 
-        abilitiesObservable.addAll(creatureEditing.getAbilities());
         abilitiesNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         abilitiesNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         abilitiesNameColumn.setOnEditCommit(
@@ -301,6 +300,7 @@ public class CreatureEditorController {
         abilityTable.setItems(abilitiesObservable);
         abilityTable.setEditable(true);
 
+        abilityComboBox.setItems(FXCollections.observableArrayList());
         creatureEditing
                 .getAbilities()
                 .forEach(element -> abilityComboBox.getItems().add(element.getName()));
@@ -342,6 +342,7 @@ public class CreatureEditorController {
         weaponsTable.setItems(toolsObservable);
         weaponsTable.setEditable(true);
 
+        weaponComboBox.setItems(FXCollections.observableArrayList());
         creatureEditing.getTools().forEach(element -> weaponComboBox.getItems().add(element.getName()));
     }
 

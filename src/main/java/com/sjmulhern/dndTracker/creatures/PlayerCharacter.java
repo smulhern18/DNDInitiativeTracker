@@ -1,7 +1,6 @@
 package com.sjmulhern.dndTracker.creatures;
 
 import com.google.gson.JsonObject;
-
 import java.util.ArrayList;
 
 public class PlayerCharacter extends Creature {

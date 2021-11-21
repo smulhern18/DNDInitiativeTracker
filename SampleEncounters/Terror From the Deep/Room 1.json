@@ -1,0 +1,62 @@
+{
+    "name": "Room 1",
+    "description": "The Fight with the Abeloth",
+    "initativeRoundRobin": {"creatures": [{
+        "swimSpeed": 40,
+        "constitution": 15,
+        "strength": 21,
+        "description": "description",
+        "resistances": [],
+        "movementSpeed": 10,
+        "type": 0,
+        "flySpeed": 0,
+        "tools": [
+            {
+                "damage": "3d6+5",
+                "name": "Tentacle",
+                "description": " 10ft Reach, dc 14 cont throw or 1d12 acid",
+                "damageType": 2,
+                "toHit": " +9"
+            },
+            {
+                "damage": "3d6+5",
+                "name": "Tail",
+                "description": "10ft Reach",
+                "damageType": 2,
+                "toHit": "+9"
+            }
+        ],
+        "charisma": 18,
+        "wisdom": 15,
+        "abilities": [
+            {
+                "name": "Multiattack",
+                "description": "Can Make 3 Tentacle Attacks"
+            },
+            {
+                "name": "Enslave",
+                "description": "only 3 per day, dc 14 wisdom, or taken control of by aboleth. when taking damage, saving throw"
+            },
+            {
+                "name": "Legendary Actions",
+                "description": " "
+            }
+        ],
+        "skills": [],
+        "armorClass": 17,
+        "weaknesses": [],
+        "hitPoints": 129,
+        "spells": null,
+        "initiative": 10,
+        "languages": [11],
+        "immunities": [],
+        "level": 10,
+        "currentCondition": 15,
+        "intelligence": 18,
+        "dexterity": 9,
+        "size": 2,
+        "name": "Aboleth",
+        "climbSpeed": 5,
+        "alignment": "LE"
+    }]}
+}

@@ -1,0 +1,366 @@
+{
+    "name": "Room 5",
+    "description": "Kelpies and Sahuagin Priestess",
+    "initativeRoundRobin": {"creatures": [
+        {
+            "swimSpeed": 30,
+            "constitution": 13,
+            "strength": 7,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 25,
+            "type": 12,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d6 +3",
+                    "name": "Wrap",
+                    "description": " target becomes grappled, dc12, 10ft reach",
+                    "damageType": 2,
+                    "toHit": "+4"
+                },
+                {
+                    "damage": "2d6+3",
+                    "name": "Crush",
+                    "description": " ",
+                    "damageType": 2,
+                    "toHit": "+4"
+                }
+            ],
+            "charisma": 14,
+            "wisdom": 9,
+            "abilities": [{
+                "name": "Charm Person",
+                "description": "1/day, casts charm person spell, dc12 cha"
+            }],
+            "skills": [],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 37,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 7,
+            "dexterity": 11,
+            "size": 2,
+            "name": "Kelpie 1",
+            "climbSpeed": 10,
+            "alignment": "CE"
+        },
+        {
+            "swimSpeed": 30,
+            "constitution": 13,
+            "strength": 7,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 25,
+            "type": 12,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d6 +3",
+                    "name": "Wrap",
+                    "description": " target becomes grappled, dc12, 10ft reach",
+                    "damageType": 2,
+                    "toHit": "+4"
+                },
+                {
+                    "damage": "2d6+3",
+                    "name": "Crush",
+                    "description": " ",
+                    "damageType": 2,
+                    "toHit": "+4"
+                }
+            ],
+            "charisma": 14,
+            "wisdom": 9,
+            "abilities": [{
+                "name": "Charm Person",
+                "description": "1/day, casts charm person spell, dc12 cha"
+            }],
+            "skills": [],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 33,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 7,
+            "dexterity": 11,
+            "size": 2,
+            "name": "Kelpie 2",
+            "climbSpeed": 10,
+            "alignment": "CE"
+        },
+        {
+            "swimSpeed": 40,
+            "constitution": 13,
+            "strength": 7,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 9,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d6 +3",
+                    "name": "Trident",
+                    "description": "Reach 10ft",
+                    "damageType": 1,
+                    "toHit": "+4"
+                },
+                {
+                    "damage": "1d4+1",
+                    "name": "Bite",
+                    "description": "Reach 5ft",
+                    "damageType": 1,
+                    "toHit": "+3"
+                }
+            ],
+            "charisma": 14,
+            "wisdom": 9,
+            "abilities": [
+                {
+                    "name": "Blood Frenzy",
+                    "description": "if not at full health, attacks have advantage"
+                },
+                {
+                    "name": "Multiattack",
+                    "description": "Trident and Bite once per turn"
+                }
+            ],
+            "skills": [],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 21,
+            "spells": {
+                "secondLevel": [{
+                    "requirements": "Must make consecutive throws each turn until success",
+                    "size": 0,
+                    "shape": 5,
+                    "effect": "wis throw or paralyzed",
+                    "name": "Hold Person"
+                }],
+                "eigthLevel": [],
+                "slots": [
+                    0,
+                    4,
+                    3,
+                    3,
+                    2,
+                    1,
+                    2,
+                    1,
+                    3,
+                    2,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "cantrips": [{
+                    "requirements": "need to be touching creature",
+                    "size": 0,
+                    "shape": 5,
+                    "effect": "add 1d4 to any check",
+                    "name": "Guidance"
+                }],
+                "thirdLevel": [{
+                    "requirements": "6 creatures heal by 1d4 + cha mod",
+                    "size": 0,
+                    "shape": 5,
+                    "effect": "",
+                    "name": "Mass Healing Word"
+                }],
+                "ninthLevel": [],
+                "forthLevel": [],
+                "fifthLevel": [],
+                "sixthLevel": [],
+                "firstLevel": [
+                    {
+                        "requirements": "Advantage on attack on creature until end of next turn",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "ranged spell attack, 4d6 radiant damage",
+                        "name": "Guiding Bolt"
+                    },
+                    {
+                        "requirements": "3 nearby creatures",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "add 1d4 to any roll",
+                        "name": "Bless"
+                    }
+                ],
+                "slotsUsed": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "seventhLevel": []
+            },
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 7,
+            "dexterity": 11,
+            "size": 1,
+            "name": "Sahuagin Priestess 1",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 40,
+            "constitution": 13,
+            "strength": 7,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 30,
+            "type": 9,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d6 +3",
+                    "name": "Trident",
+                    "description": "Reach 10ft",
+                    "damageType": 1,
+                    "toHit": "+4"
+                },
+                {
+                    "damage": "1d4+1",
+                    "name": "Bite",
+                    "description": "Reach 5ft",
+                    "damageType": 1,
+                    "toHit": "+3"
+                }
+            ],
+            "charisma": 14,
+            "wisdom": 9,
+            "abilities": [
+                {
+                    "name": "Blood Frenzy",
+                    "description": "if not at full health, attacks have advantage"
+                },
+                {
+                    "name": "Multiattack",
+                    "description": "Trident and Bite once per turn"
+                }
+            ],
+            "skills": [],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 21,
+            "spells": {
+                "secondLevel": [{
+                    "requirements": "Must make consecutive throws each turn until success",
+                    "size": 0,
+                    "shape": 5,
+                    "effect": "wis throw or paralyzed",
+                    "name": "Hold Person"
+                }],
+                "eigthLevel": [],
+                "slots": [
+                    0,
+                    4,
+                    3,
+                    3,
+                    2,
+                    1,
+                    2,
+                    1,
+                    3,
+                    2,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "cantrips": [{
+                    "requirements": "need to be touching creature",
+                    "size": 0,
+                    "shape": 5,
+                    "effect": "add 1d4 to any check",
+                    "name": "Guidance"
+                }],
+                "thirdLevel": [{
+                    "requirements": "6 creatures heal by 1d4 + cha mod",
+                    "size": 0,
+                    "shape": 5,
+                    "effect": "",
+                    "name": "Mass Healing Word"
+                }],
+                "ninthLevel": [],
+                "forthLevel": [],
+                "fifthLevel": [],
+                "sixthLevel": [],
+                "firstLevel": [
+                    {
+                        "requirements": "Advantage on attack on creature until end of next turn",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "ranged spell attack, 4d6 radiant damage",
+                        "name": "Guiding Bolt"
+                    },
+                    {
+                        "requirements": "3 nearby creatures",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "add 1d4 to any roll",
+                        "name": "Bless"
+                    }
+                ],
+                "slotsUsed": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "seventhLevel": []
+            },
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 7,
+            "dexterity": 11,
+            "size": 1,
+            "name": "Sahuagin Priestess 2",
+            "climbSpeed": 15,
+            "alignment": "LE"
+        }
+    ]}
+}

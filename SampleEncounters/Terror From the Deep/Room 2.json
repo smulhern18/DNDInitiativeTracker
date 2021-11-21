@@ -1,0 +1,128 @@
+{
+    "name": "Room 2",
+    "description": "Gargoyles",
+    "initativeRoundRobin": {"creatures": [
+        {
+            "swimSpeed": 20,
+            "constitution": 18,
+            "strength": 15,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 40,
+            "type": 5,
+            "flySpeed": 60,
+            "tools": [
+                {
+                    "damage": "2d8+2",
+                    "name": "Bite",
+                    "description": "5ft reach",
+                    "damageType": 1,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "2d6+2",
+                    "name": "Claws",
+                    "description": "5ft reach, if both attacks hit same target, the target is grappled",
+                    "damageType": 0,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "2d10+2",
+                    "name": "Gore",
+                    "description": " ",
+                    "damageType": 1,
+                    "toHit": "+5"
+                }
+            ],
+            "charisma": 7,
+            "wisdom": 11,
+            "abilities": [
+                {
+                    "name": "Multiattack",
+                    "description": "1 Bite, 2 Claws, 1 Gore"
+                },
+                {
+                    "name": "Magic Weapons",
+                    "description": " The Gargoyles' attacks are magical"
+                }
+            ],
+            "skills": [11],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 73,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 6,
+            "currentCondition": 15,
+            "intelligence": 6,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Gargoyle 1",
+            "climbSpeed": 20,
+            "alignment": "CE"
+        },
+        {
+            "swimSpeed": 20,
+            "constitution": 18,
+            "strength": 15,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 40,
+            "type": 5,
+            "flySpeed": 60,
+            "tools": [
+                {
+                    "damage": "2d8+2",
+                    "name": "Bite",
+                    "description": "5ft reach",
+                    "damageType": 1,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "2d6+2",
+                    "name": "Claws",
+                    "description": "5ft reach, if both attacks hit same target, the target is grappled",
+                    "damageType": 0,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "2d10+2",
+                    "name": "Gore",
+                    "description": " ",
+                    "damageType": 1,
+                    "toHit": "+5"
+                }
+            ],
+            "charisma": 7,
+            "wisdom": 11,
+            "abilities": [
+                {
+                    "name": "Multiattack",
+                    "description": "1 Bite, 2 Claws, 1 Gore"
+                },
+                {
+                    "name": "Magic Weapons",
+                    "description": " The Gargoyles' attacks are magical"
+                }
+            ],
+            "skills": [11],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 74,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 6,
+            "currentCondition": 15,
+            "intelligence": 6,
+            "dexterity": 14,
+            "size": 1,
+            "name": "Gargoyle 2",
+            "climbSpeed": 20,
+            "alignment": "CE"
+        }
+    ]}
+}

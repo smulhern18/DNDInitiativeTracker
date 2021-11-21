@@ -1,0 +1,276 @@
+{
+    "name": "Room 14",
+    "description": "Kelpies and Seahorses",
+    "initativeRoundRobin": {"creatures": [
+        {
+            "swimSpeed": 40,
+            "constitution": 11,
+            "strength": 12,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 0,
+            "type": 1,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d6 +1",
+                "name": "Ram",
+                "description": " ",
+                "damageType": 2,
+                "toHit": "+3"
+            }],
+            "charisma": 5,
+            "wisdom": 12,
+            "abilities": [{
+                "name": "Charge",
+                "description": "Move 20 ft, hit with ram, takes extra 2d6 bludge, dc 11 cont or stunned"
+            }],
+            "skills": [],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 13,
+            "spells": null,
+            "initiative": 10,
+            "languages": [],
+            "immunities": [],
+            "level": 0.5,
+            "currentCondition": 15,
+            "intelligence": 2,
+            "dexterity": 15,
+            "size": 2,
+            "name": "Giant Seahorse 2",
+            "climbSpeed": 0,
+            "alignment": "UA"
+        },
+        {
+            "swimSpeed": 40,
+            "constitution": 11,
+            "strength": 12,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 0,
+            "type": 1,
+            "flySpeed": 0,
+            "tools": [{
+                "damage": "1d6 +1",
+                "name": "Ram",
+                "description": " ",
+                "damageType": 2,
+                "toHit": "+3"
+            }],
+            "charisma": 5,
+            "wisdom": 12,
+            "abilities": [{
+                "name": "Charge",
+                "description": "Move 20 ft, hit with ram, takes extra 2d6 bludge, dc 11 cont or stunned"
+            }],
+            "skills": [],
+            "armorClass": 13,
+            "weaknesses": [],
+            "hitPoints": 15,
+            "spells": null,
+            "initiative": 10,
+            "languages": [],
+            "immunities": [],
+            "level": 0.5,
+            "currentCondition": 15,
+            "intelligence": 2,
+            "dexterity": 15,
+            "size": 2,
+            "name": "Giant Seahorse 1",
+            "climbSpeed": 0,
+            "alignment": "UA"
+        },
+        {
+            "swimSpeed": 30,
+            "constitution": 13,
+            "strength": 7,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 25,
+            "type": 12,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d6 +3",
+                    "name": "Wrap",
+                    "description": " target becomes grappled, dc12, 10ft reach",
+                    "damageType": 2,
+                    "toHit": "+4"
+                },
+                {
+                    "damage": "2d6+3",
+                    "name": "Crush",
+                    "description": " ",
+                    "damageType": 2,
+                    "toHit": "+4"
+                }
+            ],
+            "charisma": 14,
+            "wisdom": 9,
+            "abilities": [{
+                "name": "Charm Person",
+                "description": "1/day, casts charm person spell, dc12 cha"
+            }],
+            "skills": [],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 37,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 7,
+            "dexterity": 11,
+            "size": 2,
+            "name": "Kelpie 1",
+            "climbSpeed": 10,
+            "alignment": "CE"
+        },
+        {
+            "swimSpeed": 30,
+            "constitution": 13,
+            "strength": 7,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 25,
+            "type": 12,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d6 +3",
+                    "name": "Wrap",
+                    "description": " target becomes grappled, dc12, 10ft reach",
+                    "damageType": 2,
+                    "toHit": "+4"
+                },
+                {
+                    "damage": "2d6+3",
+                    "name": "Crush",
+                    "description": " ",
+                    "damageType": 2,
+                    "toHit": "+4"
+                }
+            ],
+            "charisma": 14,
+            "wisdom": 9,
+            "abilities": [{
+                "name": "Charm Person",
+                "description": "1/day, casts charm person spell, dc12 cha"
+            }],
+            "skills": [],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 33,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 7,
+            "dexterity": 11,
+            "size": 2,
+            "name": "Kelpie 2",
+            "climbSpeed": 10,
+            "alignment": "CE"
+        },
+        {
+            "swimSpeed": 30,
+            "constitution": 13,
+            "strength": 7,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 25,
+            "type": 12,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d6 +3",
+                    "name": "Wrap",
+                    "description": " target becomes grappled, dc12, 10ft reach",
+                    "damageType": 2,
+                    "toHit": "+4"
+                },
+                {
+                    "damage": "2d6+3",
+                    "name": "Crush",
+                    "description": " ",
+                    "damageType": 2,
+                    "toHit": "+4"
+                }
+            ],
+            "charisma": 14,
+            "wisdom": 9,
+            "abilities": [{
+                "name": "Charm Person",
+                "description": "1/day, casts charm person spell, dc12 cha"
+            }],
+            "skills": [],
+            "armorClass": 15,
+            "weaknesses": [],
+            "hitPoints": 38,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 7,
+            "dexterity": 11,
+            "size": 2,
+            "name": "Kelpie 3",
+            "climbSpeed": 10,
+            "alignment": "CE"
+        },
+        {
+            "swimSpeed": 40,
+            "constitution": 14,
+            "strength": 16,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 20,
+            "type": 1,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d8 +3",
+                    "name": "Pincer",
+                    "description": " target becomes grappled, dc16",
+                    "damageType": 0,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "1d8 + 3",
+                    "name": "Crush",
+                    "description": "Auto hit if grappled",
+                    "damageType": 1,
+                    "toHit": "+4"
+                }
+            ],
+            "charisma": 2,
+            "wisdom": 10,
+            "abilities": [{
+                "name": "Multiattack",
+                "description": "Attacks Twice"
+            }],
+            "skills": [],
+            "armorClass": 14,
+            "weaknesses": [],
+            "hitPoints": 41,
+            "spells": null,
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 2,
+            "currentCondition": 15,
+            "intelligence": 1,
+            "dexterity": 10,
+            "size": 2,
+            "name": "Monsterous Crayfish",
+            "climbSpeed": 10,
+            "alignment": "UA"
+        }
+    ]}
+}

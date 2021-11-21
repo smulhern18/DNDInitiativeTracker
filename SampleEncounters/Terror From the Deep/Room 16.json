@@ -1,0 +1,276 @@
+{
+    "name": "Room 16",
+    "description": "2 shivers",
+    "initativeRoundRobin": {"creatures": [
+        {
+            "swimSpeed": 20,
+            "constitution": 12,
+            "strength": 10,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 40,
+            "type": 9,
+            "flySpeed": 60,
+            "tools": [{
+                "damage": "1d10",
+                "name": "Eye of Frost",
+                "description": "30ft line",
+                "damageType": 6,
+                "toHit": "+3"
+            }],
+            "charisma": 17,
+            "wisdom": 13,
+            "abilities": [{
+                "name": "Chilling Mist",
+                "description": "Aura of cold mist within 10ft, when creature is delt damage in area, the creature takes 1d10 cold damage"
+            }],
+            "skills": [11],
+            "armorClass": 12,
+            "weaknesses": [],
+            "hitPoints": 17,
+            "spells": {
+                "secondLevel": [
+                    {
+                        "requirements": "cannot determine which is real, d20 to determine actual target",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "creates an exact duplicate",
+                        "name": "Mirror Image"
+                    },
+                    {
+                        "requirements": "space must be unoccupied",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "teleport 30 ft away",
+                        "name": "Misty Step"
+                    }
+                ],
+                "eigthLevel": [],
+                "slots": [
+                    0,
+                    4,
+                    3,
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "cantrips": [
+                    {
+                        "requirements": "must be in eyeshot",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "ranged spell, 2d8 necrotic",
+                        "name": "Chill Touch"
+                    },
+                    {
+                        "requirements": "can manipulate objects",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "control magic hand up to 30 ft away",
+                        "name": "Mage hand"
+                    }
+                ],
+                "thirdLevel": [{
+                    "requirements": "wisdom saving throw or become frightened",
+                    "size": 30,
+                    "shape": 1,
+                    "effect": "run away",
+                    "name": "Fear"
+                }],
+                "ninthLevel": [],
+                "forthLevel": [],
+                "fifthLevel": [],
+                "sixthLevel": [],
+                "firstLevel": [
+                    {
+                        "requirements": "none",
+                        "size": 20,
+                        "shape": 4,
+                        "effect": "create fog, gives disadvantage",
+                        "name": "Fog Cloud"
+                    },
+                    {
+                        "requirements": "none",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "Gives AC of 15",
+                        "name": "Mage Armor"
+                    },
+                    {
+                        "requirements": "pushed 10 ft away, half damage on success",
+                        "size": 15,
+                        "shape": 2,
+                        "effect": "cont throw, 2d8 thunder",
+                        "name": "Thunderwave"
+                    }
+                ],
+                "slotsUsed": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "seventhLevel": []
+            },
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 6,
+            "currentCondition": 15,
+            "intelligence": 13,
+            "dexterity": 14,
+            "size": 1,
+            "name": "One-Eyed Shiver 1",
+            "climbSpeed": 20,
+            "alignment": "CE"
+        },
+        {
+            "swimSpeed": 20,
+            "constitution": 12,
+            "strength": 10,
+            "description": "  ",
+            "resistances": [],
+            "movementSpeed": 40,
+            "type": 9,
+            "flySpeed": 60,
+            "tools": [{
+                "damage": "1d10",
+                "name": "Eye of Frost",
+                "description": "30ft line",
+                "damageType": 6,
+                "toHit": "+3"
+            }],
+            "charisma": 17,
+            "wisdom": 13,
+            "abilities": [{
+                "name": "Chilling Mist",
+                "description": "Aura of cold mist within 10ft, when creature is delt damage in area, the creature takes 1d10 cold damage"
+            }],
+            "skills": [11],
+            "armorClass": 12,
+            "weaknesses": [],
+            "hitPoints": 10,
+            "spells": {
+                "secondLevel": [
+                    {
+                        "requirements": "cannot determine which is real, d20 to determine actual target",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "creates an exact duplicate",
+                        "name": "Mirror Image"
+                    },
+                    {
+                        "requirements": "space must be unoccupied",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "teleport 30 ft away",
+                        "name": "Misty Step"
+                    }
+                ],
+                "eigthLevel": [],
+                "slots": [
+                    0,
+                    4,
+                    3,
+                    2,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "cantrips": [
+                    {
+                        "requirements": "must be in eyeshot",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "ranged spell, 2d8 necrotic",
+                        "name": "Chill Touch"
+                    },
+                    {
+                        "requirements": "can manipulate objects",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "control magic hand up to 30 ft away",
+                        "name": "Mage hand"
+                    }
+                ],
+                "thirdLevel": [{
+                    "requirements": "wisdom saving throw or become frightened",
+                    "size": 30,
+                    "shape": 1,
+                    "effect": "run away",
+                    "name": "Fear"
+                }],
+                "ninthLevel": [],
+                "forthLevel": [],
+                "fifthLevel": [],
+                "sixthLevel": [],
+                "firstLevel": [
+                    {
+                        "requirements": "none",
+                        "size": 20,
+                        "shape": 4,
+                        "effect": "create fog, gives disadvantage",
+                        "name": "Fog Cloud"
+                    },
+                    {
+                        "requirements": "none",
+                        "size": 0,
+                        "shape": 5,
+                        "effect": "Gives AC of 15",
+                        "name": "Mage Armor"
+                    },
+                    {
+                        "requirements": "pushed 10 ft away, half damage on success",
+                        "size": 15,
+                        "shape": 2,
+                        "effect": "cont throw, 2d8 thunder",
+                        "name": "Thunderwave"
+                    }
+                ],
+                "slotsUsed": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "seventhLevel": []
+            },
+            "initiative": 10,
+            "languages": [0],
+            "immunities": [],
+            "level": 6,
+            "currentCondition": 15,
+            "intelligence": 13,
+            "dexterity": 14,
+            "size": 1,
+            "name": "One-Eyed Shiver 2",
+            "climbSpeed": 20,
+            "alignment": "CE"
+        }
+    ]}
+}
