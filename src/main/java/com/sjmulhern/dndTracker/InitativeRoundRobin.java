@@ -109,7 +109,7 @@ public class InitativeRoundRobin {
                     }
                 });
 
-        Collections.sort(creatures);
+        creatures.sort(Collections.reverseOrder());
         setCurrentIndex(0);
     }
 

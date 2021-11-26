@@ -50,7 +50,11 @@ public class RecalculateInitiativeController {
         playerTableView.getItems().addAll(playerCharacters);
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         nameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
-        nameColumn.setEditable(false);
+        nameColumn.setOnEditCommit(
+                event ->
+                        (event.getTableView().getItems().get(event.getTablePosition().getRow()))
+                                .setName(event.getNewValue()));
+        nameColumn.setEditable(true);
 
         // Initialize the tables
         Integer[] sizeArray = {

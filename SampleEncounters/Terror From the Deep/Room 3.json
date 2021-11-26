@@ -1,1 +1,142 @@
-{"name":"Room 3","description":"Eyes","initativeRoundRobin":{"creatures":[{"name":"Eye of the Deep 2","description":"","alignment":"LE","size":1.0,"movementSpeed":5,"swimSpeed":20,"climbSpeed":5,"flySpeed":0,"level":5.0,"abilities":[{"name":"Flyby","description":"No opportunity attack when moving out of reach"},{"name":"Stun Cone","description":"Looks in a direction, cone 30ft, dc15 cont or stunned for 10 turns, repeat each turn"},{"name":"Multiattack","description":"1 bite, 2 pincers"}],"tools":[{"name":"Bite","description":"reach 5ft","damageType":1,"toHit":"+5","damage":"1d6+2"},{"name":"Pincer","description":"Grappled, dc12","damageType":2,"toHit":"+5","damage":"3d6+2"},{"name":"Enfeeblement Ray","description":"DC 15 wis or melee half damage","damageType":13,"toHit":" ","damage":"150ft range"}],"skills":[],"languages":[0,11],"strength":14,"dexterity":9,"constitution":24,"intelligence":12,"wisdom":13,"charisma":13,"hitPoints":90,"armorClass":14,"initiative":10,"currentCondition":15,"spells":null,"resistances":[],"weaknesses":[],"immunities":[],"type":0},{"name":"Eye of the Deep 1","description":"","alignment":"LE","size":1.0,"movementSpeed":5,"swimSpeed":20,"climbSpeed":5,"flySpeed":0,"level":5.0,"abilities":[{"name":"Flyby","description":"No opportunity attack when moving out of reach"},{"name":"Stun Cone","description":"Looks in a direction, cone 30ft, dc15 cont or stunned for 10 turns, repeat each turn"},{"name":"Multiattack","description":"1 bite, 2 pincers"}],"tools":[{"name":"Bite","description":"reach 5ft","damageType":1,"toHit":"+5","damage":"1d6+2"},{"name":"Pincer","description":"Grappled, dc12","damageType":2,"toHit":"+5","damage":"3d6+2"},{"name":"Enfeeblement Ray","description":"DC 15 wis or melee half damage","damageType":13,"toHit":" ","damage":"150ft range"}],"skills":[],"languages":[0,11],"strength":14,"dexterity":9,"constitution":24,"intelligence":12,"wisdom":13,"charisma":13,"hitPoints":128,"armorClass":14,"initiative":10,"currentCondition":15,"spells":null,"resistances":[],"weaknesses":[],"immunities":[],"type":0}]}}
+{
+    "name": "Room 3",
+    "description": "Eyes",
+    "initativeRoundRobin": {"creatures": [
+        {
+            "swimSpeed": 20,
+            "constitution": 24,
+            "strength": 14,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 5,
+            "type": 0,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d6+2",
+                    "name": "Bite",
+                    "description": "reach 5ft",
+                    "damageType": 1,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "3d6+2",
+                    "name": "Pincer",
+                    "description": "Grappled, dc12",
+                    "damageType": 2,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "150ft range",
+                    "name": "Enfeeblement Ray",
+                    "description": "DC 15 wis or melee half damage",
+                    "damageType": 13,
+                    "toHit": " "
+                }
+            ],
+            "charisma": 13,
+            "wisdom": 13,
+            "abilities": [
+                {
+                    "name": "Flyby",
+                    "description": "No opportunity attack when moving out of reach"
+                },
+                {
+                    "name": "Stun Cone",
+                    "description": "Looks in a direction, cone 30ft, dc15 cont or stunned for 10 turns, repeat each turn"
+                },
+                {
+                    "name": "Multiattack",
+                    "description": "1 bite, 2 pincers"
+                }
+            ],
+            "skills": [],
+            "armorClass": 14,
+            "weaknesses": [],
+            "hitPoints": 90,
+            "spells": null,
+            "initiative": 10,
+            "languages": [
+                0,
+                11
+            ],
+            "immunities": [],
+            "level": 5,
+            "currentCondition": 15,
+            "intelligence": 12,
+            "dexterity": 9,
+            "size": 1,
+            "name": "Eye of the Deep 2",
+            "climbSpeed": 5,
+            "alignment": "LE"
+        },
+        {
+            "swimSpeed": 20,
+            "constitution": 24,
+            "strength": 14,
+            "description": "",
+            "resistances": [],
+            "movementSpeed": 5,
+            "type": 0,
+            "flySpeed": 0,
+            "tools": [
+                {
+                    "damage": "1d6+2",
+                    "name": "Bite",
+                    "description": "reach 5ft",
+                    "damageType": 1,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "3d6+2",
+                    "name": "Pincer",
+                    "description": "Grappled, dc12",
+                    "damageType": 2,
+                    "toHit": "+5"
+                },
+                {
+                    "damage": "150ft range",
+                    "name": "Enfeeblement Ray",
+                    "description": "DC 15 wis or melee half damage",
+                    "damageType": 13,
+                    "toHit": " "
+                }
+            ],
+            "charisma": 13,
+            "wisdom": 13,
+            "abilities": [
+                {
+                    "name": "Flyby",
+                    "description": "No opportunity attack when moving out of reach"
+                },
+                {
+                    "name": "Stun Cone",
+                    "description": "Looks in a direction, cone 30ft, dc15 cont or stunned for 10 turns, repeat each turn"
+                },
+                {
+                    "name": "Multiattack",
+                    "description": "1 bite, 2 pincers"
+                }
+            ],
+            "skills": [],
+            "armorClass": 14,
+            "weaknesses": [],
+            "hitPoints": 128,
+            "spells": null,
+            "initiative": 10,
+            "languages": [
+                0,
+                11
+            ],
+            "immunities": [],
+            "level": 5,
+            "currentCondition": 15,
+            "intelligence": 12,
+            "dexterity": 9,
+            "size": 1,
+            "name": "Eye of the Deep 1",
+            "climbSpeed": 5,
+            "alignment": "LE"
+        }
+    ]}
+}
