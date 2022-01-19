@@ -123,47 +123,83 @@ public class SpellEditorController {
         firstSlots
                 .getValueFactory()
                 .valueProperty()
-                .addListener(((observable, oldValue, newValue) -> finalResult.getSlots().add(1, newValue)));
+                .addListener(
+                        ((observable, oldValue, newValue) -> {
+                            finalResult.getSlots().remove(1);
+                            finalResult.getSlots().add(1, newValue);
+                        }));
         initializeSpinner(secondSlots, slots.get(2));
         secondSlots
                 .getValueFactory()
                 .valueProperty()
-                .addListener(((observable, oldValue, newValue) -> finalResult.getSlots().add(2, newValue)));
+                .addListener(
+                        ((observable, oldValue, newValue) -> {
+                            finalResult.getSlots().remove(2);
+                            finalResult.getSlots().add(2, newValue);
+                        }));
         initializeSpinner(thirdSlots, slots.get(3));
         thirdSlots
                 .getValueFactory()
                 .valueProperty()
-                .addListener(((observable, oldValue, newValue) -> finalResult.getSlots().add(3, newValue)));
+                .addListener(
+                        ((observable, oldValue, newValue) -> {
+                            finalResult.getSlots().remove(3);
+                            finalResult.getSlots().add(3, newValue);
+                        }));
         initializeSpinner(forthSlots, slots.get(4));
         forthSlots
                 .getValueFactory()
                 .valueProperty()
-                .addListener(((observable, oldValue, newValue) -> finalResult.getSlots().add(4, newValue)));
+                .addListener(
+                        ((observable, oldValue, newValue) -> {
+                            finalResult.getSlots().remove(4);
+                            finalResult.getSlots().add(4, newValue);
+                        }));
         initializeSpinner(fifthSlots, slots.get(5));
         fifthSlots
                 .getValueFactory()
                 .valueProperty()
-                .addListener(((observable, oldValue, newValue) -> finalResult.getSlots().add(5, newValue)));
+                .addListener(
+                        ((observable, oldValue, newValue) -> {
+                            finalResult.getSlots().remove(5);
+                            finalResult.getSlots().add(5, newValue);
+                        }));
         initializeSpinner(sixthSlots, slots.get(6));
         sixthSlots
                 .getValueFactory()
                 .valueProperty()
-                .addListener(((observable, oldValue, newValue) -> finalResult.getSlots().add(6, newValue)));
+                .addListener(
+                        ((observable, oldValue, newValue) -> {
+                            finalResult.getSlots().remove(6);
+                            finalResult.getSlots().add(6, newValue);
+                        }));
         initializeSpinner(seventhSlots, slots.get(7));
         seventhSlots
                 .getValueFactory()
                 .valueProperty()
-                .addListener(((observable, oldValue, newValue) -> finalResult.getSlots().add(7, newValue)));
+                .addListener(
+                        ((observable, oldValue, newValue) -> {
+                            finalResult.getSlots().remove(7);
+                            finalResult.getSlots().add(7, newValue);
+                        }));
         initializeSpinner(eighthSlots, slots.get(8));
         eighthSlots
                 .getValueFactory()
                 .valueProperty()
-                .addListener(((observable, oldValue, newValue) -> finalResult.getSlots().add(8, newValue)));
+                .addListener(
+                        ((observable, oldValue, newValue) -> {
+                            finalResult.getSlots().remove(8);
+                            finalResult.getSlots().add(8, newValue);
+                        }));
         initializeSpinner(ninthSlots, slots.get(9));
         ninthSlots
                 .getValueFactory()
                 .valueProperty()
-                .addListener(((observable, oldValue, newValue) -> finalResult.getSlots().add(9, newValue)));
+                .addListener(
+                        ((observable, oldValue, newValue) -> {
+                            finalResult.getSlots().remove(9);
+                            finalResult.getSlots().add(9, newValue);
+                        }));
         initializeSpinner(firstSlotsExpended, slotsExpended.get(1));
         firstSlotsExpended
                 .getValueFactory()
@@ -370,18 +406,12 @@ public class SpellEditorController {
                 event ->
                         (event.getTableView().getItems().get(event.getTablePosition().getRow()))
                                 .setName(event.getNewValue()));
-        thirdEffect.setCellValueFactory(new PropertyValueFactory<>("size"));
+        thirdEffect.setCellValueFactory(new PropertyValueFactory<>("effect"));
         thirdEffect.setCellFactory(TextFieldTableCell.forTableColumn());
         thirdEffect.setOnEditCommit(
                 event ->
                         (event.getTableView().getItems().get(event.getTablePosition().getRow()))
                                 .setEffect(event.getNewValue()));
-        thirdSize.setCellValueFactory(new PropertyValueFactory<>("effect"));
-        thirdSize.setCellFactory(ComboBoxTableCell.forTableColumn(sizeArray));
-        thirdSize.setOnEditCommit(
-                event ->
-                        (event.getTableView().getItems().get(event.getTablePosition().getRow()))
-                                .setSize(event.getNewValue()));
         thirdShape.setCellValueFactory(new PropertyValueFactory<>("shape"));
         thirdShape.setCellFactory(ComboBoxTableCell.forTableColumn(Shape.values()));
         thirdShape.setOnEditCommit(
