@@ -29,6 +29,30 @@ public class Spells {
     ArrayList<Integer> slots;
     ArrayList<Integer> slotsUsed;
 
+    public ArrayList<Spell> getLevelSpells(int level) {
+        return switch (level) {
+            case 0 -> cantrips;
+            case 1 -> firstLevel;
+            case 2 -> secondLevel;
+            case 3 -> thirdLevel;
+            case 4 -> forthLevel;
+            case 5 -> fifthLevel;
+            case 6 -> sixthLevel;
+            case 7 -> seventhLevel;
+            case 8 -> eighthLevel;
+            case 9 -> ninthLevel;
+            default -> null;
+        };
+    }
+
+    public int[] getSpinnerLevels(int level) {
+        if (1 <= level && level <= 9) {
+            return new int[]{slots.get(level), slotsUsed.get(level)};
+        } else {
+            return null;
+        }
+    }
+
     public Spells(JsonObject jsonObject) {
 
         // Cantrips

@@ -106,6 +106,37 @@ public class SpellEditorController {
         }
     }
 
+    public void initSpinners() {
+        for (int i = 0; i < slotsSpinners.size(); i++) {
+            int[] spinnerValues = result.getSpinnerLevels(i+1);
+            Spinner<Integer> slots = slotsSpinners.get(i);
+            Spinner<Integer> expended = slotsExpendedSpinners.get(i);
+            initializeSpinner(slots, spinnerValues[0]);
+            initializeSpinner(expended, spinnerValues[1]);
+            int finalI = i;
+            slots
+                    .getValueFactory()
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                result.getSlots().remove(finalI +1);
+                                result.getSlots().add(finalI +1, newValue);
+                            }));
+            expended
+                    .getValueFactory()
+                    .valueProperty()
+                    .addListener(
+                            ((observable, oldValue, newValue) -> {
+                                result.getSlotsUsed().remove(finalI +1);
+                                result.getSlotsUsed().add(finalI +1, newValue);
+                            }));
+        }
+    }
+
+    public void initTable(TableView<Spell> table, ArrayList<Spell> spells) {
+
+    }
+
     public void initialize() {
         tabPane.getSelectionModel().selectedItemProperty().addListener(this::handleChangeTab);
 
@@ -116,144 +147,7 @@ public class SpellEditorController {
         }
 
         // Initialize the spinners
-        ArrayList<Integer> slots = spells.getSlots();
-        ArrayList<Integer> slotsExpended = spells.getSlotsUsed();
-        initializeSpinner(firstSlots, slots.get(1));
-        Spells finalResult = spells;
-        firstSlots
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> {
-                            finalResult.getSlots().remove(1);
-                            finalResult.getSlots().add(1, newValue);
-                        }));
-        initializeSpinner(secondSlots, slots.get(2));
-        secondSlots
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> {
-                            finalResult.getSlots().remove(2);
-                            finalResult.getSlots().add(2, newValue);
-                        }));
-        initializeSpinner(thirdSlots, slots.get(3));
-        thirdSlots
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> {
-                            finalResult.getSlots().remove(3);
-                            finalResult.getSlots().add(3, newValue);
-                        }));
-        initializeSpinner(forthSlots, slots.get(4));
-        forthSlots
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> {
-                            finalResult.getSlots().remove(4);
-                            finalResult.getSlots().add(4, newValue);
-                        }));
-        initializeSpinner(fifthSlots, slots.get(5));
-        fifthSlots
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> {
-                            finalResult.getSlots().remove(5);
-                            finalResult.getSlots().add(5, newValue);
-                        }));
-        initializeSpinner(sixthSlots, slots.get(6));
-        sixthSlots
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> {
-                            finalResult.getSlots().remove(6);
-                            finalResult.getSlots().add(6, newValue);
-                        }));
-        initializeSpinner(seventhSlots, slots.get(7));
-        seventhSlots
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> {
-                            finalResult.getSlots().remove(7);
-                            finalResult.getSlots().add(7, newValue);
-                        }));
-        initializeSpinner(eighthSlots, slots.get(8));
-        eighthSlots
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> {
-                            finalResult.getSlots().remove(8);
-                            finalResult.getSlots().add(8, newValue);
-                        }));
-        initializeSpinner(ninthSlots, slots.get(9));
-        ninthSlots
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> {
-                            finalResult.getSlots().remove(9);
-                            finalResult.getSlots().add(9, newValue);
-                        }));
-        initializeSpinner(firstSlotsExpended, slotsExpended.get(1));
-        firstSlotsExpended
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> finalResult.getSlotsUsed().add(1, newValue)));
-        initializeSpinner(secondSlotsExpended, slotsExpended.get(2));
-        secondSlotsExpended
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> finalResult.getSlotsUsed().add(2, newValue)));
-        initializeSpinner(thirdSlotsExpended, slotsExpended.get(3));
-        thirdSlotsExpended
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> finalResult.getSlotsUsed().add(3, newValue)));
-        initializeSpinner(forthSlotsExpended, slotsExpended.get(4));
-        forthSlotsExpended
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> finalResult.getSlotsUsed().add(4, newValue)));
-        initializeSpinner(fifthSlotsExpended, slotsExpended.get(5));
-        fifthSlotsExpended
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> finalResult.getSlotsUsed().add(5, newValue)));
-        initializeSpinner(sixthSlotsExpended, slotsExpended.get(6));
-        sixthSlotsExpended
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> finalResult.getSlotsUsed().add(6, newValue)));
-        initializeSpinner(seventhSlotsExpended, slotsExpended.get(7));
-        seventhSlotsExpended
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> finalResult.getSlotsUsed().add(7, newValue)));
-        initializeSpinner(eighthSlotsExpended, slotsExpended.get(8));
-        eighthSlotsExpended
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> finalResult.getSlotsUsed().add(8, newValue)));
-        initializeSpinner(ninthSlotsExpended, slotsExpended.get(9));
-        ninthSlotsExpended
-                .getValueFactory()
-                .valueProperty()
-                .addListener(
-                        ((observable, oldValue, newValue) -> finalResult.getSlotsUsed().add(9, newValue)));
+        initSpinners();
 
         // Initialize the tables
         Integer[] sizeArray = {0, 5, 10, 15, 20, 30, 40, 50, 60, 100, 150, 200};
@@ -299,6 +193,17 @@ public class SpellEditorController {
         }
 
         creature.setSpells(spells);
+
+        initTable(cantripTable, spells.getCantrips());
+        initTable(firstTable, spells.getFirstLevel());
+        initTable(secondTable, spells.getSecondLevel());
+        initTable(thirdTable, spells.getThirdLevel());
+        initTable(forthTable, spells.getForthLevel());
+        initTable(fifthTable, spells.getFifthLevel());
+        initTable(sixthTable, spells.getSixthLevel());
+        initTable(seventhTable, spells.getSeventhLevel());
+        initTable(eighthTable, spells.getEighthLevel());
+        initTable(ninthTable, spells.getNinthLevel());
 
         cantripTable.getItems().addAll(creature.getSpells().getCantrips());
         cantripName.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -754,4 +659,7 @@ public class SpellEditorController {
     @FXML public Button addSpellButton;
     @FXML public Button removeSelected;
     @FXML public ComboBox<String> spellNameComboBox;
+    
+    ArrayList<Spinner<Integer>> slotsSpinners = new ArrayList<>(Arrays.asList(firstSlots, secondSlots, thirdSlots, forthSlots, fifthSlots, sixthSlots, seventhSlots, eighthSlots, ninthSlots));
+    ArrayList<Spinner<Integer>> slotsExpendedSpinners = new ArrayList<>(Arrays.asList(firstSlotsExpended, secondSlotsExpended, thirdSlotsExpended, forthSlotsExpended, fifthSlotsExpended, sixthSlotsExpended, seventhSlotsExpended, eighthSlotsExpended, ninthSlotsExpended));
 }
