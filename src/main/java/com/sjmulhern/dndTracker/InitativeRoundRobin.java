@@ -59,7 +59,7 @@ public class InitativeRoundRobin {
 
         Creature creature = (Creature) creaturesArray[currentIndex % creatures.size()];
 
-        while (creature.getHitPoints() <= 0) {
+        while (creature.getHitPoints() == 0) {
             currentIndex++;
             creature = (Creature) creaturesArray[currentIndex % creatures.size()];
         }
@@ -108,7 +108,6 @@ public class InitativeRoundRobin {
                         creature.setInitiative(Utilities.rollD20((creature.getDexterity() - 10) / 2));
                     }
                 });
-
         creatures.sort(Collections.reverseOrder());
         setCurrentIndex(0);
     }

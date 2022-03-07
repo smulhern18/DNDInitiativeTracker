@@ -68,6 +68,7 @@ public class RecalculateInitiativeController {
                 event ->
                         (event.getTableView().getItems().get(event.getTablePosition().getRow()))
                                 .setInitiative(event.getNewValue()));
+        initRollColumn.setEditable(true);
 
         playerCharacters.forEach(character -> playerNames.getItems().add(character.getName()));
 
