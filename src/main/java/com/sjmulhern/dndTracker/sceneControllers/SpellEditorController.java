@@ -108,7 +108,7 @@ public class SpellEditorController {
 
     public void initSpinners() {
         for (int i = 0; i < slotsSpinners.size(); i++) {
-            int[] spinnerValues = result.getSpinnerLevels(i+1);
+            int[] spinnerValues = result.getSpinnerLevels(i + 1);
             Spinner<Integer> slots = slotsSpinners.get(i);
             Spinner<Integer> expended = slotsExpendedSpinners.get(i);
             initializeSpinner(slots, spinnerValues[0]);
@@ -119,23 +119,21 @@ public class SpellEditorController {
                     .valueProperty()
                     .addListener(
                             ((observable, oldValue, newValue) -> {
-                                result.getSlots().remove(finalI +1);
-                                result.getSlots().add(finalI +1, newValue);
+                                result.getSlots().remove(finalI + 1);
+                                result.getSlots().add(finalI + 1, newValue);
                             }));
             expended
                     .getValueFactory()
                     .valueProperty()
                     .addListener(
                             ((observable, oldValue, newValue) -> {
-                                result.getSlotsUsed().remove(finalI +1);
-                                result.getSlotsUsed().add(finalI +1, newValue);
+                                result.getSlotsUsed().remove(finalI + 1);
+                                result.getSlotsUsed().add(finalI + 1, newValue);
                             }));
         }
     }
 
-    public void initTable(TableView<Spell> table, ArrayList<Spell> spells) {
-
-    }
+    public void initTable(TableView<Spell> table, ArrayList<Spell> spells) {}
 
     public void initialize() {
         tabPane.getSelectionModel().selectedItemProperty().addListener(this::handleChangeTab);
@@ -659,7 +657,29 @@ public class SpellEditorController {
     @FXML public Button addSpellButton;
     @FXML public Button removeSelected;
     @FXML public ComboBox<String> spellNameComboBox;
-    
-    ArrayList<Spinner<Integer>> slotsSpinners = new ArrayList<>(Arrays.asList(firstSlots, secondSlots, thirdSlots, forthSlots, fifthSlots, sixthSlots, seventhSlots, eighthSlots, ninthSlots));
-    ArrayList<Spinner<Integer>> slotsExpendedSpinners = new ArrayList<>(Arrays.asList(firstSlotsExpended, secondSlotsExpended, thirdSlotsExpended, forthSlotsExpended, fifthSlotsExpended, sixthSlotsExpended, seventhSlotsExpended, eighthSlotsExpended, ninthSlotsExpended));
+
+    ArrayList<Spinner<Integer>> slotsSpinners =
+            new ArrayList<>(
+                    Arrays.asList(
+                            firstSlots,
+                            secondSlots,
+                            thirdSlots,
+                            forthSlots,
+                            fifthSlots,
+                            sixthSlots,
+                            seventhSlots,
+                            eighthSlots,
+                            ninthSlots));
+    ArrayList<Spinner<Integer>> slotsExpendedSpinners =
+            new ArrayList<>(
+                    Arrays.asList(
+                            firstSlotsExpended,
+                            secondSlotsExpended,
+                            thirdSlotsExpended,
+                            forthSlotsExpended,
+                            fifthSlotsExpended,
+                            sixthSlotsExpended,
+                            seventhSlotsExpended,
+                            eighthSlotsExpended,
+                            ninthSlotsExpended));
 }

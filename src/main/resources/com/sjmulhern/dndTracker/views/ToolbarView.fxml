@@ -6,8 +6,8 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.ToolbarController">
-    <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="650.0">
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.ToolbarController">
+    <ToolBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="39.0" prefWidth="650.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <Button mnemonicParsing="false" onAction="#mainMenuPressed" text="Main Menu" />
         <MenuButton fx:id="encounterPropertiesMenu" mnemonicParsing="false" text="Encounter Properties">
             <items>

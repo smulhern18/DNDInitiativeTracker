@@ -14,8 +14,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane fx:id="rootPane" prefHeight="789.0" prefWidth="373.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.CombatTrackerController">
-    <fx:include source="ToolbarView.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+<AnchorPane fx:id="rootPane" prefHeight="789.0" prefWidth="373.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sjmulhern.dndTracker.sceneControllers.CombatTrackerController">
     <Pane layoutX="1.0" layoutY="40.0" prefHeight="750.0" prefWidth="650.0">
         <Separator layoutX="102.0" layoutY="207.0" orientation="VERTICAL" prefHeight="543.0" prefWidth="7.0" />
         <GridPane layoutX="207.0" layoutY="3.0" prefHeight="59.0" prefWidth="441.0">
@@ -187,4 +186,5 @@
             </columns>
         </TableView>
     </GridPane>
+   <fx:include source="ToolbarView.fxml" />
 </AnchorPane>

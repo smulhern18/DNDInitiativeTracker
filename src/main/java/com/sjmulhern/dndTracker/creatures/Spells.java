@@ -47,7 +47,7 @@ public class Spells {
 
     public int[] getSpinnerLevels(int level) {
         if (1 <= level && level <= 9) {
-            return new int[]{slots.get(level), slotsUsed.get(level)};
+            return new int[] {slots.get(level), slotsUsed.get(level)};
         } else {
             return null;
         }

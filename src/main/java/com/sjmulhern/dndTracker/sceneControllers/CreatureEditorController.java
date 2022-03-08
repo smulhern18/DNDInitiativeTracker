@@ -288,9 +288,11 @@ public class CreatureEditorController {
         abilitiesNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         abilitiesNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         abilitiesNameColumn.setOnEditCommit(
-                event ->
-                        (event.getTableView().getItems().get(event.getTablePosition().getRow()))
-                                .setName(event.getNewValue()));
+                event -> {
+                    event.getTableView().getItems().get(event.getTablePosition().getRow())
+                        .setName(event.getNewValue());
+                    reset();
+                });
         abilitiesDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         abilitiesDescriptionColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         abilitiesDescriptionColumn.setOnEditCommit(
@@ -310,9 +312,11 @@ public class CreatureEditorController {
         toolsNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         toolsNameColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         toolsNameColumn.setOnEditCommit(
-                event ->
-                        (event.getTableView().getItems().get(event.getTablePosition().getRow()))
-                                .setName(event.getNewValue()));
+            event -> {
+                event.getTableView().getItems().get(event.getTablePosition().getRow())
+                     .setName(event.getNewValue());
+                reset();
+            });
         toolsDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
         toolsDescriptionColumn.setCellFactory(TextFieldTableCell.forTableColumn());
         toolsDescriptionColumn.setOnEditCommit(
@@ -348,10 +352,18 @@ public class CreatureEditorController {
 
     public void addNewWeaponPressed() {
         weaponsTable.getItems().add(new Tool("New Weapon", " ", DamageType.None, " ", " "));
+        weaponComboBox.getItems().removeAll();
+        for (Tool weapon: weaponsTable.getItems()) {
+            weaponComboBox.getItems().add(weapon.getName());
+        }
     }
 
     public void addNewAbilityPressed() {
         abilityTable.getItems().add(new Ability("New Ability", " "));
+        abilityComboBox.getItems().removeAll();
+        for (Ability ability: abilityTable.getItems()) {
+            abilityComboBox.getItems().add(ability.getName());
+        }
     }
 
     public void editSkillsButtonPressed() {
